@@ -1,0 +1,171 @@
+# [SkyComb Analyst - Drone](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
+
+# Overview
+This ReadMe covers the purpose and content of the DroneSpace folder of the SkyComb Analyst application.
+(Refer the root-level [ReadMe](./ReadMe.md) for an overview of the whole application.)
+DroneSpace covers drone flight logs, video metadata, ground elevation, etc. 
+These data sources have variable accuracy, built-in limitations and sometimes outright errors. 
+This application implements a variety of algorithms and cross-checks to minimise the impact of these issues.
+
+# Drone Input
+SkyComb Analyst can be used on a single image, or a standalone thermal video file, but is most useful when provide with:
+- A thermal video file and the corresponding drone flight log - a text file of location and altitude etc information, or
+- Paired thermal and optical video files each with its own drone flight logs (so 2 videos and 2 flight logs).
+
+For example, the Mavic 2 Enterprise (M2E) Dual drone, in a single flight can generate 4 files concurrently:
+- DJI_0053.mp4		Optical (aka visible-light) camera video
+- DJI_0053.srt		Drone flight log (location, speed, altitude, orientation, fstop, focal length, etc) for optical video
+- DJI_0054.mp4		Thermal (aka IR) camera video, for the same time span as the optical video
+- DJI_0054.srt		Drone flight log (location, altitude, orientation, color palette) for thermal video
+The format of the two flight logs differ somewhat.
+
+
+# Height vs Altitude vs Elevation
+It is important to understand the difference between these terms:
+- Drone Height: The height of the drone above the GROUND where it started its flight.
+- Drone Altitude: The height of the drone above the SEA LEVEL.
+- Ground Elevation: The height of the ground above the SEA LEVEL.
+- Surface Elevation: The height of the tree tops above the SEA LEVEL.
+The SkyComb Analyst application uses these terms consistently.
+
+For example, when you place a drone on the ground in front of you, and switch it on, 
+the drone will say that it is at a height of 0.0 meters, but at an altitude of say 56.4 meters.
+
+
+# Input Accuracy
+
+## Video Start Time Accuracy
+From experience, despite the timestamps of the thermal and optical videos being the same, the 2 video file may NOT start at exactly the same time. 
+In one instance, there was a difference of 0.5 seconds between the first frame of each video.
+SkyComb Analyst needs the videos to be time synchronised.
+
+The FlightConfig.cs setting ThermalToOpticalVideoDelayS is used to cope with the time difference between the two video files.
+To evaluate this setting for your drone, set ThermalToOpticalVideoDelayS to zero, run SkyComb Analyst on your flight data, 
+and as the drone turns a sharp corner, see if the thermal and optical videos start to turn at difference times. 
+If they do, modify ThermalToOpticalVideoDelayS until the videos sync up.
+
+(ToDo: Auto-calculate the time difference between the two videos by analysing first drone sharp corner perhaps using GFTT)
+
+## Drone Time Accuracy
+From experience, the above 2 drone flight log files do NOT all start at exactly the same time as each other, 
+nor do they start at exactly the same time as the thermal and optical videos.
+In one instance, there was a difference of 1.2 seconds between the earliest video frame and the latest of the flight log files.
+Likely the drone has a single-threaded OS and is a power-constrained. So sub-systems are "started" one by one in sequence.
+
+The FlightConfig.cs setting ThermalVideoStartToThermalFlightStartS is used to cope with the time difference between the thermal video and the theraml flight log.
+To evaluate this setting for your drone, set ThermalVideoStartToThermalFlightStartS to zero, run SkyComb Analyst on your flight data, 
+and as the drone turns a sharp corner, see if the thermal video and drone flight path start to turn at difference times. 
+If they do, modify ThermalVideoStartToThermalFlightStartS until the video and flight path sync up.
+
+(ToDo: Auto-calculate the time difference between the video and flight log by analysing first drone sharp corner perhaps using GFTT on video)
+
+## Drone Accuracy
+Drones evaluate their location using both GPS and internal accelerometers to give their longitude and latitude. 
+When GPS is evaluated (say once a second), there may be a correction in the location. 
+This may be seen in the drone flight log as a small "leap" in location every 8 or so frames. 
+This leads to a corresponding "spikes" in (calculated) drone speed every 8 or so frames. 
+
+Drones evaluate their pitch and yaw every so often (not every video frame), give small sudden "steps" in the value.
+ 
+The FlightConfig.cs setting SmoothSectionSize is used to smooth out these location "leaps" (and so also smooth out the speed "spikes").
+To evaluate this setting for your drone, set SmoothSectionSize to zero, run SkyComb Analyst on your flight data. 
+Then view the "speed over time" graph in the Flight data output xls. Adjust SmoothSectionSize until the speed is smooth.
+		
+This image shows no smoothing (value 0), good smoothing (value 6), and bad over-smoothing (value 12) for a leg of flight:
+![Smooth Location Sections Example](./Static/SmoothLocationSectionsExample.png?raw=true "Smooth Location Sections Example")
+A SmoothSectionSize of 6 corresponds to smoothing over 1.5 seconds of drone flight.
+
+(ToDo: Auto-calculate the SmoothSectionSize value that gives the most believable drone speed curve)
+
+## Drone Altitude Accuracy
+Drones evaluate their altitude using air pressure measuring devices called barometers. 
+They may also use GPS but while GPS is very accurate for longitude and latitude is is not accurate for altitude.
+Generally drones do not give accurate altitude readings.
+For example a drone flight at sea level in New Zealand recorded a starting altitude of NEGATIVE 75 metres, rising to a value of NEGATIVE 59 metres.
+The same flight recorded a starting HEIGHT of 0 metres, rising to 16 metres.
+
+The FlightConfig.cs setting OnGroundAt is used to correct these inaccuracies.
+Refer [Usage](./Usage.md) for more detail on the OnGroundAt setting and flying drone data collection missions. 
+
+
+# Drone Overall Accuracy
+The drone's flight log input may have 60 datums per second (mirroring 60 video frames per second).
+When measuring physical flight characteristics, 60 datums/second is way more than is needed for this application.
+
+Also, at least for the M2E drone, most flight log attributes (including the key location, pitch & yaw attributes)
+are NOT recalculated every frame. Instead they are recalculated periodically. This can be seen in
+the DataStore graphs, when viewed for a short period of time.
+These key attributes all show "step" changes in value in the graphs, corresponding to when they are reevaluated.
+
+For these reasons, the application samples the flight log data every so often, rather than storing all flight log data.
+The FlightSection setting SectionMinMs controls this sampling.
+		
+
+# Camera Gimbal Down Angle
+On a drone, the camera gimbal controls where camera is pointing. 
+The drone cameras can be adjusted from point horizontally (aka 0 degrees) to point vertically downwards (aka -90 degrees).
+The drone camera angle, together with the drone height above ground, are important for converting the drone location to the video image location and coverage.
+
+For the M2E Dual, camera angle is not provided in the flight log data. 
+The FlightConfig.cs setting CameraDownAngle provides the default camera down angle for the drone. The setting is a positive number in degrees. 
+So for a camera gimbal set at -80 degrees, CameraDownAngle is set to 80.
+
+A camera gimbal setting of -90 degrees (physically pointing straight down) is recommended, 
+as it minimises the impact when drone is too high above the trees, or the altitude or elevation data is inaccurate. Else -80 or -75.
+
+
+# Source Code Terminology
+The source files use this terminology:
+- Drones make FLIGHTs, at an ALTITUDE, with each flight being subdivided into 0.25 second SECTIONS.
+- Drones take THERMAL and OPTICAL videos in flight. Each VIDEO is made up of many FRAMES (aka images).
+- The GROUND has an ELEVATION. Trees have a topmost SURFACE some meters above the ground.  
+
+
+# Source Code
+The source files in the DroneSpace folder are:
+- Video.cs: Thermal and optical video metadata. Does NOT process the video images.
+- FlightSection.cs: Drone flight section raw data (altitude, location, etc). 
+- FlightStep.cs: Drone flight path data (speed, etc) derived from FlightSection and Ground data  
+- FlightLeg.cs: Segments of the drone flight path that are at a mostly constant altitude, in a mostly constant direction.
+- DroneData.cs: Contains all in-memory data we hold about a drone flight, the videos taken, the flight log, and ground DEM and DSM elevations. 
+- FlightConfig.cs: Contains configuration settings e.g. ThermalToOpticalVideoDelayS, SmoothSectionSize, ExcludeMarginRatio
+
+## Legs
+Most of the drone flight path is categorised as "legs". Each leg is a path with a mostly constant altitude, in a mostly constant direction. 
+Each leg is independent (non-overlapping) of the other legs.
+
+Specifically, a leg is a section of a drone flight that:
+- Is a level flight i.e. has a constant Altitude within +/- 2 meters
+- Is in a constant direction i.e. has a DeltaYawRad of less than 0.2 over leg
+- Is not pitching up (to slow down) or pitching down (to speed up).
+- Has a duration of at least 5 seconds 
+- Travels at least 5m horizontally.    
+- Does not contain a flight data gap of 0.5 seconds or more. (This is a rare case where the flight log data is missing data for that period.)
+These criteria threshold values are defined in FlightConfig.cs
+
+Parts of the flight path that are NOT part of any leg include spinning (changing direction), hovering (not moving), climbing or descending.
+
+
+# Drone Specifics 
+Each manufacturer's drones needs unique configuration settings
+
+## ExcludeMarginRatio
+For many drones the thermal and optical videos have different pixel resolution and horizontal field of vision (HFOV).
+SkyComb Analyst shows the location of significant objects found in thermal video on top of the optical video.
+So it needs to know the difference between the HFOV of the thermal and optical videos.
+
+Currently this information is provided via the configuration setting ExcludeMarginRatio.
+ExcludeMarginRatio is the "margin" of the optical video that is not displayed in the thermal video, as a ratio between 0.0 and 0.5.
+The ratio can be manually calculated by comparing images from the thermal and optical cameras "side by side" in the SkyComb Analyst UI.
+
+(ToDo: Auto-calculate ExcludeMarginRatio from the drone manufacturer's published thermal and optical HFOVs)
+
+## Mavic 2 Enterprise Dual 
+For a Mavic 2 Enterprise (M2E) Dual drone:
+- Flight speed smoothing works well with SmoothSectionSize=5  
+- Scaling thermal to optical image works well with ExcludeMarginRatio=0.125. So we exclude a 1/8th margin - both horizontally and vertically. 
+- Time between thermal and optical video start (ThermalToOpticalVideoDelayS) differs per video   
+- Time between thermal video and thermal flight data start time works well with ThermalVideoStartToThermalFlightStartS=0.4  
+
+Likely the drone has a single-threaded OS and is a power-constrained system, so sub-systems are "started" one by one in sequence.
+

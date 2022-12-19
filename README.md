@@ -47,7 +47,7 @@ After the program starts up, the input video(s) can be chosen and loaded via the
 Alternatively a input video name can be specified in the App.Config setting "InputFileName".
 This will be automatically loaded on start up.
 
-[DroneReadMe](./DroneReadMe.md) provides more detail on the input videos, 
+[Drone](./Drone.md) provides more detail on the input videos, 
 their contents and accuracy, obtaining ground elevation data, and how to view all this metadata. 
 Also recommended config settings for specific drone types.
 
@@ -92,7 +92,7 @@ The program output is:
 - Saving the updated image or video to a file named InputFileName_SkyComb.mp4(or jpg)
 - Saving thermal & optical meta-data, drone flight path and altitude data, ground and tree-top elevation to a spreadsheet file named InputFileName_SkyComb.xls
 
-[DataStoreReadMe](./DataStoreReadMe.md) file provides more detail on the spreadsheet contents, purpose and usage.
+[DataStore](./DataStore.md) file provides more detail on the spreadsheet contents, purpose and usage.
 
 # Image Processing Models
 The user can select one of several image processing models via the RunModel dropdown. 
@@ -103,7 +103,7 @@ The models output markedly different images.
 
 ![Model Examples](./Static/ModelExamples.png?raw=true "Model Examples")
 
-[ModelReadMe](./ModelReadMe.md) file provides more detail on the models. 
+[Model](./Model.md) file provides more detail on the models. 
 Also recommended config settings for specific drone types.
 
 
@@ -111,11 +111,11 @@ Also recommended config settings for specific drone types.
 The source code is written in C#. The main source files are:
 - App.Config: Default value for all input, process, and output configuration settings.
 - CommonSpace folder: Shared utility classes
-- DataStoreSpace folder: Refer [DataStoreReadMe](./DataStoreReadMe.md)
+- DataStoreSpace folder: Refer [DataStore](./DataStore.md)
 - DrawSpace folder: Classes to draw on videos and on the UI
-- DroneSpace folder: Refer [DroneReadMe](./DroneReadMe.md)
-- GroundSpace folder: Refer [GroundReadMe](./GroundReadMe.md)
-- ModelSpace folder: Refer [ModelReadMe](./ModelReadMe.md) 
+- DroneSpace folder: Refer [Drone](./Drone.md)
+- GroundSpace folder: Refer [Ground](./Ground.md)
+- ModelSpace folder: Refer [Model](./Model.md) 
 - RunSpace folder: Classes to run a process model over an image or video(s)
 - Mainform.cs: The only UI page of this application
 
