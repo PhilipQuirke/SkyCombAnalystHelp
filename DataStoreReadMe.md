@@ -1,4 +1,4 @@
-# [SkyComb Analyst - DataStore](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
+# [SkyComb Analyst - DataStore](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
 
 # Overview
 This ReadMe covers the purpose and content of the DataStoreSpace folder of the SkyComb Analyst application.
@@ -15,7 +15,7 @@ To speed up runs, the spreadsheet is used as a "DataStore" to cache data for re-
 For example, the spreadsheet "Ground" tab acts like a database table of cached ground and tree-top elevations. 
 
 The DataStore contains several graphs including a 3D rendering of the ground elevation data:
-![DataStore Example Graphs](../Static/XlsExampleGraphs.png?raw=true "DataStore Example Graphs")
+![DataStore Example Graphs](./Static/XlsExampleGraphs.png?raw=true "DataStore Example Graphs")
 
 
 # Controlling output files

@@ -1,4 +1,4 @@
-# [SkyComb Analyst - Ground](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
+# [SkyComb Analyst - Ground](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
 
 # Overview
 This ReadMe covers the purpose and content of the GroundSpace folder of the SkyComb Analyst application.

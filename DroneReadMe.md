@@ -1,4 +1,4 @@
-# [SkyComb Analyst - Drone](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
+# [SkyComb Analyst - Drone](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
 
 # Overview
 This ReadMe covers the purpose and content of the DroneSpace folder of the SkyComb Analyst application.

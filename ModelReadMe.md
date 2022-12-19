@@ -1,4 +1,4 @@
-# [SkyComb Analyst - Models](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
+# [SkyComb Analyst - Models](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
 
 # Overview
 This ReadMe covers the purpose and content of the ModelSpace folder of the SkyComb Analyst application.
