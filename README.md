@@ -15,16 +15,16 @@ It displays flight path, speed, altitude, yaw, etc data:
 
 It decodes the drone flight area, and loads highly-detailed (1m grid) and 
 highly-accurate publically-available ground-elevation data (+/- 0.2m) and 
-tree-top height data for the area the drone flew over. It stores this data:
+tree-top height data for the area the drone flew over:
 
 ![DEM & DSM Elevations](./Static/Overview2.png?raw=true "DEM & DSM Elevations")
 
 It combines the drone, ground and tree-top altitude data. If you follow our recommended flight protocols, 
-SkyComb Analyst can automatically correct for drone elevation inaccuracies (which are common):
+SkyComb Analyst can automatically correct for (very common) drone altitude inaccuracies:
 
 ![Drone Altitude Correction](./Static/OnGroundAtExamples.png?raw=true "Drone Altitude Correction")
 
-It automatically finds the sections of the flight that have a (mostly) constant altitude, in a (mostly) constant direction 
+It automatically finds the parts of the drone flight that have a (mostly) constant altitude, in a (mostly) constant direction 
 for a reasonable length of time. These it calls "legs". For each leg, it processes the drone thermal video, 
 detecting animals, and displaying the results:
 
@@ -34,22 +34,22 @@ The overall user interface of this Windows based tool looks like this:
 
 ![User Interface](./Static/UIExample.png?raw=true "User Interface")
 
-The raw and derived data and the visualisations can be saved on disk as a video and/or as a spreadsheet (for further analysis).
+The raw and derived data and the visualisations are saved on disk as a video and/or as a spreadsheet (for further analysis and re-use).
 
 
 
 # Usage
 
-## Input files
-Supported drone input is 1) two videos and two flight logs (recommended), 2) a video and flight log or 3) a video file 
+## Select Video
+For a given drone flight, SkyCombAnalyst can process 1) two videos and two flight logs (recommended), 2) a video and flight log or 3) a video file 
 
-After the program starts up, the input video(s) can be chosen and loaded via the "Select video" button.
+After the program starts up, an input video can be chosen via the "Select video" button.
 Alternatively a input video name can be specified in the App.Config setting "InputFileName".
 This will be automatically loaded on start up.
 
 [Drone](./Drone.md) provides more detail on the input videos, 
-their contents and accuracy, obtaining ground elevation data, and how to view all this metadata. 
-Also recommended config settings for specific drone types.
+their contents and accuracy, obtaining ground elevation data, and how to view this metadata. 
+It also recommends config settings for specific drone types.
 
 [Usage](./Usage.md) provides more detail on flying drone data collection missions.  
 
@@ -64,23 +64,23 @@ The most important App.Config settings are:
 
 After the program starts up, these settings can be modified in the UI, allowing different combinations to be tested.
 
-## Run Execution
-If the "RunModel" and "InputFileName" settings are defaulted in App.Config, 
-then the program will run the specified processing technique on the default input on start up.
-
-After the program starts up, the "Run" button can be used to manually run/re-run the processing technique.
+## Run Processing
+After the video is selected & loaded, the "Run" button will run/re-run the processing technique.
 If the RunSpeed setting is set to "Max" the UI is updated infrequently during processing (to save time).
-Otherwise, during processing the UI images and graphs will be updated often.
+Otherwise, the UI images and graphs will be updated often.
 Either way these runtime messages are shown:
 | Message    | Description |
 | ---------- | ----------- |
 | Loading    | The video meta-data is loaded and the entire flight data files (if any) are loaded & Drone Speed, Altitude and Path graphs are displayed |
 | Processing | Frame by frame loading and processing of the video |
-| Saving     | The video, image and spreadsheets (if any) are saved |
+| Saving     | The video and spreadsheets (if any) are saved |
 | Finished   | Shows total elapsed time (including loading, processing, UI updating and saving). |
 | Objects    | Number of objects and significant objects detected is shown |
 
-Once the processing has finished, the updated image, video and spreadsheet files are written to disk. 
+Alternatively, if the "RunModel" and "InputFileName" settings are defaulted in App.Config, 
+then the program will run the specified processing technique on the input video on start up.
+
+Once the processing has finished, the updated video and spreadsheet files are written to disk. 
 The progress message is updated at each step, finally saving "Loaded in 8s. Ran in 6s (1036 frames). 
 Saved in 9s. Finished after total of 30s. Objects 1 (1 significant)".
 
@@ -88,8 +88,8 @@ Saved in 9s. Finished after total of 30s. Objects 1 (1 significant)".
 
 ## Saving output files
 The program output is:
-- Displaying the image or video frame currently being processed, and the updated image or video frame in the UI.
-- Saving the updated image or video to a file named InputFileName_SkyComb.mp4(or jpg)
+- Displaying the video frame currently being processed, and the updated video frame in the UI.
+- Saving the updated video to a file named InputFileName_SkyComb.mp4
 - Saving thermal & optical meta-data, drone flight path and altitude data, ground and tree-top elevation to a spreadsheet file named InputFileName_SkyComb.xls
 
 [DataStore](./DataStore.md) file provides more detail on the spreadsheet contents, purpose and usage.
@@ -117,7 +117,7 @@ The source code is written in C#. The main source files are:
 - GroundSpace folder: Refer [Ground](./Ground.md)
 - ModelSpace folder: Refer [Model](./Model.md) 
 - RunSpace folder: Classes to run a process model over an image or video(s)
-- Mainform.cs: The only UI page of this application
+- Mainform.cs: The main UI page of this application
 
 
 # Tooling 
