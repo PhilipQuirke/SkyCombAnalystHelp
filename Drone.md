@@ -1,16 +1,17 @@
 # [SkyComb Analyst - Drone](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
 
 # Overview
-This ReadMe covers the purpose and content of the DroneSpace folder of the SkyComb Analyst application.
-(Refer the root-level [ReadMe](./ReadMe.md) for an overview of the whole application.)
-DroneSpace covers drone flight logs, video metadata, ground elevation, etc. 
+This ReadMe covers drone flight logs, video metadata, ground elevation, etc. 
+(Refer [ReadMe](./ReadMe.md) for an overview of the whole application.)
 These data sources have variable accuracy, built-in limitations and sometimes outright errors. 
-This application implements a variety of algorithms and cross-checks to minimise the impact of these issues.
+
+The source code folder DroneSpace folder of the SkyComb Analyst application covers these topics as well.
+The application implements a variety of algorithms and cross-checks to minimise the impact of inaccuracies.
 
 # Drone Input
-SkyComb Analyst can be used on a single image, or a standalone thermal video file, but is most useful when provide with:
+SkyComb Analyst can be used on a single thermal video file, but is most useful when provide with:
 - A thermal video file and the corresponding drone flight log - a text file of location and altitude etc information, or
-- Paired thermal and optical video files each with its own drone flight logs (so 2 videos and 2 flight logs).
+- Paired thermal and optical video files each with its own drone flight logs (so 2 videos and 2 flight logs). Recommended
 
 For example, the Mavic 2 Enterprise (M2E) Dual drone, in a single flight can generate 4 files concurrently:
 - DJI_0053.mp4		Optical (aka visible-light) camera video
@@ -28,26 +29,27 @@ It is important to understand the difference between these terms:
 - Surface Elevation: The height of the tree tops above the SEA LEVEL.
 The SkyComb Analyst application uses these terms consistently.
 
-For example, when you place a drone on the ground in front of you, and switch it on, 
-the drone will say that it is at a height of 0.0 meters, but at an altitude of say 56.4 meters.
+For example, a drone placed on the ground in front of you, and switched on, 
+will say that the drone is at a height of 0.0 meters, but at an altitude of say 56.4 meters.
 
 
 # Input Accuracy
 
 ## Video Start Time Accuracy
 From experience, despite the timestamps of the thermal and optical videos being the same, the 2 video file may NOT start at exactly the same time. 
-In one instance, there was a difference of 0.5 seconds between the first frame of each video.
-SkyComb Analyst needs the videos to be time synchronised.
+When viewed side by side, there is commonly a clear non-zero difference (say 0.5 seconds) between the real start time of each video.
+SkyComb Analyst needs the videos to be time-synchronised.
 
 The FlightConfig.cs setting ThermalToOpticalVideoDelayS is used to cope with the time difference between the two video files.
-To evaluate this setting for your drone, set ThermalToOpticalVideoDelayS to zero, run SkyComb Analyst on your flight data, 
+To evaluate this setting for your drone, set ThermalToOpticalVideoDelayS to zero in the UI, run SkyComb Analyst on your flight data, 
 and as the drone turns a sharp corner, see if the thermal and optical videos start to turn at difference times. 
-If they do, modify ThermalToOpticalVideoDelayS until the videos sync up.
+If they do, modify ThermalToOpticalVideoDelayS in the UI until the videos sync up.
+This setting value will be saved to the xls and if you reload the video in SkyCombAnalyst later, the setting value will be loaded from the xls.
 
 (ToDo: Auto-calculate the time difference between the two videos by analysing first drone sharp corner perhaps using GFTT)
 
 ## Drone Time Accuracy
-From experience, the above 2 drone flight log files do NOT all start at exactly the same time as each other, 
+From experience, the above 2 drone flight log files do NOT start at exactly the same time as each other, 
 nor do they start at exactly the same time as the thermal and optical videos.
 In one instance, there was a difference of 1.2 seconds between the earliest video frame and the latest of the flight log files.
 Likely the drone has a single-threaded OS and is a power-constrained. So sub-systems are "started" one by one in sequence.
