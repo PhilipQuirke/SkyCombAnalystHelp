@@ -68,44 +68,43 @@ These "steps" can be seen in the xls graphs, when looking at just a few seconds 
 In reality, the drone is moving smoothly in 3 dimensions. SkyComb Analyst automatically smooths this data. 
 (In the source code this is the SmoothSectionSize setting.)
 
-This image shows no smoothing (value 0), good smoothing (value 6), and bad over-smoothing (value 12) for a leg of flight:
+This image shows no smoothing (value 0), good smoothing (value 6), and bad over-smoothing (value 12) for part of a flight:
 ![Smooth Location Sections Example](./Static/SmoothLocationSectionsExample.png?raw=true "Smooth Location Sections Example")
 A SmoothSectionSize of 6 corresponds to smoothing over 1.5 seconds of drone flight.
 
 ## Drone Location Accuracy
 Drones use GPS to evaluate their location as longitude and latitude - but only recalculate the location every second or so.
 In between GPS recalculations, the drones use internal accelerometers to estimate the drone location at each video frame.
-
 GPS locations are not 100% accurate, so after each recalculation, the drone location may appear to "jump" a small distance.
 		
+This image shows the flight path of a drone travelling south (top to bottom). The horizontal "jumps" are caused by a 
+GPS recalculation suddenly changing the estimated  drone location by 12cm:
+![GPS Location Jump Example](./Static/GpsLocationJumpExample.png?raw=true "GPS Location Jump Example")
 
-
-
-
+SkyComb Analyst smooths out these "jumps" automatically. 
 
 ## Drone Altitude Accuracy
 Drones evaluate their altitude using air pressure measuring devices called barometers. 
 They may also use GPS but while GPS is very accurate for longitude and latitude is is not accurate for altitude.
-Generally drones do not give accurate altitude readings.
-For example a drone flight at sea level in New Zealand recorded a starting altitude of NEGATIVE 75 metres, rising to a value of NEGATIVE 59 metres.
-The same flight recorded a starting HEIGHT of 0 metres, rising to 16 metres.
+Generally drones do not give accurate altitude readings. Indeed the readings can be very inaccurate. 
+A sample drone flight at sea level in New Zealand recorded a starting altitude of NEGATIVE 75 metres, rising to a value of NEGATIVE 59 metres. The same flight recorded a starting HEIGHT of 0 metres, rising to 16 metres.
 
-The FlightConfig.cs setting OnGroundAt is used to correct these inaccuracies.
-Refer [Usage](./Usage.md) for more detail on the OnGroundAt setting and flying drone data collection missions. 
+If the drone video recording starts and ends at ground level, SkyComb Analysts can partially correct the altitude inaccuracies.
+The SkyComb Analyst UI has a "On ground at" setting to specify whethe the video started &/or ended at ground level. 
+Refer [Usage](./Usage.md) for more detail on this.
 
-
-# Drone Overall Accuracy
+# Drone Overall Data Accuracy
 The drone's flight log input may have 60 datums per second (mirroring 60 video frames per second).
-When measuring physical flight characteristics, 60 datums/second is way more than is needed for this application.
+For most drone, flight log attributes (including the key location, altitude, pitch & yaw attributes)
+are NOT recalculated every frame - instead they are recalculated periodically - introducing error. 
 
-Also, at least for the M2E drone, most flight log attributes (including the key location, pitch & yaw attributes)
-are NOT recalculated every frame. Instead they are recalculated periodically. This can be seen in
-the DataStore graphs, when viewed for a short period of time.
-These key attributes all show "step" changes in value in the graphs, corresponding to when they are reevaluated.
+In fact, every data attribute the drone logs has some level of embedded error - from small to large.
+SkyComb Analyst uses a variety of methods to automatically minimise these errors.
 
-For these reasons, the application samples the flight log data every so often, rather than storing all flight log data.
-The FlightSection setting SectionMinMs controls this sampling.
-		
+Human input is needed to minimise some other types of error.
+Specifically, the "Video Delay (Secs)", "Flight Delay (Secs)", and "On ground at" settings help minimise errors.
+
+Overall, the drone mid-flight altitude remains the data measurement with the largest error. 
 
 # Camera Gimbal Down Angle
 On a drone, the camera gimbal controls where camera is pointing. 
