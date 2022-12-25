@@ -36,48 +36,52 @@ will say that the drone is at a height of 0.0 meters, but at an altitude of say 
 # Input Accuracy
 
 ## Video Start Time Accuracy
-From experience, despite the timestamps of the thermal and optical videos being the same, the 2 video file may NOT start at exactly the same time. 
-When viewed side by side, there is commonly a clear non-zero difference (say 0.5 seconds) between the real start time of each video.
-SkyComb Analyst needs the videos to be time-synchronised.
+Despite the timestamps of the thermal and optical videos being identical, the 2 video file may NOT start at exactly the same time. 
+When the two videos are viewed side by side, there may be a say 0.5 time difference, most visible when the drone turns a corner.
+Maybe the drone has a single-threaded OS, or is a power-constrained, so sub-systems are "started" one after the other.
 
-The FlightConfig.cs setting ThermalToOpticalVideoDelayS is used to cope with the time difference between the two video files.
-To evaluate this setting for your drone, set ThermalToOpticalVideoDelayS to zero in the UI, run SkyComb Analyst on your flight data, 
+SkyComb Analyst works better when the videos are time-synchronised.
+The SkyComb Analyst UI has a "Video Delay (Secs)" setting to specify the time difference between the two video files. 
+(In the source code this is the ThermalToOpticalVideoDelayS setting.)
+To evaluate this setting for your video, load your video, set Video Delay to 0 in the UI, set Run Speed to Slow, click Run, 
 and as the drone turns a sharp corner, see if the thermal and optical videos start to turn at difference times. 
-If they do, modify ThermalToOpticalVideoDelayS in the UI until the videos sync up.
-This setting value will be saved to the xls and if you reload the video in SkyCombAnalyst later, the setting value will be loaded from the xls.
+If they do, modify Video Delay and click Run again, until the videos sync up.
+This setting will be saved to the xls. If you reload the video in SkyComb Analyst later, the setting  will be loaded from the xls.
 
-(ToDo: Auto-calculate the time difference between the two videos by analysing first drone sharp corner perhaps using GFTT)
+## Drone Log Time Accuracy
+Despite the video file and the flight log file being recorded at the same time, the two files may NOT start at exactly the same time. 
+When the thermal video and drone flight path are viewed side by side, there may be a say 0.5 time difference, most visible when the drone turns a corner.
+Maybe the drone has a single-threaded OS, or is a power-constrained, so sub-systems are "started" one after the other.
 
-## Drone Time Accuracy
-From experience, the above 2 drone flight log files do NOT start at exactly the same time as each other, 
-nor do they start at exactly the same time as the thermal and optical videos.
-In one instance, there was a difference of 1.2 seconds between the earliest video frame and the latest of the flight log files.
-Likely the drone has a single-threaded OS and is a power-constrained. So sub-systems are "started" one by one in sequence.
+SkyComb Analyst works better when the thermal video and flight path are time-synchronised.
+The SkyComb Analyst UI has a "Flight Delay (Secs)" setting to specify the time difference between the thermal video file and the flight log. 
+(In the source code this is the ThermalVideoToFlightLogDelayS setting.)
+To evaluate this setting for your video, load your video, set Flight Delay to 0 in the UI, set Run Speed to Slow, click Run, 
+and as the drone turns a sharp corner, see if the thermal video and the flight path start to turn at difference times. 
+If they do, modify Flight Delay and click Run again, until the video and flight path sync up.
+This setting will be saved to the xls. If you reload the video in SkyComb Analyst later, the setting  will be loaded from the xls.
 
-The FlightConfig.cs setting ThermalVideoStartToThermalFlightStartS is used to cope with the time difference between the thermal video and the theraml flight log.
-To evaluate this setting for your drone, set ThermalVideoStartToThermalFlightStartS to zero, run SkyComb Analyst on your flight data, 
-and as the drone turns a sharp corner, see if the thermal video and drone flight path start to turn at difference times. 
-If they do, modify ThermalVideoStartToThermalFlightStartS until the video and flight path sync up.
+## Drone Pitch, Yaw & Roll Accuracy
+Drones use internal accelerometers to evaluate their pitch, yaw and yaw every so often (not every video frame).
+These intermitent evaluations can give small sudden "jumps" in the Pitch, Yaw & Roll values. 
+These "steps" can be seen in the xls graphs, when looking at just a few seconds of flight. 
+In reality, the drone is moving smoothly in 3 dimensions. SkyComb Analyst automatically smooths this data. 
+(In the source code this is the SmoothSectionSize setting.)
 
-(ToDo: Auto-calculate the time difference between the video and flight log by analysing first drone sharp corner perhaps using GFTT on video)
-
-## Drone Accuracy
-Drones evaluate their location using both GPS and internal accelerometers to give their longitude and latitude. 
-When GPS is evaluated (say once a second), there may be a correction in the location. 
-This may be seen in the drone flight log as a small "leap" in location every 8 or so frames. 
-This leads to a corresponding "spikes" in (calculated) drone speed every 8 or so frames. 
-
-Drones evaluate their pitch and yaw every so often (not every video frame), give small sudden "steps" in the value.
- 
-The FlightConfig.cs setting SmoothSectionSize is used to smooth out these location "leaps" (and so also smooth out the speed "spikes").
-To evaluate this setting for your drone, set SmoothSectionSize to zero, run SkyComb Analyst on your flight data. 
-Then view the "speed over time" graph in the Flight data output xls. Adjust SmoothSectionSize until the speed is smooth.
-		
 This image shows no smoothing (value 0), good smoothing (value 6), and bad over-smoothing (value 12) for a leg of flight:
 ![Smooth Location Sections Example](./Static/SmoothLocationSectionsExample.png?raw=true "Smooth Location Sections Example")
 A SmoothSectionSize of 6 corresponds to smoothing over 1.5 seconds of drone flight.
 
-(ToDo: Auto-calculate the SmoothSectionSize value that gives the most believable drone speed curve)
+## Drone Location Accuracy
+Drones use GPS to evaluate their location as longitude and latitude - but only recalculate the location every second or so.
+In between GPS recalculations, the drones use internal accelerometers to estimate the drone location at each video frame.
+
+GPS locations are not 100% accurate, so after each recalculation, the drone location may appear to "jump" a small distance.
+		
+
+
+
+
 
 ## Drone Altitude Accuracy
 Drones evaluate their altitude using air pressure measuring devices called barometers. 
