@@ -2,7 +2,7 @@
 
 # Overview
 This ReadMe covers the purpose and content of the ModelSpace folder of the SkyComb Analyst application.
-(Refer the root-level [ReadMe](./ReadMe.md) for an overview of the whole application.)
+(Refer the root-level [ReadMe](./README.md) for an overview of the whole application.)
 
 
 # Purpose
