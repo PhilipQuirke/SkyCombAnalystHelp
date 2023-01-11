@@ -109,15 +109,14 @@ Also recommended config settings for specific drone types.
 
 # Source Code
 The source code is written in C#. The main source files are:
-- App.Config: Default value for all input, process, and output configuration settings.
 - CommonSpace folder: Shared utility classes
 - DataStoreSpace folder: Refer [DataStore](./DataStore.md)
 - DrawSpace folder: Classes to draw on videos and on the UI
 - DroneSpace folder: Refer [Drone](./Drone.md)
+- Forms folder: Forms used by the application including MainForm.cs the main UI page
 - GroundSpace folder: Refer [Ground](./Ground.md)
 - ModelSpace folder: Refer [Model](./Model.md) 
 - RunSpace folder: Classes to run a process model over an image or video(s)
-- Mainform.cs: The main UI page of this application
 
 
 # Tooling 
