@@ -4,7 +4,7 @@
 The SkyComb Analyst application generates a lot of data and graphs about the videos and logs of a drone flight. 
 This data is persisted in a spreadsheet (called a DataStore) which acts as a database for a drone flight.
 This ReadMe describes the DataStore and its uses. 
-(Refer the root-level [ReadMe](ReadMe.md) for an overview of the whole application.)
+(Refer the root-level [ReadMe](./README.md) for an overview of the whole application.)
 
 
 # Purpose
