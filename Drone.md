@@ -2,7 +2,7 @@
 
 # Overview
 This ReadMe covers drone flight logs, video metadata, ground elevation, etc. 
-(Refer [ReadMe](./ReadMe.md) for an overview of the whole application.)
+(Refer [ReadMe](./README.md) for an overview of the whole application.)
 These data sources have variable accuracy, built-in limitations and sometimes outright errors. 
 
 The source code folder DroneSpace folder of the SkyComb Analyst application covers these topics as well.
@@ -177,7 +177,6 @@ For a Mavic 2 Enterprise (M2E) Dual drone:
 - Flight speed smoothing works well with SmoothSectionSize=5  
 - Scaling thermal to optical image works well with ExcludeMarginRatio=0.125. So we exclude a 1/8th margin - both horizontally and vertically. 
 - Time between thermal and optical video start (ThermalToOpticalVideoDelayS) differs per video   
-- Time between thermal video and thermal flight data start time works well with ThermalVideoStartToThermalFlightStartS=0.4  
 
-Likely the drone has a single-threaded OS and is a power-constrained system, so sub-systems are "started" one by one in sequence.
+
 
