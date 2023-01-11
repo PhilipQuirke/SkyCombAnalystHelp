@@ -38,7 +38,10 @@ will say that the drone is at a height of 0.0 meters, but at an altitude of say 
 ## Video Start Time Accuracy
 Despite the timestamps of the thermal and optical videos being identical, the 2 video file may NOT start at exactly the same time. 
 When the two videos are viewed side by side, there may be a say 0.5 time difference, most visible when the drone turns a corner.
-Maybe the drone has a single-threaded OS, or is a power-constrained, so sub-systems are "started" one after the other.
+
+Each thermal video image has little data, and requires no post-processing, so it can be saved to the video file immediately. 
+Each optical video frame contains a lot of data, and has to be post-processed (compressed) into MP4 format before it can be saved to the media file.
+This is likely why there is a visual delay between the thermal & optical videos.
 
 SkyComb Analyst works better when the videos are time-synchronised.
 The SkyComb Analyst UI has a "Video Delay (Secs)" setting to specify the time difference between the two video files. 
@@ -48,18 +51,13 @@ and as the drone turns a sharp corner, see if the thermal and optical videos sta
 If they do, modify Video Delay and click Run again, until the videos sync up.
 This setting will be saved to the xls. If you reload the video in SkyComb Analyst later, the setting  will be loaded from the xls.
 
-## Drone Log Time Accuracy
-Despite the video file and the flight log file being recorded at the same time, the two files may NOT start at exactly the same time. 
-When the thermal video and drone flight path are viewed side by side, there may be a say 0.5 time difference, most visible when the drone turns a corner.
-Maybe the drone has a single-threaded OS, or is a power-constrained, so sub-systems are "started" one after the other.
+## Drone Flight Log Accuracy
+The video and flight log file are time synchronized.
 
-SkyComb Analyst works better when the thermal video and flight path are time-synchronised.
-The SkyComb Analyst UI has a "Flight Delay (Secs)" setting to specify the time difference between the thermal video file and the flight log. 
-(In the source code this is the ThermalVideoToFlightLogDelayS setting.)
-To evaluate this setting for your video, load your video, set Flight Delay to 0 in the UI, set Run Speed to Slow, click Run, 
-and as the drone turns a sharp corner, see if the thermal video and the flight path start to turn at difference times. 
-If they do, modify Flight Delay and click Run again, until the video and flight path sync up.
-This setting will be saved to the xls. If you reload the video in SkyComb Analyst later, the setting  will be loaded from the xls.
+However the data in each "paragraph" of the flight log comes from multiple subsystems.
+Those subsystems are not time-synchronized. Some subsystems take longer to evaluate than others (e.g. GPS coordinates) and so are calculated less frequently. 
+The data in each paragraph of the flight log is just what data was available at that moment to output to the flight log. 
+Some of the data in each paragraph (perhaps GPS) may be older (aka staler) than the other data in the paragraph. SkyComb Analyst copes with this.
 
 ## Drone Pitch, Yaw & Roll Accuracy
 Drones use internal accelerometers to evaluate their pitch, yaw and yaw every so often (not every video frame).
