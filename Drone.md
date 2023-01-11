@@ -59,8 +59,8 @@ Those subsystems are not time-synchronized. Some subsystems take longer to evalu
 The data in each paragraph of the flight log is just what data was available at that moment to output to the flight log. 
 Some of the data in each paragraph (perhaps GPS) may be older (aka staler) than the other data in the paragraph. SkyComb Analyst copes with this.
 
-## Drone Pitch, Yaw & Roll Accuracy
-Drones use internal accelerometers to evaluate their pitch, yaw and yaw every so often (not every video frame).
+## Drone Pitch, Roll & Yaw Accuracy
+Drones use internal accelerometers to evaluate their pitch, roll and yaw every so often (not every video frame).
 These intermitent evaluations can give small sudden "jumps" in the Pitch, Yaw & Roll values. 
 These "steps" can be seen in the xls graphs, when looking at just a few seconds of flight. 
 In reality, the drone is moving smoothly in 3 dimensions. SkyComb Analyst automatically smooths this data. 
@@ -69,6 +69,15 @@ In reality, the drone is moving smoothly in 3 dimensions. SkyComb Analyst automa
 This image shows no smoothing (value 0), good smoothing (value 6), and bad over-smoothing (value 12) for part of a flight:
 ![Smooth Location Sections Example](./Static/SmoothLocationSectionsExample.png?raw=true "Smooth Location Sections Example")
 A SmoothSectionSize of 6 corresponds to smoothing over 1.5 seconds of drone flight.
+
+## Drone Gumbal interactions with Pitch, Roll & Yaw
+The drone continuously makes small changes in pitch & roll to compensate for small gusts of wind to keep the drone on the path, or to slow down or speed up the drone. 
+
+The drone camera are mounted on a "gimbal" that can move independently of the drone. The gimbal automatically compensates for small changes in pitch, roll & yaw. This gives a much smoother video image. 
+
+When a drone "turns a corner", the camera gimbal compensates for (aka negates) the initial small yaw values for say 1/2 a second, before the yaw increases sufficiently that gimbal realises that the drone is cornering. The camera gimbal will then center and wait for the drone to stop yawing (aka turning). This explains why, as the drone turns a corner, the flight path map shows the drone yawing a 1/2 second before the video image visually begins to show the same yaw.
+
+Note that the pitch, roll & yaw are measured on the drone body (not the gimbal). 
 
 ## Drone Location Accuracy
 Drones use GPS to evaluate their location as longitude and latitude - but only recalculate the location every second or so.
