@@ -91,6 +91,7 @@ GPS locations are not 100% accurate, so after each recalculation, the drone loca
 		
 This image shows the flight path of a drone travelling south (top to bottom). The horizontal "jumps" are caused by a 
 GPS recalculation suddenly changing the estimated  drone location by 12cm:
+
 ![GPS Location Jump Example](./Static/GpsLocationJumpExample.png?raw=true "GPS Location Jump Example")
 
 SkyComb Analyst smooths out these "jumps" automatically. 
