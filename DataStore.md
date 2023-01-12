@@ -17,6 +17,7 @@ To speed up runs, the spreadsheet is used as a database to cache data for re-use
 For example, the spreadsheet "Ground" tab acts like a database table of cached ground elevations. 
 
 The DataStore contains several graphs including a 3D rendering of the ground elevation data:
+
 ![DataStore Example Graphs](./Static/XlsExampleGraphs.png?raw=true "DataStore Example Graphs")
 
 
@@ -65,7 +66,7 @@ The spreadsheet (aka DataStore) named InputFileName_SkyComb.xlsx can contain the
 # Creating / Updating the DataStores 
 A new spreadsheet is creation in three steps:
 - When a video is selected, by clicking the 'Select File' button, the Files tab is populated and the spreadsheet is created.
-- Immediatley, some initial calculations are done, much drone-specific data is calculated, several tabs created, and the spreadsheet updated.
+- Immediately, some initial calculations are done, much drone-specific data is calculated, several tabs created, and the spreadsheet updated.
 - If the user clicks the "Save" button (generally after changing some UI settings), the above data related to the drone flight is re-saved.
 - If the user clicks the "Run" button, much image processing data is calculated, several tabs created, and the spreadsheet updated.
 
