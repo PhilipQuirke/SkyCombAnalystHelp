@@ -29,6 +29,10 @@ After creating a (free) LINZ account, you can generate a (free) API key, allowin
 The data is available in a grid of 1 meter by 1 meter (horizontal) squares with a elevation (vertical) accuracy of +/-0.2 meters.
 This is a phenomenal level of accuracy, and SkyComb Analyst really benefits from this accuracy.
 
+This data is also stored and graphed in a  [DataStore](./DataStore.md) (aka spreadsheet) associated with each drone flight:
+
+![DataStore Example Ground Graph](./Static/Overview2.png?raw=true "DataStore Example Ground Graph")
+
 
 # Using Elevation Data Sources
 The GroundSpace folder contains two methods for using elevations data in the SkyComb Analyst:
