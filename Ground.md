@@ -1,16 +1,16 @@
 # [SkyComb Analyst - Ground](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
 
 # Overview
-The SkyComb Analyst application works better with accurate ground and tree-top elevation.   
+The SkyComb Analyst application works better with accurate ground and tree-top elevation.
 This ReadMe covers how this elevation data is used in the application.
-(Refer the root-level [ReadMe](./ReadMe.md) for an overview of the whole application.)
+(Refer the root-level [ReadMe](./README.md) for an overview of the whole application.)
 
 
 # Ground Elevation
 SkyComb Analyst tries to determine whether a heat source is at ground level or is located up in a tree, above the ground. 
 For this highly accuracy ground & surface (aka tree-top) elevation data is needed.
 
-While the drone provides its altitude and location, it can't provide information on the elevation of the ground or 
+While the drone provides its own altitude and location, it can't provide information on the elevation of the ground or 
 tree tops beneath it. For ground and tree-top elevations, alternative input sources are needed.
 
 
