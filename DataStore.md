@@ -18,7 +18,7 @@ For example, the spreadsheet "Ground" tab acts like a database table of cached g
 
 The DataStore contains several graphs including a 3D rendering of the ground elevation data:
 
-![DataStore Example Graphs](./Static/XlsExampleGraphs.png?raw=true "DataStore Example Graphs")
+![DataStore Example Ground Graph](./Static/Overview2.png?raw=true "DataStore Example Ground Graph")
 
 
 # Controlling output files
