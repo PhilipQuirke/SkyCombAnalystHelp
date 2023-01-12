@@ -44,28 +44,25 @@ The raw and derived data and the visualisations are saved on disk as a video and
 For a given drone flight, SkyCombAnalyst can process 1) two videos and two flight logs (recommended), 2) a video and flight log or 3) a video file 
 
 After the program starts up, an input video can be chosen via the "Select video" button.
-Alternatively a input video name can be specified in the App.Config setting "InputFileName".
-This will be automatically loaded on start up.
 
 [Drone](./Drone.md) provides more detail on the input videos, 
 their contents and accuracy, obtaining ground elevation data, and how to view this metadata. 
-It also recommends config settings for specific drone types.
 
 [Usage](./Usage.md) provides more detail on flying drone data collection missions.  
 
 ## Run Configuration
 The image-processing model applied to the input video is controlled by many configuration settings. 
-The most important App.Config settings are:
+The most important settings are:
 | Setting  | Description |
 | -------- | ----------- |
 | RunModel | Determines which image processing model to use to process the input. Value is "Contour", "Distance, "Flow", "Gftt", "Comb", "Smooth", "Threshold" or "None".  |
 | RunVideoFromS | Determines the time (in seconds) to start video input processing from. Optional |
 | RunVideoToS | Determines the time (in seconds) to end video input processing at. Optional |
 
-After the program starts up, these settings can be modified in the UI, allowing different combinations to be tested.
+These settings can be modified in the UI, allowing different combinations to be tested.
 
 ## Run Processing
-After the video is selected & loaded, the "Run" button will run/re-run the processing technique.
+After the video is selected & loaded, the "Run" button will run/re-run the image processing technique.
 If the RunSpeed setting is set to "Max" the UI is updated infrequently during processing (to save time).
 Otherwise, the UI images and graphs will be updated often.
 Either way these runtime messages are shown:
@@ -76,9 +73,6 @@ Either way these runtime messages are shown:
 | Saving     | The video and spreadsheets (if any) are saved |
 | Finished   | Shows total elapsed time (including loading, processing, UI updating and saving). |
 | Objects    | Number of objects and significant objects detected is shown |
-
-Alternatively, if the "RunModel" and "InputFileName" settings are defaulted in App.Config, 
-then the program will run the specified processing technique on the input video on start up.
 
 Once the processing has finished, the updated video and spreadsheet files are written to disk. 
 The progress message is updated at each step, finally saving "Loaded in 8s. Ran in 6s (1036 frames). 
