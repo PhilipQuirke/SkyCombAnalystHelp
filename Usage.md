@@ -24,7 +24,7 @@ The authors are risk adverse. This guide balances obtaining good animal detectio
 To minimise risks to the drone, we recommend this process:
 
 1. Plan the mission at home:
-	- Select the target area and plan out your flight path before leaving home. 
+	- Select the target area and plan out your flight path before leaving home (more on this later)
 	- If your drone supports this, program the flight path into the drone, so the drone can fly the path autonomously (rather than be controlled manually).
 2. Test at the launch site during the day:
 	- At the launch site, during the day, when visibility is good, fly the drone upwards manually, and then visually determine a safe height to fly the drone at. Say 10 to 15 metres higher than the tallest tree in the flight area. Record this height.
@@ -39,6 +39,13 @@ To minimise risks to the drone, we recommend this process:
 4. Process the data collected at home.
 	- Transfer the new videos and flight log files from your drone to your laptop or similar. 
 	- Process the new file using the SkyComb Analyst tool 
+
+## What Path to Fly
+There are many ways to design a flight path to collect data:
+- If you are focused on a small area, then a "criss cross" pattern can be used to cover the same area multiple times from different directions.
+- If you have a large area to cover, or your target animao is rare, then a "lawn mowing" pattern covers much more area, and collects more data.   
+
+![DroneFlightPathExample](./Static/DroneFlightPathExample.png?raw=true "Drone Flight Path Examples")
 
 
 ## What Time of Day to Fly
