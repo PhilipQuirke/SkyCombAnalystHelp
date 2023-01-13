@@ -50,7 +50,7 @@ The best option is to fly data collection missions in the hour before dawn, when
 and the landscape has cooled overnight (helping the thermal camera detect animals).
 
 
-## Improved Drone Altitude via "On Ground At Start/End""
+## Improved Drone Altitude via "On Ground At Start/End"
 Drones can calculate their <u>location/u> accurately (using GPS), but calculate their height <u>inaccurately</u>
 (using barometers and accelerometers). 
 
@@ -156,7 +156,7 @@ ToDo: Auto-calculate ExcludeMarginRatio from the drone manufacturer's published 
 # Process the whole video
 Having configued the above parameters which are specific to your drone and flight, you are ready to process the video.
 
-Set the "Process" to "Comb". Clear the "From (Secs)" and "To (Secs)" settings. Click "Run"
+Set the "Process" to "Comb". Click the "All" Legs button under the flight path widget. Click "Run"
 
 
 # Supporting More Drone Types
