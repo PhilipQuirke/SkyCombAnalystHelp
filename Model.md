@@ -69,9 +69,11 @@ The altitude reported by the drone is often inaccurate. The inaccuracy causes th
 
 ![FixAltitudeM](./Static/FixAltitudeM.png?raw=true "Fix Altitude Example")
 
+The altitude correction algorithm code is in ModelCombLeg.cs, and the results of the algorthim are stored in the "CombLeg" tab of the DataStore. 
+
 
 # Source Code
-The source code folder ModelSpace the implementation of these models.
+The source code folder ModelSpace contains the implementation of these models.
 
 
 # Drone Specifics 
