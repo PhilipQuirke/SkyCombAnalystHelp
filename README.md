@@ -45,19 +45,19 @@ For a given drone flight, SkyCombAnalyst can process 1) two videos and two fligh
 
 After the program starts up, an input video can be chosen via the "Select video" button.
 
-[Drone](./Drone.md) provides more detail on the input videos, 
+The [Drone](./Drone.md) page has more detail on the input videos, 
 their contents and accuracy, obtaining ground elevation data, and how to view this metadata. 
 
-[Usage](./Usage.md) provides more detail on flying drone data collection missions.  
+The [Usage](./Usage.md) page has more detail on flying drone data collection missions.  
 
 ## Run Configuration
 The image-processing model applied to the input video is controlled by many configuration settings. 
 The most important settings are:
 | Setting  | Description |
 | -------- | ----------- |
-| RunModel | Determines which image processing model to use to process the input. Value is "Contour", "Distance, "Flow", "Gftt", "Comb", "Smooth", "Threshold" or "None".  |
 | RunVideoFromS | Determines the time (in seconds) to start video input processing from. Optional |
 | RunVideoToS | Determines the time (in seconds) to end video input processing at. Optional |
+| RunModel | Determines which image processing model to use to process the input. Value is "Contour", "Distance, "Flow", "Gftt", "Comb", "Smooth", "Threshold" or "None".  |
 
 These settings can be modified in the UI, allowing different combinations to be tested.
 
@@ -69,8 +69,8 @@ Either way these runtime messages are shown:
 | Message    | Description |
 | ---------- | ----------- |
 | Loading    | The video meta-data is loaded and the entire flight data files (if any) are loaded & Drone Speed, Altitude and Path graphs are displayed |
-| Processing | Frame by frame loading and processing of the video |
-| Saving     | The video and spreadsheets (if any) are saved |
+| Processing | Frame by frame loading, processing & displaying of the video(s) |
+| Saving     | The video and spreadsheet (if any) are saved |
 | Finished   | Shows total elapsed time (including loading, processing, UI updating and saving). |
 | Objects    | Number of objects and significant objects detected is shown |
 
@@ -78,15 +78,15 @@ Once the processing has finished, the updated video and spreadsheet files are wr
 The progress message is updated at each step, finally saving "Loaded in 8s. Ran in 6s (1036 frames). 
 Saved in 9s. Finished after total of 30s. Objects 1 (1 significant)".
 
-[Usage](./Usage.md) provides more detail on processing data gathered in drone data collection missions.  
+The [Usage](./Usage.md) page provides more detail on processing data gathered in drone data collection missions.  
 
 ## Saving output files
 The program output is:
 - Displaying the video frame currently being processed, and the updated video frame in the UI.
 - Saving the updated video to a file named InputFileName_SkyComb.mp4
-- Saving thermal & optical meta-data, drone flight path and altitude data, ground and tree-top elevation to a spreadsheet file named InputFileName_SkyComb.xls
+- Saving thermal & optical meta-data, drone flight path and altitude data, ground and tree-top elevation, objects detected to a spreadsheet file named InputFileName_SkyComb.xls
 
-[DataStore](./DataStore.md) file provides more detail on the spreadsheet contents, purpose and usage.
+The [DataStore](./DataStore.md) page has more detail on the spreadsheet contents, purpose and usage.
 
 # Image Processing Models
 The user can select one of several image processing models via the RunModel dropdown. 
@@ -97,8 +97,8 @@ The models output markedly different images.
 
 ![Model Examples](./Static/ModelExamples.png?raw=true "Model Examples")
 
-[Model](./Model.md) file provides more detail on the models. 
-Also recommended config settings for specific drone types.
+The [Model](./Model.md) page has more detail on the models. 
+It also has recommended config settings for specific drone types.
 
 
 # Source Code
