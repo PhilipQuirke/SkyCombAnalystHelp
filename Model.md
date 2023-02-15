@@ -65,7 +65,7 @@ The Comb process decides whether an object is significant using a number of fact
 
 For significant objects, the UI shows "Notes" such as "Yes: C3 D2 T1 E3" showing the strength of each factor.  
 
-The altitude reported by the drone is often inaccurate. The inaccuracy causes the calculated physical location of the object in each successive frame to move a regular distance in the direction of flight, giving a straight line of object locations. The Comb process can back-calculate from this line, to correct the drone altitude, and correct the object line to be an object point. In this example, 8 test hot spots appear to all be moving in the same direction. After correcting the drone altitude, the 8 test hot spots are correctly identified as stationary:
+The altitude reported by the drone is often inaccurate. The inaccuracy causes the calculated physical location of the object in each successive frame to move a regular distance in the direction of flight, giving a straight line of object locations. The Comb process automatically back-calculates from these lines, to correct the drone altitude, and correct the object lines to be closer to object points. In this real-world example, 8 test hot spots appear to all be moving in the same direction. After correcting the drone altitude, the 8 test hot spots are correctly shown as stationary:
 
 ![FixAltitudeM](./Static/FixAltitudeM.png?raw=true "Fix Altitude Example")
 
