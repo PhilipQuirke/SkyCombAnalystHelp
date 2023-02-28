@@ -69,7 +69,7 @@ The spreadsheet (aka DataStore) named InputFileName_SkyComb.xlsx can contain the
 		- The change of pitch (aka nose up / down, in degrees / step) of the drone, graphed over time 
 		- The change of roll (in degrees / step) of the drone, graphed over time 
 		- The duration of the flight legs, graphed over time 
-- Model: Summarises the processing model settings, run settings, run results, etc related to the following tabs:
+- Process: Summarises the process settings, run settings, run results, etc related to the following tabs:
 	- Blocks: Lists the Blocks corresponding to the processed video frames
 	- Blocks2: Holds graphs based on the Blocks data, for the processed video frames, including:
 		- The altitude of the drone, the ground elevation and surface (aka tree-top) elevation (in meters) graphed over time	
