@@ -57,7 +57,7 @@ The most important settings are:
 | -------- | ----------- |
 | RunVideoFromS | Determines the time (in seconds) to start video input processing from. Optional |
 | RunVideoToS | Determines the time (in seconds) to end video input processing at. Optional |
-| RunModel | Determines which image processing model to use to process the input. Value is "Contour", "Distance, "Flow", "Gftt", "Comb", "Smooth", "Threshold" or "None".  |
+| RunProcess | Determines which image processing model to use to process the input. Value is "Contour", "Distance, "Flow", "Gftt", "Comb", "Smooth", "Threshold" or "None".  |
 
 These settings can be modified in the UI, allowing different combinations to be tested.
 
@@ -89,27 +89,29 @@ The program output is:
 The [DataStore](./DataStore.md) page has more detail on the spreadsheet contents, purpose and usage.
 
 # Image Processing Models
-The user can select one of several image processing models via the RunModel dropdown. 
-This can help users understand/experiment with these models.
+The user can select one of several image processing models via the RunProcess dropdown. 
+This can help users understand/experiment with these processes.
 
 The available models are None, Smooth, Threshold, Flow, Comb (recommended), Contour, Distance and Gftt.
 The models output markedly different images. 
 
-![Model Examples](./Static/ModelExamples.png?raw=true "Model Examples")
+![Process Examples](./Static/ModelExamples.png?raw=true "Process Examples")
 
-The [Model](./Model.md) page has more detail on the models. 
+The [Process](./Model.md) page has more detail on the processes. 
 It also has recommended config settings for specific drone types.
 
 
 # Source Code
 The source code is written in C#. The main source files are:
 - CommonSpace folder: Shared utility classes
-- DataStoreSpace folder: Refer [DataStore](./DataStore.md)
+- PersistModel folder: Refer [DataStore](./DataStore.md)
 - DrawSpace folder: Classes to draw on videos and on the UI
-- DroneSpace folder: Refer [Drone](./Drone.md)
+- DroneModel folder: Refer [Drone](./Drone.md)
+- DroneLogic folder: Refer [Drone](./Drone.md)
 - Forms folder: Forms used by the application including MainForm.cs the main UI page
 - GroundSpace folder: Refer [Ground](./Ground.md)
-- ModelSpace folder: Refer [Model](./Model.md) 
+- ProcesModel folder: Refer [Process](./Model.md) 
+- ProcessLogic folder: Refer [Process](./Model.md) 
 - RunSpace folder: Classes to run a process model over an image or video(s)
 
 
