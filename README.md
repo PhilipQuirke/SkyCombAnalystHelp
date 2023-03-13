@@ -34,7 +34,11 @@ The overall user interface of this Windows based tool looks like this:
 
 ![User Interface](./Static/UIExample.png?raw=true "User Interface")
 
-The raw and derived data and the visualisations are saved on disk as a video and/or as a spreadsheet (for further analysis and re-use).
+After the video(s) are processed:
+- The derived data and associated visualisations are immediately saved on disk as a video and/or as a spreadsheet (for further analysis and re-use).
+- The "Object explorer" window can be used to view the objects detected during processing:
+
+![Object Explorer](./Static/ObjectExplorer.png?raw=true "Object Explorer")
 
 These pages explain the input, use and outputs of the application in more detail:
 - The [End to End Usage](./Usage.md) page has more detail on flying drone data collection missions to collect high-quality data.  
