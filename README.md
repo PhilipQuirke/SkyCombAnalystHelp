@@ -48,7 +48,7 @@ After the program starts up, an input video can be chosen via the "Select video"
 The [Drone](./Drone.md) page has more detail on the input videos, 
 their contents and accuracy, obtaining ground elevation data, and how to view this metadata. 
 
-The [Usage](./Usage.md) page has more detail on flying drone data collection missions.  
+The [End to End Usage](./Usage.md) page has more detail on flying drone data collection missions.  
 
 ## Run Configuration
 The image-processing model applied to the input video is controlled by many configuration settings. 
