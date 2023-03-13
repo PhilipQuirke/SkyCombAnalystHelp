@@ -1,4 +1,4 @@
-﻿# [SkyComb Analyst End to End Usage](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
+﻿# [SkyComb Analyst - End to End Usage](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
 
 
 # Overview
@@ -195,5 +195,3 @@ If you do please push your changes to this repo.
 
 If SkyComb Analyst can obtain accurate ground elevation data, it will do so automatically, and the 
 the ground elevation will be displayed on the altitude chart, and saved to the spreadsheet.
-
-
