@@ -1,4 +1,4 @@
-﻿# [SkyComb Analyst Usage](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
+﻿# [SkyComb Analyst End to End Usage](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
 
 
 # Overview
@@ -7,7 +7,9 @@ The primary use case is a drone with thermal and optical camera, flying over wil
 
 This document does NOT cover the mechanics of how to operate a drone. It assumes you know how to fly your drone.
 
-This document outlines how to best use a drone and SkyComb Analyst together to get high quality output. 
+This document outlines the end to end process how to best to:
+- Plan and fly a drone mission to collect video and flight log data
+- Load that data into SkyComb Analyst and tune the processing of it. 
 
 
 # Safety first
