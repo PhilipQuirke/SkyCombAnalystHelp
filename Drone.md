@@ -1,7 +1,7 @@
 # [SkyComb Analyst - Drone](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
 
 # Overview
-This ReadMe covers drone flight logs, video metadata, ground elevation, etc. 
+This page covers drone flight logs, video metadata, ground elevation, etc. 
 (Refer [ReadMe](./README.md) for an overview of the whole application.)
 These data sources have variable accuracy, built-in limitations and sometimes outright errors. 
 The application implements a variety of algorithms and cross-checks to minimise the impact of inaccuracies.

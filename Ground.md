@@ -2,7 +2,7 @@
 
 # Overview
 The SkyComb Analyst application works better with accurate ground and tree-top elevation.
-This ReadMe covers how this elevation data is used in the application.
+This page covers how this elevation data is used in the application.
 (Refer the root-level [ReadMe](./README.md) for an overview of the whole application.)
 
 

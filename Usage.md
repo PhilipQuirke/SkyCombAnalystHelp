@@ -1,13 +1,13 @@
-﻿# [SkyComb Analyst - End to End Usage](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
+﻿	# [SkyComb Analyst - End to End Usage](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
 
 
 # Overview
 SkyComb Analyst helps environmentalists, scientists & software developers make a drone into a scientific tool.
 The primary use case is a drone with thermal and optical camera, flying over wilderness, detecting animals. 
 
-This document does NOT cover the mechanics of how to operate a drone. It assumes you know how to fly your drone.
+This page does NOT cover the mechanics of how to operate a drone. It assumes you know how to fly your drone.
 
-This document outlines the end to end process how to best to:
+This page outlines the end to end process of how best to:
 - Plan and fly a drone mission to collect video and flight log data
 - Load that data into SkyComb Analyst and tune the processing of it. 
 
