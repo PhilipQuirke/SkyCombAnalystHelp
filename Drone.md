@@ -157,8 +157,8 @@ The ratio can be manually calculated by comparing images from the thermal and op
 
 (ToDo: Auto-calculate ExcludeMarginRatio from the drone manufacturer's published thermal and optical HFOVs)
 
-## Mavic 2 Enterprise Dual 
-For a Mavic 2 Enterprise (M2E) Dual drone:
+## DJI Mavic 2 Enterprise Dual 
+For a DJI Mavic 2 Enterprise (M2E) Dual drone:
 - Flight speed smoothing works well with SmoothSectionSize=5  
 - Scaling thermal to optical image works well with ExcludeMarginRatio=0.125. So we exclude a 1/8th margin - both horizontally and vertically. 
 - Time between thermal and optical video start (ThermalToOpticalVideoDelayS) differs per video   
