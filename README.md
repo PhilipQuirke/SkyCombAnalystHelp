@@ -50,3 +50,8 @@ Developed using:
 - Emgu, a C# wrapper around the OpenCV image processing library. Refer nuget package in project
 - EPPlus, a spreadsheet tool. Refer nuget package in project
 - Visual Studio Community 2022 downloaded from https://visualstudio.microsoft.com/vs/community/
+
+# Caveats
+This application has only been extensively tested with:
+- Data from a DJI Mavic 2 Enterprise (M2E) Dual drone. SkyComb Analyst is designed to support any drone, but other drone models may require some code changes around flight log parsing and loading. Refer [Drone](./Drone.md) for more details.
+- Ground (surface and treetop) data from New Zealand. SkyComb Analyst is designed to support any country, but supporting additional countries will involve locating publically available ground data, and parsing and loading that data. Refer [Ground](./Ground.md) for more detail.
