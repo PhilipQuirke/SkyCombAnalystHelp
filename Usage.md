@@ -1,4 +1,4 @@
-﻿	# [SkyComb Analyst - End to End Usage](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
+# [SkyComb Analyst - End to End Usage](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
 
 
 # Overview
@@ -44,8 +44,8 @@ To minimise risks to the drone, we recommend this process:
 
 ## What Path to Fly
 There are many ways to design a flight path to collect data:
-- If you are focused on a small area, then a "criss cross" pattern can be used to cover the same area multiple times from different directions.
-- If you have a large area to cover, or your target animao is rare, then a "lawn mowing" pattern covers much more area, and collects more data.   
+- If you have a large area to cover, or your target animal is rare, then a "lawn mowing" pattern covers the most land, and collects the most data.   
+- If you are focused on a small area, then a "criss cross" pattern will covers the same area multiple times from different directions.
 
 ![DroneFlightPathExample](./Static/DroneFlightPathExample.png?raw=true "Drone Flight Path Examples")
 
