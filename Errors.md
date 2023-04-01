@@ -174,7 +174,7 @@ The two cameras are distinct sub-systems, likely manufactured by different compa
 Both cameras must compress the data they see in real-time, but the above differences may result in the compressed data being persisted to the memory card at different rates.
 
 These factors result in differences:
-- The start date / time of the two video files may differ a little.
+- The start date / time of the two video <u>files</u> may differ a little.
 - The duration of the two videos may differ a little.
  
 SkyComb Analyst copes with this automatically.
@@ -184,7 +184,9 @@ The differences between the two cameras can result in the first frame of each vi
 That is, if you play the two videos side by side, one video will lag behind the other one. 
 
 SkyComb Analyst provides a manual process for the operator to quickly determine the best "sychronization delay" for a given drone flight.
-After the operator enters this value in SkyComb Analyst, SkyComb Analyst handles the sychronization automatically. 
+Refer to the [Usage](./Usage.md#optical-and-thermal-video-synchronisation) page for more detail.
+After the operator enters the delay value in SkyComb Analyst, SkyComb Analyst stores the value 
+in the FlightConfig.cs setting ThermalToOpticalVideoDelayS, and handles the sychronization automatically. 
 
 
 # Gimbal 
@@ -209,6 +211,7 @@ The gimbal could be pointing the cameras at the horizon, or straight down at the
 This angle is key to SkyComb Analyst calculations. The drone flight log often does <u>not</u> contain this angle. 
 
 SkyComb Analyst provides a manual process for the operator to specific the "camera down angle" for a given drone flight.
+Refer [Usage](./Usage.md#camera-down-angle) page for more detail.
 After the operator enters this value in SkyComb Analyst, SkyComb Analyst handles the calculations automatically. 
 
 Caveat: The SkyComb flight protocol recommends the camera be pointed straight down during the flight. 
@@ -265,12 +268,3 @@ and the more accurate the object height calculation.
 The main constraint on the accuracy of this method is the accuracy of the "drone to object angle". 
 This is calculated from the drone location (good accuracy), the location of the object in the thermal video image.
 As the thermal video image has low resolution, the "drone to object angle" accuracy is not great.
-
-
-
-
-
-
-
-
-
