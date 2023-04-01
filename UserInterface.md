@@ -161,7 +161,9 @@ Clicking on the "pop-out" button at top-left of this list opens the Object Explo
 
 This form allows you to select and focus in on a single object & review much of the data associated with that object.
 
-This form "loops" through the data associated with the selected object. You can click the "Pause" button to stop or start this looping.
-
 Each object has been detected over several video frames. Each frame generated a "Feature" associated with the object. 
 The object features are shown in the list at bottom right.
+
+This form "loops" through the object feature data, so you can see the order the data was collected in. 
+You can click the "Pause" button to stop or start this looping.
+

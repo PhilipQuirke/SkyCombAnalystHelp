@@ -250,11 +250,25 @@ SkyComb Analyst "back calculates" an improved drone height that would minimise t
 It applies this improved drone height to the full flight leg.
 
 In test flights, where 8 hot objects were concurrently visible in the same image of a thermal video, 
-this method improved the drone height by 3.2 meters, and improved the location object clustering significantly to be +/- 8 cms!
+this method corrected the drone height by 3.2 meters, and improved the location object clustering significantly to be +/- 8 cms!
 
 There is good reason to believe that this approach is correctly calculating the drone height.
 
 These improved drone height per flight leg  are "pushed back" into the drone data for future use.
+
+## Drone Height Leg Variance
+As explained in the "Drone Height" section it is common for the raw drone height data to be wrong.
+
+What is somewhat surprising is that, for a given drone flight, where the drone is instructed to fly at a "constant" height, 
+each of the legs will have a different "drone heigth fix". In one flight with 3 legs, the "fixs" were 0m, 3m, 2.6m. 
+The cause of this intra-leg variance is not well understood.
+
+One possibility: When the drone "corners" it goes through a complex sequence of moves. First it pitches up (goes nose up) for 1 to 3 seconds to quickly loose forward speed. 
+Then it flattens out and rotates to the new heading. Then it pitches down (goes nose down) for 1 to 3 seconds to quickly gain forward speed, 
+before finally flattening to fly steadily down the next leg. 
+
+The drone is cornering in 3D with only its internal accelerometers to tell it how it has changed direction, speed, etc. 
+It is very possible that this cornering introduces error into the drone height calculations.
 
 ## Object Height
 The "Comb" image processing algorithm takes the same objects detected above, and determines whether they are on the ground or in trees above ground.

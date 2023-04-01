@@ -1,4 +1,4 @@
-﻿# [SkyComb Analyst Usage](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
+﻿# [SkyComb Analyst Flight](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
 
 
 # Overview
