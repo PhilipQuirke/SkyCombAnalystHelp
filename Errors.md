@@ -239,25 +239,34 @@ The "Comb" image processing algorithm detects objects - on the ground or in tree
 
 Frame by frame, using the estimated drone height, SkyComb Analyst calculates the Northing / Easting location of the object.
 Each frame is an independent experiment.
-If the estimated drone height is <u>incorrect>/u>, then the location of the object changes in a linear fashion, in the drone direction-of-flight.
+If the estimated drone height is correct, then the location of the object in each frame cluster at one physical location.
+If the estimated drone height is <u>incorrect</u>, then the location of the object in each frame appear as a line walking across the land, aligned to the drone direction-of-flight.
+If several independent objects are being tracked in the same video image, all these objects move in the same pattern.
 
-If several independent objects are being tracked at the same time, these objects will also show this pattern.
+SkyComb Analyst "back calculates" an improved drone height that would minimise the movement of all the visible objects in a flight leg. 
+It applies this improved drone height to the full flight leg.
 
-SkyComb Analyst "back calculates" a refined drone height that would minimise the movement of all the visible objects in a flight leg. 
-It applies this refined drone height to the full flight leg.
-
-In test flights, where 8 hot objects are concurrently visible in the thermal video, 
-this method refined the drone height by 3.2 meters, and refined the location object location to +/- 8 cms!
+In test flights, where 8 hot objects were concurrently visible in the same image of a thermal video, 
+this method improved the drone height by 3.2 meters, and improved the location object clustering significantly to be +/- 8 cms!
 
 There is good reason to believe that this approach is correctly calculating the drone height.
 
-These drone height per flight leg corrections are "pushed back" into the drone data.
+These improved drone height per flight leg  are "pushed back" into the drone data for future use.
 
 ## Object Height
-The "Comb" image processing algorithm detects objects - on the ground or in trees above ground.
-Frame by frame, using the refined drone height, SkyComb Analyst calculates the height of each object above ground.
+The "Comb" image processing algorithm takes the same objects detected above, and determines whether they are on the ground or in trees above ground.
 
-It does this using TBA
+It does this using the [Parallax](https://en.wikipedia.org/wiki/Parallax) method. 
+As the drone moves overhead, the angle from the drone to the object changes.
+
+The more frames the object is in view, the greater the drone "base line" movement distabce, the greater the change in angle from drone to object, 
+and the more accurate the object height calculation.
+
+The main constraint on the accuracy of this method is the accuracy of the "drone to object angle". 
+This is calculated from the drone location (good accuracy), the location of the object in the thermal video image.
+As the thermal video image has low resolution, the "drone to object angle" accuracy is not great.
+
+
 
 
 
