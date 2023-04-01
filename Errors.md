@@ -4,7 +4,8 @@
 # Overview
 The SkyComb Analyst tool helps environmentalists, scientists & software developers make a drone into a scientific tool.
 
-A key technical goal in the creation of this tool was to minimise the negative impact of various sources of error. This document outlines these sources of error. 
+A key technical goal in the creation of this tool was to minimise the negative impact of various sources of error. 
+This document outlines these sources of error & how SkyComb Analyst minimses them. 
 
 
 # Drone Overview
@@ -13,67 +14,6 @@ Each sub-system provides data and each has its own error source(s).
 The drone must integrate these data feeds, make and execute decisions, and store selected data as videos and flight logs - all in real-time.
 
 This document is not a critique of drones or drone engineers. It is instead a survery of real world error sources.
-
-
-# Drone Altitude vs Height
-
-## Drone Altitude vs Height terminology 
-Drones state their vertical distance above the ground using two different terms:
-- Drone <u>Altitude</u>: The height of the drone above <u>Sea level</u>. Say 190 meters
-- Drone <u>Height</u>: The height of the drone above the <u>Sea level</u> where it started its flight. Say 20 meters
-
-For example, a drone placed on the ground in front of you, and switched on, will say it is at a height of 0.0 meters, but at an altitude of say 170 meters.
-
-
-## Drone Altitude & Height systemic error
-While drones can show their vertical distance above the ground using either Altitude or Height, the underlying data is the same.
-
-Most drones calculate their Altitude/Height using 
-[barometers](https://en.wikipedia.org/wiki/Barometer/)
-. A barometer measures air pressure. Air gets thinner as the drone rises. 
-
-So far so good. But barometeric pressure at sea level in one location can differ significantly from another sea level location. 
-The same is true at in-land locations. 
-
-For example, a drone sitting on the ground at sea level in New Zealand reported its altitude as 20 meters BELOW sea level!
-
-Drones do <u>not</u> have a way to correct for this. SkyComb Analyst <u>has</u> a semi-automated way of correcting this systemic error.
-
-
-## Drone Altitude & Height variable error
-When say a storm front sweeps in, the air pressure changes. 
-Barometers are effected by these air pressure changes, and the impact over the duration of a drone flight can be significant. 
-
-For example, a drone that started and ended its flight in the SAME location in New Zealand, reported different altitudes at the start and end of the flight. 
-The difference (error) was round 6 meters! 
-
-Drones do <u>not</u> have a way to correct for this. SkyComb Analyst <u>has</u> a semi-automated way of correcting this systemic error.
-
-
-# Ground & Surface Elevation
-
-## Ground & Surface Elevation Terminology
-It is important to understand the difference between these two terms:
-
-- Ground Elevation: The height of the ground above the sea level. 
-- Surface Elevation: The height of the <u>tree tops</u> above the sea level. 
-
-If the Ground Elevation is 170 meters, and the Surface Elevation is 177 meters, then the trees are 7 meters tall.
- 
-## Ground & Surface Elevation accuracy
-In general, drones can <u>not</u> provide ground or surface elevation data. An alternative source of information is needed
-
-Many countries have accurately mapped part or all of their land using a technology called 
-[Lidar](https://en.wikipedia.org/wiki/Lidar/)
-. Many countries provide this data to the public for free. 
-
-For example, the New Zealand government is progressively mapping New Zealand. The resulting data is freely available at 
-[LINZ](https://www.linz.govt.nz/products-services/data/types-linz-data/elevation-data).
-The data is provided in 1 meter by 1 meter (horizontal) grids. The ground elevation (vertical) data accuracy is +/- 0.2 meters. That is +/- 20 centimeters!
-The surface elevation data has the same format and accuracy.
-
-SkyComb Analyst can automatically integrate Lidar data pertaining to a drone light. 
-Caveat: Currently only New Zealand Lidar data has been integrated.
 
 
 # Drone Location
@@ -107,6 +47,79 @@ This error shows up in the flight log as a series of steadily moving locations f
 as new GPS data becomes available.
 
 SkyComb Analyst automatically smooths the location data.
+
+
+# Ground & Surface Elevation
+
+## Ground & Surface Elevation Terminology
+It is important to understand the difference between these two terms:
+
+- Ground Elevation: The height of the ground above the sea level. 
+- Surface Elevation: The height of the <u>tree tops</u> above the sea level. 
+
+If the Ground Elevation is 170 meters, and the Surface Elevation is 177 meters, then the trees are 7 meters tall.
+ 
+## Ground & Surface Elevation accuracy
+Drones can <u>not</u> provide ground or surface elevation data. An alternative source of information is needed
+
+Many countries have accurately mapped part or all of their land using a technology called 
+[Lidar](https://en.wikipedia.org/wiki/Lidar/)
+. Many countries provide this data to the public for free. 
+
+For example, the New Zealand government is progressively mapping New Zealand. The resulting data is freely available at 
+[LINZ](https://www.linz.govt.nz/products-services/data/types-linz-data/elevation-data).
+The data is provided in 1 meter by 1 meter (horizontal) grids. The ground elevation (vertical) data accuracy is +/- 0.2 meters. That is +/- 20 centimeters which is amazing!
+The surface elevation data has the same format and accuracy.
+
+SkyComb Analyst can automatically integrate Lidar data for the area under a drone flight. 
+Caveat: Currently only New Zealand Lidar data has been integrated so far.
+
+
+# Drone Altitude vs Height
+
+## Drone Altitude vs Height terminology 
+Drones state their vertical distance above the ground using two different terms:
+- Drone <u>Altitude</u>: The height of the drone above <u>Sea level</u>. Say 190 meters
+- Drone <u>Height</u>: The height of the drone above the <u>Sea level</u> where it started its flight. Say 20 meters
+
+For example, a drone placed on the ground in front of you, and switched on, will say it is at a height of 0.0 meters, but at an altitude of say 170 meters.
+
+While drones can show their vertical distance above the ground using either Altitude or Height, the underlying data is the same.
+
+## Drone Altitude & Height systemic error
+Most drones calculate their Altitude/Height using 
+[barometers](https://en.wikipedia.org/wiki/Barometer/)
+. A barometer measures air pressure. Air gets thinner as the drone rises. 
+
+So far so good. But barometeric pressure at sea level in one location can differ significantly from another sea level location. 
+The same is true at in-land locations. 
+
+For example, a drone sitting on the ground at sea level in New Zealand reported its altitude as 20 meters BELOW sea level!
+
+Drones do <u>not</u> have a way to correct for this. 
+
+If the operator uses the recommended flight protocols, 
+SkyComb Analyst <u>has</u> can automatically correct this "systemic" error using Lidar ground elevation data.
+This correction is accurate to within +/- 0.2m at the drone flight "start" and "end" points, 
+but during the flight, as the drone is inherently an unstable flight platform, the height is much less accurately known.
+
+## Drone Altitude & Height variable error
+When say a storm front sweeps in, the air pressure changes. 
+Barometers are effected by these air pressure changes, and the impact over the duration of a drone flight can be significant. 
+
+For example, a drone that started and ended its flight in the SAME location in New Zealand, reported different altitudes at the start and end of the flight. 
+The difference (error) was round 6 meters! There was no apparent change in the weather during this flight. So the cause of this error is not well understood.
+
+Drones do <u>not</u> have a way to correct for this. 
+If the operator uses the recommended flight protocols, 
+SkyComb Analyst <u>has</u> an automated way to spread this variable error evenly over the flight duration.
+This seems the best way to minimise the impact of this error on height data.
+
+## Drone Altitude & Height overall error
+Even with these enhancements, the drone height data is still the least accurate of all the drone data streams.
+
+SkyComb Analyst has another automated way (described in a later section) to further refine the drone height data.
+
 
 
 # Drone Logs
@@ -171,12 +184,13 @@ The differences between the two cameras can result in the first frame of each vi
 That is, if you play the two videos side by side, one video will lag behind the other one. 
 
 SkyComb Analyst provides a manual process for the operator to quickly determine the best "sychronization delay" for a given drone flight.
-After the oeprator enters this value in SkyComb Analyst, SkyComb Analyst handles the sychronization automatically. 
+After the operator enters this value in SkyComb Analyst, SkyComb Analyst handles the sychronization automatically. 
 
 
-# Gimbal lag on turning
+# Gimbal 
 The gimbal physically holds the camera(s) and compensates for small drone variable in yaw, pitch & roll, steadying the video image.
 
+## Gimbal lag on turning
 When the drone is flying in a straight line, and has to cope with say with changes in the cross-wind strength, this works well.
 
 The gimbal is a distinct sub-system of the drone, and not perfectly co-ordinated with other drone sub-systems in real time.
@@ -188,3 +202,66 @@ until the gimbal has caught up and is centered on the new direction.
 While the flight log will contain the drone direction, information on the gimbal direction may not be contained in the flight log. 
 
 SkyComb Analyst copes with this gimbal lag automatically.
+
+## Camera down angle
+The gimbal could be pointing the cameras at the horizon, or straight down at the ground, or somewhere inbetween.
+
+This angle is key to SkyComb Analyst calculations. The drone flight log often does <u>not</u> contain this angle. 
+
+SkyComb Analyst provides a manual process for the operator to specific the "camera down angle" for a given drone flight.
+After the operator enters this value in SkyComb Analyst, SkyComb Analyst handles the calculations automatically. 
+
+Caveat: The SkyComb flight protocol recommends the camera be pointed straight down during the flight. 
+SkyComb Analyst has mostly been tested on flights with this camera configuration.
+
+
+# Thermal Video Processing Errors
+The above sections detail errors that can be quickly analysed when loading the drone flight data and associated Lidar data. 
+That is, the above corrections are implemented without relying on the contents of the videos.
+
+This section details errors related to the processing of the thermal video.
+
+## Thermal Video Resolution
+The SkyComb Analyst image processing algorithms are limited by the resolution and frame rate of the thermal video. 
+While the thermal video may have a resolution of 640x360, the underlying sensor may have a lower resolution, 
+with some on-camera hardware algorithm generated the higher-resolution video.
+
+## Thermal Threshold
+Thermal image processing algorithms must look at an image and decide which pixels are "hot" 
+and which are "not hot" using a "threshold value". 
+
+SkyComb Analyst can't automatically detect or calculate the "best" threshold value.
+SkyComb Analyst provides a way for the operator to determine the best value.
+Once the operator has entered this value, SkyComb Analyst applies the threshold automatically.
+
+## Drone Height & Object Location
+The "Comb" image processing algorithm detects objects - on the ground or in trees above ground.
+
+Frame by frame, using the estimated drone height, SkyComb Analyst calculates the Northing / Easting location of the object.
+Each frame is an independent experiment.
+If the estimated drone height is <u>incorrect>/u>, then the location of the object changes in a linear fashion, in the drone direction-of-flight.
+
+If several independent objects are being tracked at the same time, these objects will also show this pattern.
+
+SkyComb Analyst "back calculates" a refined drone height that would minimise the movement of all the visible objects in a flight leg. 
+It applies this refined drone height to the full flight leg.
+
+In test flights, where 8 hot objects are concurrently visible in the thermal video, 
+this method refined the drone height by 3.2 meters, and refined the location object location to +/- 8 cms!
+
+There is good reason to believe that this approach is correctly calculating the drone height.
+
+These drone height per flight leg corrections are "pushed back" into the drone data.
+
+## Object Height
+The "Comb" image processing algorithm detects objects - on the ground or in trees above ground.
+Frame by frame, using the refined drone height, SkyComb Analyst calculates the height of each object above ground.
+
+It does this using TBA
+
+
+
+
+
+
+
