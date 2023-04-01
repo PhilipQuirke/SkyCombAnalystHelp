@@ -28,6 +28,7 @@ These pages provide more detail:
 - The [Process](./Process.md) page explains the image processing options the application supports.
 - The [Ground](./Ground.md) page explains how detailed ground and treetop elevation data is obtained and displayed.
 - The [Drone](./Drone.md) page explains the drone inputs and some of the inherent inaccuracies & how they are minimised. 
+- The [Errors](./Errors.md) page describes all know error sources in the input data & how they are minimised. 
 
 
 # Source Code
