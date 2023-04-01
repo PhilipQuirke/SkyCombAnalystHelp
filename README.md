@@ -55,6 +55,6 @@ Developed using:
 # Caveats
 This application has only been extensively tested with:
 - Data from a DJI Mavic 2 Enterprise (M2E) Dual drone. SkyComb Analyst is designed to support any drone, but other drone models may require some code changes around flight log parsing and loading. Refer [Drone](./Drone.md) for more details.
-- Data generated using the [End to End Usage](./Usage.md) page data collection recommendations, especially: 1) the flight start and end on the ground and 2) the camera(s) should be pointing straight down during the flight. SkyComb Analyst will support other flight configurations, but the height accuracy will be worse.  
+- Data generated using the [Usage](./Usage.md) page data collection recommendations, especially: 1) the flight start and end on the ground and 2) the camera(s) should be pointing straight down during the flight. SkyComb Analyst will support other flight configurations, but the height accuracy will be worse.  
 - Ground (surface and treetop) data from New Zealand. SkyComb Analyst is designed to support any country, but supporting additional countries will involve locating publically available ground data, and parsing and loading that data. Refer [Ground](./Ground.md) for more detail.
 
