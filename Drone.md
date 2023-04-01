@@ -9,7 +9,7 @@ DroneSpace covers drone flight logs, video metadata, ground elevation, etc. Also
 # Out of Scope
 This page does <u>not</u> cover:
 - How to fly your drone. We assumes you already know how to fly your drone.
-- How to prepare for and execute for drone data collection flights. Refer [Usage](./Usage.md) page.
+- How to prepare for and run drone data collection flights. Refer [Flight](./Flight.md) page.
 - How to use the SkyComb Analyst tool to analyse the data collected. Refer [UserInterface](./UserInterface.md)
 - The inaccuracies inherent in drone flight log data. Refer [Errors](./Errors.md) page.
 
