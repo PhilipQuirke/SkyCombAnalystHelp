@@ -8,7 +8,7 @@ This document outlines how best to fly your drone to collect high quality data.
 
 
 # Out of Scope
-This page does <u>not</u> cover:
+This page does **not** cover:
 - How to actually fly your drone. We assumes you already know how to fly your drone.
 - How to use the SkyComb Analyst tool to analyse the data collected. Refer [UserInterface](./UserInterface.md)
 - The inaccuracies inherent in drone flight data. Refer [Errors](./Errors.md) page.
@@ -57,7 +57,7 @@ Flying at other times of day may still work well enough.
 
 
 # Improved Drone Altitude via "On Ground At Start/End""
-Drones can calculate their <u>location/u> accurately (using GPS), but calculate their height <u>inaccurately</u>
+Drones can calculate their **location** accurately (using GPS), but calculate their height **inaccurately**
 (using barometers and accelerometers). For more detail refer to the [Errors](./Errors.md#drone-altitude-vs-height) page.
 
 We recommend starting the video recording while the drone is still on the ground, and continuing recording 
