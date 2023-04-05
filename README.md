@@ -9,13 +9,13 @@ Drones are unstable flying platforms. The data they generate contains many inacc
 
 ![Path, Speed & Altitude](./Static/Overview1.png?raw=true "Path, Speed & Altitude")
 
-Where it is available, SkyComb Analyst supplements the drone data with very accurate ground and tree top <u>elevation</u> data from public sources, increasing the <u>object height</u> data accuracy.
+Where it is available, SkyComb Analyst supplements the drone data with very accurate ground and tree top <u>elevation</u> data from public sources, increasing the accuracy of <u>animal height</u> estimates.
 
 ![DEM & DSM Elevations](./Static/Overview2.png?raw=true "DEM & DSM Elevations")
 
-SkyComb Analyst can generate animal population statistics for the area flown over, in a robust and repeatable fashion. It generates [spreadsheets](./DataStore.md) and annotated video as output. This output can used later for further analysis e.g. as input to image recognition software.
+SkyComb Analyst can generate animal population statistics for the area flown over, in a robust and repeatable fashion. It generates [spreadsheets](./DataStore.md) and annotated video as output. This output can used later for further analysis e.g. as input to image recognition machine learning systems.
 
-SkyComb Analyst provides an easy to use [interface](./UserInterface.md) that converts your drone into a scientific data-collection platform.
+SkyComb Analyst provides an easy to use [interface](./UserInterface.md) that makes it easy to explore the data your drone collected.
 
 ![User Interface](./Static/UIExample.png?raw=true "User Interface")
 
@@ -55,6 +55,5 @@ Developed using:
 # Caveats
 This application has only been extensively tested with:
 - Data from a DJI Mavic 2 Enterprise (M2E) Dual drone. SkyComb Analyst is designed to support any drone, but other drone models may require some code changes around flight log parsing and loading. Refer [Drone](./Drone.md) for more details.
-- Data generated using the [Flight](./Flight.md) page data collection recommendations, especially: 1) the flight start and end on the ground and 2) the camera(s) should be pointing straight down during the flight. SkyComb Analyst will support other flight configurations, but the height accuracy will be worse.  
-- Ground (surface and treetop) data from New Zealand. SkyComb Analyst is designed to support any country, but supporting additional countries will involve locating publically available ground data, and parsing and loading that data. Refer [Ground](./Ground.md) for more detail.
-
+- Data generated using the [Flight](./Flight.md) page data collection recommendations, especially: 1) the flight starts and ends on the ground and 2) the camera(s) are pointing straight down during the flight. SkyComb Analyst will support other flight configurations, but the height accuracy will be worse.  
+- Ground (surface and treetop) data for New Zealand. SkyComb Analyst is designed to support any country, but supporting additional countries will involve locating publically available ground data, and parsing and loading that data. Refer [Ground](./Ground.md) for more detail.
