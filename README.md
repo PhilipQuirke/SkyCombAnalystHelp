@@ -9,7 +9,7 @@ Drones are unstable flying platforms. The data they generate contains many inacc
 
 ![Path, Speed & Altitude](./Static/Overview1.png?raw=true "Path, Speed & Altitude")
 
-Where it is available, SkyComb Analyst supplements the drone data with very accurate ground and tree top <u>elevation</u> data from public sources, increasing the accuracy of <u>animal height</u> estimates.
+Where it is available, SkyComb Analyst supplements the drone data with very accurate ground and tree top **elevation** data from public sources, increasing the accuracy of **animal height** estimates.
 
 ![DEM & DSM Elevations](./Static/Overview2.png?raw=true "DEM & DSM Elevations")
 
