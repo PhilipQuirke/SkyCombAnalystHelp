@@ -45,7 +45,7 @@ Click "Save" to save all settings to the spreadsheet.
 
 ## Camera Down Angle
 On a drone, the camera gimbal controls where camera is pointing. 
-SkyComb Analyst needs to know this value, and this value is <u>not</u> available from the drone flight log.
+SkyComb Analyst needs to know this value, and this value is **not** available from the drone flight log.
 
 If the camera was pointing:
 - straight down during the flight, then set "Camera down angle" to 90 (not -90) in the SkyComb Analyst UI.
@@ -60,10 +60,10 @@ SkyComb Analyst can more accurately calculate the height of the drone if the dro
 This information is <u>not</u> available from the drone flight log.
 
 Use the "On ground at" field to inform SkyComb Analyst when the drone was on the ground. Select one of the settings:
-- <b>Start</b> : The drone was on the ground at the start of the video (only). 
-- <b>End</b> : The drone was on the ground at the end of the video (only). 
-- <b>Both</b> : The drone was on the ground at both the start and end of the video. (This is the recommended approach & gives the best results).
-- <b>Auto</b> : Use this if you don't know the answer
+- **Start** : The drone was on the ground at the start of the video (only). 
+- **End** : The drone was on the ground at the end of the video (only). 
+- **Both** : The drone was on the ground at both the start and end of the video. (This is the recommended approach & gives the best results).
+- **Auto** : Use this if you don't know the answer
 
 The user interface includes a "Drone Altitude" chart that shows the ground elevation in brown, the tree-top height in green and drone altitude in blue.
 Inaccurate elevations as measured by the drone can be corrected if the "On ground at" setting is specified.
