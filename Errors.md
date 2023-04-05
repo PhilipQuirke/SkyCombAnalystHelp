@@ -23,7 +23,7 @@ Drones usually obtain their location from GPS data and record the location data 
 [Longitude & Latitude](https://en.wikipedia.org/wiki/Geographic_coordinate_system#Latitude_and_longitude) coordinates.
 For example, in New Zealand, a sample location is Longitude 174.7030220 and Latitude -36.8918260
 
-Except at the equator, 1 unit of Longitude is <u>not</u> the same distance as 1 unit of Latitude. This makes using the data harder.
+Except at the equator, 1 unit of Longitude is **not** the same distance as 1 unit of Latitude. This makes using the data harder.
 So often, the location data is converted to a simpler, local coordinate system called Northing / Easting. This conversion does not change the accuracy of the data.
 
 Northing and Easting are both measured in meters, so 1 unit of Northing is the same distance as one unit of Easting. 
@@ -36,7 +36,7 @@ For a specific drone flight, SkyComb Analyst converted the above Longitude/Latit
 The primary data source for the location of the drone is GPS data.
 
 Caveat: A drone may record a line of data in its flight log 30 times a second. 
-The drone is <u>not</u> evaluating its GPS location 30 times a second. 
+The drone is **not** evaluating its GPS location 30 times a second. 
 The drone is more likely to be evaluating its location once a second.
 
 The secondary data source for the location of the drone is drone accelerometer data.
@@ -54,13 +54,13 @@ SkyComb Analyst automatically smooths the location data.
 ## Ground & Surface Elevation Terminology
 It is important to understand the difference between these two terms:
 
-- Ground Elevation: The height of the ground above the sea level. 
-- Surface Elevation: The height of the <u>tree tops</u> above the sea level. 
+- Ground Elevation: The height of the *ground* above sea level. 
+- Surface Elevation: The height of the *tree tops* above sea level. 
 
 If the Ground Elevation is 170 meters, and the Surface Elevation is 177 meters, then the trees are 7 meters tall.
  
 ## Ground & Surface Elevation accuracy
-Drones can <u>not</u> provide ground or surface elevation data. An alternative source of information is needed
+Drones can **not** provide ground or surface elevation data. An alternative source of information is needed
 
 Many countries have accurately mapped part or all of their land using a technology called 
 [Lidar](https://en.wikipedia.org/wiki/Lidar/)
@@ -79,8 +79,8 @@ Caveat: Currently only New Zealand Lidar data has been integrated so far.
 
 ## Drone Altitude vs Height terminology 
 Drones state their vertical distance above the ground using two different terms:
-- Drone <u>Altitude</u>: The height of the drone above <u>Sea level</u>. Say 190 meters
-- Drone <u>Height</u>: The height of the drone above the <u>Sea level</u> where it started its flight. Say 20 meters
+- Drone **Altitude**: The height of the drone above **Sea level**. Say 190 meters
+- Drone **Height**: The height of the drone above the **Sea level** where it started its flight. Say 20 meters
 
 For example, a drone placed on the ground in front of you, and switched on, will say it is at a height of 0.0 meters, but at an altitude of say 170 meters.
 
@@ -96,10 +96,10 @@ The same is true at in-land locations.
 
 For example, a drone sitting on the ground at sea level in New Zealand reported its altitude as 20 meters BELOW sea level!
 
-Drones do <u>not</u> have a way to correct for this. 
+Drones do **not** have a way to correct for this. 
 
 If the operator uses the recommended flight protocols, 
-SkyComb Analyst <u>has</u> can automatically correct this "systemic" error using Lidar ground elevation data.
+SkyComb Analyst **can** automatically correct this "systemic" error using Lidar ground elevation data.
 This correction is accurate to within +/- 0.2m at the drone flight "start" and "end" points, 
 but during the flight, as the drone is inherently an unstable flight platform, the height is much less accurately known.
 
@@ -110,9 +110,9 @@ Barometers are effected by these air pressure changes, and the impact over the d
 For example, a drone that started and ended its flight in the SAME location in New Zealand, reported different altitudes at the start and end of the flight. 
 The difference (error) was round 6 meters! There was no apparent change in the weather during this flight. So the cause of this error is not well understood.
 
-Drones do <u>not</u> have a way to correct for this. 
+Drones do **not** have a way to correct for this. 
 If the operator uses the recommended flight protocols, 
-SkyComb Analyst <u>has</u> an automated way to spread this variable error evenly over the flight duration.
+SkyComb Analyst **can** automatically spread this variable error evenly over the flight duration.
 This seems the best way to minimise the impact of this error on height data.
 
 ## Drone Altitude & Height overall error
@@ -133,7 +133,7 @@ So the log could be updated 30 times per second.
 Various drone subsystems (e.g. GPS) refresh their data less frequently than that. 
 So the data in each data set is the "last data collected" from each subsystem, and may not be accurate as at the frame timestamp.   
 
-When a particular attribute <u>changes</u> assume that the related sub-system provided new data just before the frame timestamp
+When a particular attribute **changes** assume that the related sub-system provided new data just before the frame timestamp
 
 SkyComb Analyst understands this and compensates for it.
 Caveat: SkyComb Analyst has only been extensively tested with a DJI M2E drone. 
@@ -174,7 +174,7 @@ The two cameras are distinct sub-systems, likely manufactured by different compa
 Both cameras must compress the data they see in real-time, but the above differences may result in the compressed data being persisted to the memory card at different rates.
 
 These factors result in differences:
-- The start date / time of the two video <u>files</u> may differ a little.
+- The start date / time of the two video **files** may differ a little.
 - The duration of the two videos may differ a little.
  
 SkyComb Analyst copes with this automatically.
@@ -208,7 +208,7 @@ SkyComb Analyst copes with this gimbal lag automatically.
 ## Camera down angle
 The gimbal could be pointing the cameras at the horizon, or straight down at the ground, or somewhere inbetween.
 
-This angle is key to SkyComb Analyst calculations. The drone flight log often does <u>not</u> contain this angle. 
+This angle is key to SkyComb Analyst calculations. The drone flight log often does **not** contain this angle. 
 
 SkyComb Analyst provides a manual process for the operator to specific the "camera down angle" for a given drone flight.
 Refer [Flight](./Flight.md#camera-down-angle) page for more detail.
@@ -263,8 +263,10 @@ What is somewhat surprising is that, for a given drone flight, where the drone i
 each of the legs will have a different "drone heigth fix". In one flight with 3 legs, the "fixs" were 0m, 3m, 2.6m. 
 The cause of this intra-leg variance is not well understood.
 
-One possibility: When the drone "corners" it goes through a complex sequence of moves. First it pitches up (goes nose up) for 1 to 3 seconds to quickly loose forward speed. 
-Then it flattens out and rotates to the new heading. Then it pitches down (goes nose down) for 1 to 3 seconds to quickly gain forward speed, 
+One possibility: When the drone "corners" it goes through a complex sequence of moves. 
+First it pitches up (goes nose up) for 1 to 3 seconds to quickly loose forward speed. 
+Then it flattens out and rotates to the new heading.
+Then it pitches down (goes nose down) for 1 to 3 seconds to quickly gain forward speed, 
 before finally flattening to fly steadily down the next leg. 
 
 The drone is cornering in 3D with only its internal accelerometers to tell it how it has changed direction, speed, etc. 
