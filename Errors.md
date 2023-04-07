@@ -188,6 +188,18 @@ Refer to the [Flight](./Flight.md#optical-and-thermal-video-synchronisation) pag
 After the operator enters the delay value in SkyComb Analyst, SkyComb Analyst stores the value 
 in the FlightConfig.cs setting ThermalToOpticalVideoDelayS, and handles the sychronization automatically. 
 
+## Thermal Video Inconsistency
+On rare occassions, the thermal video data is internally inconsistent. 
+Say you set the video frame position to say frame 100 and do 400 "get next frame" calls, you get a certain final frame image. 
+If instead you set the video frame position to frame 500 (being 100 + 400) can you will get a slightly different frame image. 
+To the naked eye, this different is barely visible, but in SkyComb Analyst's search for small hot objects it is significant.
+
+This rare inconsistency may be specific to a particular video camera.
+
+SkyComb Analyst does not detect or correct this issue. Instead SkyComb Analyst automatically minimises this issue. 
+It **consistently** processes the thermal video in all use cases.
+Specifically, it resets the video frame position at the start of each leg, 
+and then advances the video frame by frame to the point it is interested in.    
 
 # Gimbal 
 The gimbal physically holds the camera(s) and compensates for small drone variable in yaw, pitch & roll, steadying the video image.
