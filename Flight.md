@@ -17,9 +17,9 @@ This page does **not** cover:
 # Safety first
 Drones are expensive and somewhat fragile. 
 
-Thermal cameras work best at night or in low light conditions. Flying a drone in these conditions adds risk. 
+Thermal cameras work best at dusk, dawn and at night. Flying a drone in these conditions adds risk. 
 
-The SkyComb Analyst authors have basic drone skills. Despite this, no drones were hurt in the development of this tool and this guide.
+The SkyComb Analyst authors have basic drone skills. One drone was hurt in the development of this tool (when we ignored the below advice).
 
 The authors are risk adverse. This guide balances obtaining good animal detection outcomes with protecting the drone.
 
@@ -44,6 +44,11 @@ To minimise risks to the drone, we recommend this process:
 	- Transfer the new videos and flight log files from your drone to your laptop or similar. 
 	- Process the new file using the SkyComb Analyst tool as described in the [UserInterface](./UserInterface.md) page.
 
+**Warning**: NEVER flight a night-time mission that you have not previously tested when visibility was good (point 2 above). 
+The authors ignored this rule once and damaged a drone.
+We had flown a test flight during the daylight, assessed a safe height, etc. But between the daytime test flight and night flight, we extended the programmed search pattern to cover more ground to gather more data, under the strong belief that there were no taller trees in the extended area. 
+Our belief was wrong. Our drone hit a tall tree at night. 
+The search for the downed drone had to start immediately, at 10pm, while the drone battery still had power and the drone lights would help our search. We retreived the damaged drone as much by luck as by good management.
 
 # What Time of Day to Fly
 If your drone has both thermal and optical cameras:
