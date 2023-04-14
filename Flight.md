@@ -1,8 +1,9 @@
-﻿# [SkyComb Analyst Flight](https://github.com/PhilipQuirke/SkyCombAnalyst/) 
+# [SkyComb Analyst Help - Flight Recommendations](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
 
 
 # Overview
-SkyComb Analyst helps environmentalists, scientists & software developers make a drone into a scientific tool.
+The [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalyst/) tool 
+helps environmentalists, scientists & software developers make a drone into a scientific tool.
 The primary use case is a drone with thermal and optical camera, flying over wilderness, detecting animals. 
 This document outlines how best to fly your drone to collect high quality data.
 
