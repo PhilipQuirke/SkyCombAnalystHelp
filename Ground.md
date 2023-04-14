@@ -1,7 +1,8 @@
-# [SkyComb Analyst - Ground](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
+# [SkyComb Analyst Help - Ground](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
 
 # Overview
-The SkyComb Analyst application works better with accurate ground and tree-top elevation.
+The [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalyst/) tool 
+works better with accurate ground and tree-top elevation data.
 This page covers how this elevation data is used in the application.
 (Refer the root-level [ReadMe](./README.md) for an overview of the whole application.)
 
