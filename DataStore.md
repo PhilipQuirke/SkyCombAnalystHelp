@@ -18,10 +18,7 @@ A user may run the same video several times with different settings. Each run ta
 To speed up runs, the spreadsheet is used as a database to cache data for re-use in successive runs.
 For example, the spreadsheet "Ground" tab acts like a database table of cached ground elevations. 
 
-The DataStore contains several graphs including a 3D rendering of the ground elevation data:
-
-![DataStore Example Ground Graph](./Static/Overview2.png?raw=true "DataStore Example Ground Graph")
-
+A sample datastore is [here](./Static/DJI_0094_SkyComb.xlsx)
 
 # Controlling output files
 The tool output is controlled by these settings, which can be edited in the UI:
@@ -47,10 +44,10 @@ in the OutputDirectory. If one is found:
 
 # DataStore Content
 The spreadsheet (aka DataStore) named InputFileName_SkyComb.xlsx can contain these tabs:
-- Files: Lists the input file(s) read, and the output file(s) created
-- Drone: Summarises the drone video(s) meta-data, drone flight path meta-data, ground elevations, and other settings related to the following tabs:
-	- Sections: Lists the raw flight sections data detailing the drone flight. 
-	- Sections2: Holds graphs based on the raw drone Sections data, including:
+- **Files**: Lists the input file(s) read, and the output file(s) created
+- **Drone**: Summarises the drone video(s) meta-data, drone flight path meta-data, ground elevations, and other settings related to the following tabs:
+	- **Sections**: Lists the raw flight sections data detailing the drone flight. 
+	- **Sections2**: Holds graphs based on the raw drone Sections data, including:
 		- The flight path in the Northing / Easting coordinate system
 		- The flight path in the original Longitude / Latitude coordinate system   	
 		- The lineal distance travelled (in meters) by the drone per section, graphed over time 
@@ -58,11 +55,11 @@ The spreadsheet (aka DataStore) named InputFileName_SkyComb.xlsx can contain the
 		- The change of direction (aka delta yaw, in degrees / section) of the drone, graphed over time 
 		- The change of pitch (aka nose up / down, in degrees / section) of the drone, graphed over time 
 		- The change of roll (in degrees / section) of the drone, graphed over time 
-	- Ground: Lists the ground elevation (DEM) data. Includes a 3D graph of the ground elevations.
-	- Surface: Lists the surface (aka tree-top) elevation (DSM) data. Includes a 3D graph of the surface elevations.
-	- Legs: Lists "legs" of flight path - at constant altitude, in constant direction of a reasonable duration over a reasonable distance. 
-	- Steps: List flight data derived from flight steps using smoothing/correction algorithms, ground data, etc.
-	- Steps2: Holds graphs based on the smoothed Steps data, including:
+	- **Ground**: Lists the ground elevation (DEM) data. Includes a 3D graph of the ground elevations.
+	- **Surface**: Lists the surface (aka tree-top) elevation (DSM) data. Includes a 3D graph of the surface elevations.
+	- **Legs**: Lists "legs" of flight path - at constant altitude, in constant direction of a reasonable duration over a reasonable distance. 
+	- **Steps**: List flight data derived from flight steps using smoothing/correction algorithms, ground data, etc.
+	- **Steps2**: Holds graphs based on the smoothed Steps data, including:
 		- The flight path in the Northing / Easting coordinate system
 		- The altitude of the drone, the ground elevation and surface (aka tree-top) elevation (in meters) graphed over time	
 		- The lineal distance travelled (in meters) by the drone per step, graphed over time 
@@ -71,9 +68,9 @@ The spreadsheet (aka DataStore) named InputFileName_SkyComb.xlsx can contain the
 		- The change of pitch (aka nose up / down, in degrees / step) of the drone, graphed over time 
 		- The change of roll (in degrees / step) of the drone, graphed over time 
 		- The duration of the flight legs, graphed over time 
-- Process: Summarises the process settings, run settings, run results, etc related to the following tabs:
-	- Blocks: Lists the Blocks corresponding to the processed video frames
-	- Blocks2: Holds graphs based on the Blocks data, for the processed video frames, including:
+- **Process**: Summarises the process settings, run settings, run results, etc related to the following tabs:
+	- **Blocks**: Lists the Blocks corresponding to the processed video frames
+	- **Blocks2**: Holds graphs based on the Blocks data, for the processed video frames, including:
 		- The altitude of the drone, the ground elevation and surface (aka tree-top) elevation (in meters) graphed over time	
 		- The lineal distance travelled (in meters) by the drone per step, graphed over time 
 		- The lineal speed (in meters / second) of the drone per step, graphed over time
@@ -81,10 +78,10 @@ The spreadsheet (aka DataStore) named InputFileName_SkyComb.xlsx can contain the
 		- The change of pitch (aka nose up / down, in degrees / step) of the drone, graphed over time 
 		- The change of roll (in degrees / step) of the drone, graphed over time 
 		- The duration of the flight legs, graphed over time 
-	- Pixels: Lists the hot Pixels found. (Normally not saved as it is too bulky)
-	- Features: Lists the Features found during block processing. A Feature is a dense clusters of hot Pixels in a Block
-	- Objects: Lists the Objects found during block processing. For the Comb process, an Object is a series of Features that physically overlap in several frames 
-	- Objects2: Holds graphs based on the Objects & Features data, including:
+	- **Pixels**: Lists the hot Pixels found. (Normally not saved as it is too bulky)
+	- **Features**: Lists the Features found during block processing. A Feature is a dense clusters of hot Pixels in a Block
+	- **Objects**: Lists the Objects found during block processing. For the Comb process, an Object is a series of Features that physically overlap in several frames 
+	- **Objects2**: Holds graphs based on the Objects & Features data, including:
 		- Apparent speed of the features and objects found, graphed over time   
 		- Estimated heig of the features and objects found, graphed over time   
 		- The location of the features & objects found (in Northing / Easting meter units)
