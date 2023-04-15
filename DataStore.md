@@ -28,10 +28,17 @@ The DataStore has 3 main parts:
 - **Drone**: The "Drone" tab and the following 7 tabs. The data in these tabs is calculated when the user selects the video. This data exists (and is saved to the DataStore) before any video image processing is run.
 - **Process**:  The "Process" tab and the following 5 or 6 tabs. This data only exists _after_ the video image processing is run.
 
-# User Interface controls impacting the DataStore
-Two user interface controls impact how much data the tool saves: 
+# User Interface controls
+All the fields in the user interface editable by the user are persisted to the DataStore. 
+
+Two editable fields also impact the volume of data the tool persists: 
 - SaveAnnotatedVideo: Determines whether an output video file is created. Value is "Yes" or "no". 
 - SaveObjectData: Determines whether Object and Features tabs area is created in the DataStore. Value is "All", "Significant" or "None". 
+
+If later the user re-loads the same video, the tool looks for an existing InputFileName_SkyComb.xlsx. If it finds one:
+- The user-editable settings are loaded from the spreadsheet into the user interface.
+- The existing drone flight path, ground elevation data, surface elevation data, etc is loaded and re-used
+- The graphs etc are updated with the loaded data 
 
 # DataStore Tabs
 The DataStore contain some or all of these tabs:
@@ -78,18 +85,6 @@ The DataStore contain some or all of these tabs:
 		- The location of the features & objects found (in Northing / Easting meter units)
 		- The location of the features & objects found (in Northing / Easting meter units) with drone steps overlaid
 	
-
-# DataStore caches configuration settings
-When a video is run, the tool saves all configuration settings to the spreadsheet. 
-This includes all settings visible in the UI and also those not visible in the UI.
-
-When the user selects a video, the tool looks for an existing InputFileName_SkyComb.xlsx 
-in the OutputDirectory. If one is found:
-- The settings visible in the UI are loaded from the spreadsheet.
-- The existing Ground elevation data is re-used
-- The existing drone flight path, altitude, etc data is re-used
-- Significant objects found in the last run are reloaded and displayed
-
 
 # Creating / Updating the DataStores 
 A new spreadsheet is created in three parts:
