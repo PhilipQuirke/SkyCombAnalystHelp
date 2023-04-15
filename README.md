@@ -10,8 +10,6 @@ It generates (thermal & optical) close up videos of the animals.
 
 Drones are complex tools that move in three dimensions. The data they generate contains many inaccuracies. If you follow the SkyComb Analyst [recommendations](./Flight.md) on how to fly your drone, SkyComb Analyst can automatically compensate for [several inaccuracies](./Errors.md)
 
-![Path, Speed & Altitude](./Static/Overview1.png?raw=true "Path, Speed & Altitude")
-
 Where it is available, SkyComb Analyst supplements the drone data with very accurate ground and tree top **elevation** data from public sources, increasing the accuracy of **animal height above ground** estimates.
 
 ![DEM & DSM Elevations](./Static/Overview2.png?raw=true "DEM & DSM Elevations")
