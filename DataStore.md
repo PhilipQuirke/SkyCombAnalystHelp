@@ -22,16 +22,16 @@ The DataStore is named InputFileName_SkyComb.xlsx and is created in the location
 
 A sample datastore is [here](./Static/DJI_0094_SkyComb.xlsx)
 
-# Controlling output files
-Two user interface controls impact how much data the tool saves: 
-- SaveAnnotatedVideo: Determines whether an output video file is created. Value is "Yes" or "no". 
-- SaveObjectData: Determines whether Object and Featurestabs area is created in the DataStore. Value is "All", "Significant" or "None". 
-
 # DataStore Structure
 The DataStore has 3 main parts:
-- **Files**: A single tab lsting the input files read, and the output files created
+- **Files**: A single tab listing the input files read, and the output files created
 - **Drone**: The "Drone" tab and the following 7 tabs. The data in these tabs is calculated when the user selects the video. This data exists (and is saved to the DataStore) before any video image processing is run.
 - **Process**:  The "Process" tab and the following 5 or 6 tabs. This data only exists _after_ the video image processing is run.
+
+# User Interface controls impacting the DataStore
+Two user interface controls impact how much data the tool saves: 
+- SaveAnnotatedVideo: Determines whether an output video file is created. Value is "Yes" or "no". 
+- SaveObjectData: Determines whether Object and Features tabs area is created in the DataStore. Value is "All", "Significant" or "None". 
 
 # DataStore Tabs
 The DataStore contain some or all of these tabs:
