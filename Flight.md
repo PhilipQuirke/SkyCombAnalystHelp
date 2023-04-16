@@ -8,17 +8,59 @@ helps environmentalists, scientists & software developers make a drone into a sc
 The primary use case is a drone with thermal and optical camera, flying over wilderness, detecting animals. 
 This document outlines how best to fly your drone to collect high quality data for this use case.
 
-To understand how to use the collected afterwards in SkyCOmb Analyst please refer to the [UserInterface](./UserInterface.md) page.
+To understand how to use the collected afterwards in SkyComb Analyst please refer to the [UserInterface](./UserInterface.md) page.
 
 
-# Disclaimer
-This page does not tell you how to fly your drone. We assume you already know how to fly your drone. Your drone is your responsibility.
+# Recommendations
+The SkyComb Analyst tool supports collecting data on animal populations in a **repeatable, robust, safe** way.
+Aligned to this goal, this page contains several recommendations on how to fly data collection missions.
+Each is explained in detail below, but in summary the recommendations are:
+- Fly in straight lines.
+- Decide on the best height above the surface.
+- Decide whether to fly during the Day, at Dusk, at Dawn or at Night.
+- Start and end video recording when the drone is on ground.
+- For most of the flight have the video cameras pointing straight down.
+- Record the thermal video in gray scale (not say in a "red is hot" mode).
+- Pre-prepare and use programmed flight paths. (Don't fly the drone manually when collecting data).
+- Test flight plans fully before the data collection flight
+
+**Disclaimer**: This page does not tell you how to fly your drone. We assume you already know how to fly your drone. Your drone is your responsibility.
 
 
 # Safety first
-Drones are expensive and somewhat fragile.  The authors are risk adverse. This guide balances obtaining good animal detection outcomes with protecting the drone.
+Drones are expensive and somewhat fragile. The authors are risk adverse. These recommendations balance good animal detection outcomes with protecting the drone.
 
-The SkyComb Analyst authors have basic drone skills. One drone was hurt in the development of this tool (when we ignored the below advice).
+The SkyComb Analyst authors have basic drone skills. One drone was hurt in the development of this tool (when we ignored the below recommendations).
+
+**Disclaimer**: These recommendations minimise but do not eliminate the risks of data collection. Your drone is your responsibility.
+
+
+# Fly in straight lines lots
+Drones are unstable flying platforms with a lot of wobble / error in the data they produce. 
+Flying at a steady speed, in a steady direction, at a steady height reduces some of these errors.
+When the SkyComb Analyst tool detects that the drone is flying a **Leg** (steady speed, direction & height), 
+it uses statistical techniques to reduce the error further.
+Flight paths containing several long legs are recommended.
+
+![Drone Flight Path Example](./Static/DroneFlightPathExample.png?raw=true "Drone Flight Path Example")
+
+
+# Decide on the best height above the surface
+Drone thermal cameras have a lower resolution than their optical camera.
+Fly too high and the thermal camera will not have the resolution to detect small animals.
+Fly too low and you risk hitting a tree.
+Flying 10 meters above the highest tree top in your flight area is recommended.
+
+The tree-top height data provided by say the New Zealand government is a phenomenal resource, but it can be several years out of date. 
+Trees can grow a lot in several years. When it comes to drone safety, you can't rely on it.
+
+The best approach is to do a test flight at the location, use your drone to visual inspect the landscape, 
+find the highest tree top in your flight plan area and record its height. Fly your data collection flight at 10 meters above the highest tree top.
+
+
+
+
+TBC
 
 Many drones have built in collision avoidance mechanisms. These mechanisms may only work when the drone is moving at low speed, and may only work when there is sufficient light to see obstacles. Be aware of the limitations of your drone. 
 
