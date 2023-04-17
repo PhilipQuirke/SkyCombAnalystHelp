@@ -8,7 +8,7 @@ helps environmentalists, scientists & software developers make a drone into a sc
 The primary use case is a drone with thermal and optical camera, flying over wilderness, detecting animals. 
 This document outlines how best to fly your drone to collect high quality data for this use case.
 
-To understand how to use the collected afterwards in SkyComb Analyst please refer to the [UserInterface](./UserInterface.md) page.
+**Disclaimer**: This page does not tell you how to fly your drone. We assume you already know how to fly your drone. Your drone is your responsibility.
 
 
 # Recommendations
@@ -17,14 +17,12 @@ Aligned to this goal, this page contains several recommendations on how to fly d
 Each is explained in detail below, but in summary the recommendations are:
 - Fly mostly in straight lines.
 - Decide on the best/safest height above the surface.
-- Decide whether to fly during the Day, at Dusk, at Dawn or at Night.
+- Decide whether to fly the data collection mission during the Day, at Dusk, at Dawn or at Night.
 - Start and end video recording when the drone is on ground.
 - For most of the flight have the video cameras pointing straight down.
 - Record the thermal video in gray scale (not say in a "red is hot" mode).
 - Pre-prepare and use programmed flight paths.  
 - Test flight plans fully before the data collection flight
-
-**Disclaimer**: This page does not tell you how to fly your drone. We assume you already know how to fly your drone. Your drone is your responsibility.
 
 
 # Safety first
@@ -65,16 +63,16 @@ If your drone has both thermal and optical cameras:
 - The thermal camera works day or night. At night, the landscape is cold, improving the contrast between the landscape and living things.
 
 Depending on the animals you want to collect data on, you may want to flight your data collection mission during the day, at dusk, at dawn or at night:
-- Day-time missions have the best visiblity and drone safety. But, with the sun shining, day-time thermal videos will sun-warmed rocks, sun reflections off water etc.  
-- With good timing, Dusk missions still have good visibility at the height your drone is flying, and the highest (most dangerous) obstacles can still be illuminated. Water reflections are eliminated but rocks may still be warm.
-- With good timing, Dawn missions have good visibility at the height your drone is flying, with the highest obstacles can illuminated. Water reflections are eliminated. Rocks will have cooled overnight.
-- Night missions are the most dangerous. The drone built in collision avoidance mechanism may not work in darkness. Following the below recommendations of flight planning and testing make night missions safe. 
+- **Day-time** missions have the best visiblity and drone safety. But, with the sun shining, day-time thermal videos will sun-warmed rocks, sun reflections off water etc.  
+- With good timing, **dusk** missions still have good visibility at the height your drone is flying, and the highest (most dangerous) obstacles can still be illuminated. Water reflections are eliminated but rocks may still be warm.
+- With good timing, **dawn** missions have good visibility at the height your drone is flying, with the highest obstacles can illuminated. Water reflections are eliminated. Rocks will have cooled overnight.
+- **Night-time** missions are the most dangerous. The drone built in collision avoidance mechanism may not work in darkness. Following the below recommendations of flight planning and testing make night missions safe. 
 
-The SkyComb Analyst authors flew day, dawn, dusk and night missions safely using the below advice. Out one drone crash ocurred when we ignored the recommendations on this page.
+The SkyComb Analyst authors flew day, dawn, dusk and night missions safely using the below advice. Our one drone crash ocurred when we ignored the recommendations on this page.
 
 
 # Pre-prepare and use programmed flight paths
-Many drones support programmed flight paths. Once programmed, the associated flight plan can be run end-to-end automatically. 
+Many drones support programmed flight paths. Once programmed, the flight plan can be run end-to-end automatically. 
 
 SkyComb recommends you pre-prepare and use programmed flight paths:
 - You can prepare the flight plan at home when you are not under time or weather pressure and have good internet connectivity.
@@ -84,7 +82,7 @@ SkyComb recommends you pre-prepare and use programmed flight paths:
 
 # Start and end video recording when the drone is on ground.
 Drones can calculate their **location** accurately, but often **can't** calculate their **height** accurately.
-(Refer the [Errors] page for why.)
+(Refer the [Errors](./Errors.md) page for why.)
 
 We recommend starting the video recording while the drone is still on the ground, and continuing recording 
 during the flight, until the drone is back on the ground, and only then stopping recording. 
