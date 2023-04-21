@@ -4,15 +4,15 @@
 The [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalyst/) tool 
 works better with accurate ground and tree-top elevation data.
 This page covers how this elevation data is used in the application.
-(Refer the root-level [ReadMe](./README.md) for an overview of the whole application.)
+(Refer the root-level [ReadMe](./README.md) for an overview of the tool.)
 
 
 # Ground Elevation
 SkyComb Analyst tries to determine whether a heat source is at ground level or is located up in a tree, above the ground. 
-For this highly accuracy ground & surface (aka tree-top) elevation data is needed.
+For this, highly accuracy ground & surface (aka tree-top) elevation data is needed.
 
 While the drone provides its own altitude and location, it can't provide information on the elevation of the ground or 
-tree tops beneath it. For ground and tree-top elevations, alternative input sources are needed.
+tree tops. For ground and tree-top elevations, an alternative input source is needed.
 
 
 # Elevation Data Sources
@@ -22,6 +22,8 @@ aka tree-top elevation).
 
 ## New Zealand Elevation Data Sources
 New Zealand is progressively mapping the entire country using LIDAR and publishing the data for free.
+Current and planned coverage is summarised at https://www.linz.govt.nz/products-services/data/types-linz-data/elevation-data
+
 The New Zealand government LINZ web site provides the ground data. For example:
 - https://data.linz.govt.nz/layer/105089-auckland-north-lidar-1m-dsm-2016-2018/ a DSM (Digital Surface Model) data for Auckland, New Zealand.
 - https://data.linz.govt.nz/layer/106410-auckland-north-lidar-1m-dem-2016-2018/ a DEM (Digital Elevation Model) data for Auckland, New Zealand.
@@ -36,21 +38,9 @@ The data is also stored and graphed in the [DataStore](./DataStore.md) (aka spre
 ![Example Contor Graphs](./Static/Overview2.png?raw=true "Example Contor Graphs")
 
 
-# Using Elevation Data Sources
-The GroundSpace folder contains two methods for using elevations data in the SkyComb Analyst:
-- File based: Requires some set-up, then is very fast and very accurate. Recommended method.
-- HTTPS: Requires minimal set-up, but is very slow, much less accurate and requires Internet access. 
-
-Both methods are implemented for NZ data sources, but are easily extensible to data sources from other countries.
-Seach the source code for #ExtendGroundSpace to find what code to clone & modify to support another country.
-
-Both methods require you to gain access to an elevation data source. 
-In New Zealand, you can create a (free) account at the LINZ website, then use it to generate a (free) API key, 
-allowing you to access this data for free. Set the LinzApiKey setting in App.Config to your API key value.
-
-## "File based" method requires some set up effort but is then very fast and very accuracy.
-This approach allows a high-resolution ground grid (with 1m horizontally between data points), and fast runs. 
-This is the recommended approach. 
+# Using "File Based" Elevation Data
+The GroundSpace folder contains a "file based" method for obtaining elevations data in the SkyComb Analyst. 
+This requires some set-up, then is very fast and very accurate. This method is highly recommended if you want to use SkyComb Analyst offline.
 
 To set up this method, download the ground (aka DEM) and surface (aka tree-top aka DSM) datasets from the LINZ (or similar) 
 website in the "ASC" format. Set the GroundDirectory setting in App.Config to the root folder used to store this ground 
@@ -60,16 +50,17 @@ For example, the above datasets are downloaded as:
 - lds-auckland-north-lidar-1m-dem-2016-2018-AAIGrid.zip is 11 GB when downloaded, and 40 GB once unzipped. 
 - lds-auckland-north-lidar-1m-dsm-2016-2018-AAIGrid.zip is 12 GB when downloaded, and 43 GB once unzipped. 
 
-The first time that the SkyComb Analyst is run after unzipping new datasets into GroundDirectory, the tool automatically scans the subfolders, 
-and creates a datastore (e.g. D:\SkyComb\Ground_Data\SkyCombIndex.xlsx) containing names of all the ASC datasets found and the area each covers. 
+The first time that the SkyComb Analyst is run after unzipping new datasets into the GroundDirectory folder, the tool automatically scans the subfolders, 
+and creates an index (e.g. D:\SkyComb\Ground_Data\SkyCombIndex.xlsx) containing names of all the ASC datasets found and the ground area each covers. 
 Subsequent SkyComb Analyst runs uses this index to quickly locate the ASC files pertainent to any drone flight in that coverage area.
 
 
-## The "HTTPS" method requires less set-up, but is very slow, much less accurate and requires Internet access
-You can use test your API key using any browser to access their Web Tile and Raster query APIs on-demand. For example:
-- https://data.linz.govt.nz/services/query/v1/raster.json?key=Your_API_Key_Here&layer=105089&x=174.7679000000037&y=-36.85059999999978 for DSM data
-- https://data.linz.govt.nz/services/query/v1/raster.json?key=Your_API_Key_Here&layer=106410&x=174.7679000000037&y=-36.85059999999978 for DEM data
+# Other Countries
+The method is currently implemented for NZ, but is easily extensible to data sources from other countries.
+Seach the source code for #ExtendGroundSpace to find what code to modify to support another country.
 
-While convenient, accessing elevation data this way is slow. Further LINZ imposes a limit of ~100 sequential queries. 
-After this it starts rejecting some queries. The limit of 100 queries results in SkyComb using a low-resolution ground 
-grid (with say 38m horizontally between data points). This is suboptimal. 
+
+# Using "Cloud Based" Elevation Data
+The SkyComb Analyst environment will in the future implement a cloud based version of the Ground source code, tentatively called SkyGround.
+If you run the SkyComb Analyst tool on a video, and you don't have the elevation data available as files on your laptop, and you are online, 
+the tool will automatically ask SkyGround to provide the elevation data.
