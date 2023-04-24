@@ -44,8 +44,8 @@ If later the user re-loads the same video, the tool looks for an existing InputF
 The DataStore contain some or all of these tabs:
 - **Files**: Lists the input files read, and the output files created
 - **Drone**: Summarises the drone video metadata, drone flight path meta-data, ground elevations, surface elevations and other settings related to:
-	- **Sections**: Lists the raw flight sections data detailing the drone flight. 
-	- **Sections2**: Holds graphs based on the raw drone Sections data, including:
+	- **Sects1**: Lists the raw flight sections data detailing the drone flight. 
+	- **Sects2**: Holds graphs based on the raw drone Sections data, including:
 		- The flight path in the Northing / Easting coordinate system
 		- The flight path in the original Longitude / Latitude coordinate system   	
 		- The lineal distance travelled (in meters) by the drone per section, graphed over time 
@@ -53,10 +53,10 @@ The DataStore contain some or all of these tabs:
 		- The change of direction (aka delta yaw, in degrees / section) of the drone, graphed over time 
 		- The change of pitch (aka nose up / down, in degrees / section) of the drone, graphed over time 
 		- The change of roll (in degrees / section) of the drone, graphed over time 
-	- **Ground**: Lists the ground elevation (DEM) data. Includes a 3D graph of the ground elevations.
-	- **Surface**: Lists the surface (aka tree-top) elevation (DSM) data. Includes a 3D graph of the surface elevations.
+	- **DEM**: Lists the ground elevation (aka DEM) data. Includes a 3D graph of the ground elevations.
+	- **DSM**: Lists the surface (aka tree-top) elevation (aka DSM) data. Includes a 3D graph of the surface elevations.
 	- **Legs**: Lists "legs" of flight path - at constant altitude, in constant direction of a reasonable duration over a reasonable distance. 
-	- **Steps**: List flight data derived from flight steps using smoothing/correction algorithms, ground data, etc.
+	- **Steps1**: List flight data derived from flight steps using smoothing/correction algorithms, ground data, etc.
 	- **Steps2**: Holds graphs based on the smoothed Steps data, including:
 		- The flight path in the Northing / Easting coordinate system
 		- The altitude of the drone, the ground elevation and surface (aka tree-top) elevation (in meters) graphed over time	
@@ -67,8 +67,8 @@ The DataStore contain some or all of these tabs:
 		- The change of roll (in degrees / step) of the drone, graphed over time 
 		- The duration of the flight legs, graphed over time 
 - **Process**: Summarises the process settings, run settings, run results, etc related to the following tabs:
-	- **Blocks**: Lists the Blocks corresponding to the processed video frames
-	- **Blocks2**: Holds graphs based on the Blocks data, for the processed video frames, including:
+	- **Blks1**: Lists the Blocks corresponding to the processed video frames
+	- **Blks2**: Holds graphs based on the Blocks data, for the processed video frames, including:
 		- The altitude of the drone, the ground elevation and surface (aka tree-top) elevation (in meters) graphed over time	
 		- The lineal distance travelled (in meters) by the drone per step, graphed over time 
 		- The lineal speed (in meters / second) of the drone per step, graphed over time
@@ -76,14 +76,16 @@ The DataStore contain some or all of these tabs:
 		- The change of pitch (aka nose up / down, in degrees / step) of the drone, graphed over time 
 		- The change of roll (in degrees / step) of the drone, graphed over time 
 		- The duration of the flight legs, graphed over time 
-	- **Pixels**: Lists the hot Pixels found. (Normally not saved as it is too bulky)
-	- **Features**: Lists the Features found during block processing. A Feature is a dense clusters of hot Pixels in a Block
-	- **Objects**: Lists the Objects found during block processing. For the Comb process, an Object is a series of Features that physically overlap in several frames 
-	- **Objects2**: Holds graphs based on the Objects & Features data, including:
+	- **Pxls**: Lists the hot Pixels found. (Normally not saved as it is too bulky)
+	- **Feats**: Lists the Features found during block processing. A Feature is a dense clusters of hot Pixels in a Block
+	- **Objs1**: Lists the Objects found during block processing. For the Comb process, an Object is a series of Features that physically overlap in several frames 
+	- **Objs2**: Holds graphs based on the Objects & Features data, including:
 		- Apparent speed of the features and objects found, graphed over time   
 		- Estimated height of the features and objects found, graphed over time   
 		- The location of the features & objects found (in Northing / Easting meter units)
 		- The location of the features & objects found (in Northing / Easting meter units) with drone steps overlaid
+	- **Legs2**: For each flight path Leg, show the object movement calculations used to refine the drone's altitude in that leg.
+	- **Popln**: Object population summary statisitcs
 	
 
 # Creating / Updating the DataStores 
