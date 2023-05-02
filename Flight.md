@@ -3,32 +3,33 @@
 
 # Overview
 The [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalyst/) tool 
-helps environmentalists, scientists & software developers make a drone into a scientific tool.
+helps environmentalists, scientists & software developers uses drone as a scientific tool.
 
 The primary use case is a drone with thermal and optical camera, flying over wilderness, detecting animals. 
 This document outlines how best to fly your drone to collect high quality data for this use case.
 
-**Disclaimer**: This page does not tell you how to fly your drone. We assume you already know how to fly your drone. Your drone is your responsibility.
+**Disclaimer**: This page does not tell you how to fly your drone. We assume you already know how to fly your drone. Your drone's safety is your responsibility.
 
 
 # Recommendations
 The SkyComb Analyst tool supports collecting data on animal populations in a **repeatable, robust, safe** way.
 Aligned to this goal, this page contains several recommendations on how to fly data collection missions.
 Each is explained in detail below, but in summary the recommendations are:
-- Fly mostly in straight lines.
+- For most of the flight, fly in straight lines.
 - Decide on the best/safest height above the surface.
 - Decide whether to fly the data collection mission during the Day, at Dusk, at Dawn or at Night.
 - Start and end video recording when the drone is on ground.
-- For most of the flight have the video cameras pointing straight down.
+- For most of the flight, have the video cameras pointing straight down.
 - Record the thermal video in gray scale (not say in a "red is hot" mode).
 - Pre-prepare and use programmed flight paths.  
 - Test flight plans fully before the data collection flight
 
 
 # Safety first
-Drones are expensive and somewhat fragile. The authors are risk adverse. These recommendations balance good animal detection outcomes with protecting the drone.
+Drones are expensive and somewhat fragile. This tool's authors are risk adverse.
+These recommendations balance good animal detection outcomes with keeping the drone safe.
 
-The SkyComb Analyst authors have basic drone skills. One drone was hurt in the development of this tool (when we ignored the below recommendations).
+One drone was hurt in the development of this tool (when we ignored the below recommendations).
 
 **Disclaimer**: These recommendations minimise but do not eliminate the risks of data collection. Your drone is your responsibility.
 
