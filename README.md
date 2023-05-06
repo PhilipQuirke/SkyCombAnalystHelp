@@ -2,8 +2,11 @@
 
 # Introduction
 The [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalyst/) tool 
-processes data collected by drones equipped with thermal and optical video cameras. 
-It detects animals & shows their size, temperature & height above ground. 
+processes data collected by drones equipped with thermal and optical video cameras. It detects animals:
+
+![FlightPathForm](./Static/DroneFlightPathForm.png?raw=true "Flight Path Form")
+
+For each animal detected it shows their size, temperature & height above ground. 
 It generates (thermal & optical) close up videos of the animals.
 
 ![Object Explorer](./Static/ObjectExplorer.png?raw=true "Object Explorer")
