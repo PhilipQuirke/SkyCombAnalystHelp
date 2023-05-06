@@ -7,7 +7,7 @@ processes data collected by drones equipped with thermal and optical video camer
 ![FlightPathForm](./Static/DroneFlightPathForm.png?raw=true "Flight Path Form")
 
 For each animal detected it shows their size, temperature & height above ground. 
-It generates (thermal & optical) close up videos of the animals.
+It generates (thermal & optical) close up videos of each animal.
 
 ![Object Explorer](./Static/ObjectExplorer.png?raw=true "Object Explorer")
 
