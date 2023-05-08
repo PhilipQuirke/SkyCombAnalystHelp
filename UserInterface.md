@@ -107,12 +107,25 @@ To calculate the best threshold value for your video:
 - Try decreasing the "Threshold value" to say "230". Click "Run" and watch the object. Was the object outline better defined?
 - Repeat this process until you are happy with the Threshold Value
 
+
+## Selecting Legs
+You may not want to process all the legs that SkyComb Analyst has detected. 
+For example, the first leg may be the drone moving to the start of the search grid. 
+If you want to de-select Leg "A", then ctrl-click on the Leg "A" button. 
+This will change the "From (Secs)" field. 
+ 
+Likewise, the last leg may be the drone moving back to the launch point.  
+This will change the "To (Secs)" field. 
+
+You can select the set of legs to process by clicking (select), ctrl-clicking (deselect), and shift-clicking (add) on the Leg buttons.
+You must select a contiguous range of legs like "B" to "N" - you can't deselect a leg to give a hole in the middle of the range.  
+
 Click "Save" to save all settings to the DataStore.
 
 
 # Processing the new Drone Video
 You are ready to process the video:
-- Click the "All" button in the Leg column. This will set the "From/To (Secs)" fields. 
+- Click the "All" Legs button (or select the range of Legs you want to process).
 - Set the "Process" to "Comb". 
 - Set the "Speed" to "Fast". 
 - Click "Save"
