@@ -113,9 +113,11 @@ Having configued the above parameters which are specific to your drone and fligh
 - Click "Save"
 - Click "Run"
 
-## Main Progress Indicator
-While the video image process is being run, the screen will show a progress indicator at bottom left.
-A sequence of progress messages are shown:
+## Progress Indicators
+While the video image process is being run:
+- The video frame(s) currently being processed, annotated with any objects found, are shown. Note: If the Speed is set to "Max" speed then the UI is only updated every 100 frames. This is the fastest processing mode.
+- Various graphs in are updated to show the position of the drone and any objects found.
+- A sequence of progress messages progress at bottom left of the page.
 | Message    | Description |
 | ---------- | ----------- |
 | Loading    | The video meta-data is loaded and the entire flight data files (if any) are loaded & Drone Speed, Altitude and Path graphs are displayed |
@@ -124,24 +126,13 @@ A sequence of progress messages are shown:
 | Finished   | Shows total elapsed time (including loading, processing, UI updating and saving). |
 | Objects    | Number of objects and significant objects detected is shown |
 
-Once the processing has finished, the updated video and spreadsheet files are written to disk. This can take a few seconds.
 
-## Other Progress Indicators
-As the video is being processing:
-- The video frame(s) currently being processed, annotated with any objects found, is displayed in the UI.
-- Various graphs in the UI are updated to show the position of the drone and any objects found.
-
-Note: If the Speed is set to "Max" speed then the UI is only updated every 100 frames. This is the fastest processing mode.
-
-## The final output
-When the image processing run has finished, in the UI:
-- The main progress indicator is updated
-- Various graphs are updated
-- A list detailing the objects found is displayed
+# The output
+When the image processing run has finished, the object list appears:
 
 ![Main form](./Static/UIExample.png?raw=true "Main form")
 
-Also, these files are saved on disk:
+Also, these files are automatically saved on disk:
 - The annotated thermal video is saved to a file named InputFileName_SkyComb.mp4
 - Much thermal & optical meta-data, drone flight path and altitude data, ground and tree-top elevation, objects detected data is saved to a spreadsheet file named InputFileName_SkyComb.xls
 
@@ -149,9 +140,7 @@ The [DataStore](./DataStore.md) page has more detail on the spreadsheet contents
 
 
 # Viewing all objects found
-After the run is completed, the informatio generated about the objects found is automatically stored in the DataStore.
-
-The information is also shown in the user interface. For example, the objects are shown on the Flight Path graph. 
+After the run is completed, the objects are shown on the Flight Path graph in orange and red. 
 Clicking on the "pop-out" button above the Flight Path graph gives this expanded view:
 
 ![DroneFlightPathForm](./Static/DroneFlightPathForm.png?raw=true "Drone Flight Path Form")
@@ -175,3 +164,7 @@ The object features are shown in the list at bottom right.
 This page "loops" through the object feature data, so you can see the order the data was collected in. 
 You can click the "Pause" button to stop or start this looping.
 
+# Viewing the object information later
+After processing your video, and viewing the objects, you can close down the SkyComb Analyst.
+If you come back later, start up the SkyComb Analyst, and select the same video, the object information is loaded from the DataStore.
+You can review the object data without reruning the image processing step.
