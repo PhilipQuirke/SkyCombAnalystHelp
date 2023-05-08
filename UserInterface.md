@@ -156,10 +156,13 @@ Clicking on the "pop-out" button above the Flight Path graph gives this expanded
 
 ![DroneFlightPathForm](./Static/DroneFlightPathForm.png?raw=true "Drone Flight Path Form")
 
-Summary stastics about the object population are shown on the left.
+Summary statistics about the object population are shown on the left.
 
-#Viewing individual objects found
-After the run is completed, a list showing all the objects found.
+Using the "Show" radio buttons, you can change background on the flight path to show either the surface (aka tree-top, in shades of green), the ground (in shades of brown), or the area imaged by the drones thermal video camera.   
+
+
+# Viewing individual objects found
+After the run is completed, on the main form, the list shows all the objects found.
 Clicking on the "pop-out" button at top-left of this list opens the Object Explorer form:
 
 ![Object Explorer](./Static/ObjectExplorer.png?raw=true "Object Explorer")
@@ -169,6 +172,6 @@ This page allows you to select and focus in on any single object & review much o
 Each object has been detected over several video frames. Each frame generated a "Feature" associated with the object. 
 The object features are shown in the list at bottom right.
 
-This form "loops" through the object feature data, so you can see the order the data was collected in. 
+This page "loops" through the object feature data, so you can see the order the data was collected in. 
 You can click the "Pause" button to stop or start this looping.
 
