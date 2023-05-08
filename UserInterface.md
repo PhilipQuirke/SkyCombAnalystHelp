@@ -11,7 +11,7 @@ This page assumes you have already collected data by flying a drone mission as e
 This page details more about the application user interface and how to use it.
 
 
-# Getting Started with new drone flight data
+# Loading new drone flight data
 Run the SkyComb Analyst tool. 
 
 ## Selecting a Video
@@ -77,7 +77,7 @@ The altitude graph this  flight are shown four times, demonstrating how the diff
 Click "Save" to save all settings to the spreadsheet.
 
 
-# Image Processing Settings
+# Processing new Drone Video
 
 ## Process
 The [Process](./Process.md) page describes the supported image processing algorithms. 
@@ -131,7 +131,7 @@ As the video is being processing:
 - The video frame(s) currently being processed, annotated with any objects found, is displayed in the UI.
 - Various graphs in the UI are updated to show the position of the drone and any objects found.
 
-Note: If the Speed is set to "Max" speed then the UI is only updated every 100 frames. This is the fastest mode.
+Note: If the Speed is set to "Max" speed then the UI is only updated every 100 frames. This is the fastest processing mode.
 
 ## The final output
 When the image processing run has finished, in the UI:
@@ -146,21 +146,23 @@ Also, these files are saved on disk:
 The [DataStore](./DataStore.md) page has more detail on the spreadsheet contents, purpose and usage.
 
 
-# Exploring the objects found
-The run has likely generated much data about the many objects found.
-This data can be viewed and explored (without need to rerun the above image processing step.
+# Viewing all objects found
+After the run is completed, the informatio generated about the objects found is automatically stored in the DataStore.
 
-## The Datastore spreadsheet
-Much of this information is automatically stored in the spreadsheet (aka DataStore).
-The spreadsheet can be used to explore the data in depth.
+The information is also shown in the user interface. For example, the objects are shown on the Flight Path graph. 
+Clicking on the "pop-out" button above the Flight Path graph gives this expanded view:
 
-## The Object Explorer form
-After the run is completed, a list showing the objects found is displayed in the UI.
+![DroneFlightPathForm](./Static/DroneFlightPathForm.png?raw=true "Drone Flight Path Form")
+
+Summary stastics about the object population are shown on the left.
+
+#Viewing individual objects found
+After the run is completed, a list showing all the objects found.
 Clicking on the "pop-out" button at top-left of this list opens the Object Explorer form:
 
 ![Object Explorer](./Static/ObjectExplorer.png?raw=true "Object Explorer")
 
-This form allows you to select and focus in on a single object & review much of the data associated with that object.
+This page allows you to select and focus in on any single object & review much of the data associated with that object.
 
 Each object has been detected over several video frames. Each frame generated a "Feature" associated with the object. 
 The object features are shown in the list at bottom right.
