@@ -108,12 +108,12 @@ We strongly recommend you test your flight path before your actual data collecti
 - Have the drone autonomously "test" fly the full planned flight path, during the day, with the camera pointing **horizontally**, so you can manually monitor the flight for unexpected obstacles, and confirm it is safe to fly this path at this height.
 - Do not change the programmed flight path before the data collection mission.
 
-**Warning**: **NEVER** fly a night-time mission that you have not previously fully tested as detailed above
+**Warning**: **NEVER** fly a night-time mission that you have not previously fully tested as detailed above.
 The authors ignored this rule just once and damaged a drone:
 - We had flown a test flight during the daylight, assessed a safe height, etc.
 - But between the daytime test flight and night flight, we extended the programmed search pattern to cover more ground to gather more data, under the strong belief that there were no taller trees in the extended area. 
 - Our belief was wrong. At 10pm, our drone hit a tall tree. The tree only became visible seconds before impact. We had insufficient time to react. 
-- The search for the downed drone had to start immediately, at 10:30pm, while the drone battery still had power and the drone lights would help our search. We retrieved the damaged drone as much by luck as by good management. The process was stressful and risky and was avoidable. 
+- The search for the downed drone had to start immediately, at 10:30pm, while the drone battery still had power and the drone lights would help our search. By good luck, we retrieved the damaged drone from deep grass. The process was stressful, risky, avoidable and costly. 
 
 
 # Flying a Thermal Data Collection Mission Safely
