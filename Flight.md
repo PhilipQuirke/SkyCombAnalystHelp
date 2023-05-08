@@ -12,17 +12,18 @@ This document outlines how best to fly your drone to collect high quality data f
 
 
 # Recommendations
-The SkyComb Analyst tool supports collecting data on animal populations in a **repeatable, robust, safe** way.
-Aligned to this goal, this page contains several recommendations on how to fly data collection missions.
-Each is explained in detail below, but in summary the recommendations are:
-- For most of the flight, fly in straight lines.
-- Decide on the best/safest height above the surface.
+Here are several recommendations on how to fly data collection missions, to optimse detection of 
+animals in a **repeatable, robust, safe** way. Each recommendation is explained in detail later, but in summary they are:
 - Decide whether to fly the data collection mission during the Day, at Dusk, at Dawn or at Night.
+- Decide on the best/safest height above the surface, and test it.
+- Pre-prepare and use programmed flight paths.  
+- Test the programmed flight plan fully before the data collection flight.
 - Start and end video recording when the drone is on ground.
+- For most of the flight, fly in straight lines.
 - For most of the flight, have the video cameras pointing straight down.
 - Record the thermal video in gray scale (not say in a "red is hot" mode).
-- Pre-prepare and use programmed flight paths.  
-- Test flight plans fully before the data collection flight
+ 
+The SkyComb Analyst tool works best when these recommendations are followed.
 
 
 # Safety first
@@ -117,7 +118,15 @@ The authors ignored this rule just once and damaged a drone:
 - The search for the downed drone had to start immediately, at 10:30pm, while the drone battery still had power and the drone lights would help our search. By good luck, we retrieved the damaged drone from deep grass. The process was stressful, risky, avoidable and costly. 
 
 
-# Flying a Thermal Data Collection Mission Safely
+# Copying data from your drone to your laptop
+Back at home, transfer the video and flight log files to your laptop or similar. 
+This usually involves connecting your drone to your laptop with a data cable to access the drone internal physical storage.
+Copy the drone files to your computer hard-disk.
+
+Then run the SkyComb Analyst tool on your new data as described in the [UserInterface](./USerInterface.md) page.
+
+
+# Summary: Flying a Thermal Data Collection Mission Safely
 In summary, to minimise risk to the drone, we recommend this process:
 
 1. Plan the mission at home:
@@ -136,10 +145,3 @@ In summary, to minimise risk to the drone, we recommend this process:
 	- Transfer the new videos and flight log files from your drone to your laptop or similar. 
 	- Process the new file using the SkyComb Analyst tool as described in the [UserInterface](./UserInterface.md) page.
 
-
-# Copying data from your drone to your laptop
-Back at home, transfer the video and flight log files to your laptop or similar. 
-This usually involves connecting your drone to your laptop with a data cable to access the drone internal physical storage.
-Copy the drone files to your computer hard-disk.
-
-Then run the SkyComb Analyst tool on your new data as described in the [UserInterface](./USerInterface.md) page.
