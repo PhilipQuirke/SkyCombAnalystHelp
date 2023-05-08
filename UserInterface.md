@@ -6,13 +6,13 @@ The [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalyst/) tool
 helps environmentalists, scientists & software developers make a drone into a scientific tool.
 The primary use case is a drone with thermal and optical camera, flying over wilderness, detecting animals. 
 
-This page assumes you have already collected data by flying a drone mission as explained in the [Flight](./Flight.md) page
+This page assumes you have already collected video data by flying a drone mission as recommended in the [Flight](./Flight.md) page. 
+This page details how to use SkyComb Analyst to analyse the video.
 
-This page details more about the application user interface and how to use it.
 
-
-# Loading new drone flight data
+# Loading a new Drone Video
 Run the SkyComb Analyst tool. 
+
 
 ## Selecting a Video
 Click "Select" and choose one of your thermal or optical video files:
@@ -26,6 +26,7 @@ Click "Select" and choose one of your thermal or optical video files:
 ![Main form](./Static/UIExamplePostLoad.png?raw=true "Main form")
 
 At the same time, a spreadsheet containing the above data, graphs etc will be automatically created on disk. 
+This spreadsheet is called the [DataStore](./DataStore.md)
 The spreadsheet name is based on the thermal video file name but with the suffix "_SkyComb.xlsx"
 
 
@@ -53,7 +54,7 @@ If the camera was pointing:
 - straight forward (horizontally), then set "Camera down angle" to 0.
 - half way between straight down and straight forward, then set "Camera down angle" to 45.  
 
-Click "Save" to save all settings to the spreadsheet.
+Click "Save" to save all settings to the [DataStore](./DataStore.md)
 
 
 ## On Ground At 
@@ -74,14 +75,16 @@ The altitude graph this  flight are shown four times, demonstrating how the diff
 
 ![On Ground At Examples](./Static/OnGroundAtExamples.png?raw=true "On Ground At Examples")
 
-Click "Save" to save all settings to the spreadsheet.
+Click "Save" to save all settings to the DataStore.
 
 
-# Processing new Drone Video
+# Configuring the Image Processing Settings
+
 
 ## Process
 The [Process](./Process.md) page describes the supported image processing algorithms. 
 Leave the value set to the recommended default value "Comb".
+
 
 ## Threshold value
 Thermal image processing algorithms must look at an image and decide which pixels are "hot" 
@@ -104,14 +107,17 @@ To calculate the best threshold value for your video:
 - Try decreasing the "Threshold value" to say "230". Click "Run" and watch the object. Was the object outline better defined?
 - Repeat this process until you are happy with the Threshold Value
 
+Click "Save" to save all settings to the DataStore.
 
-# Process all the legs
-Having configued the above parameters which are specific to your drone and flight, you are ready to process the video.
+
+# Processing the new Drone Video
+You are ready to process the video:
 - Click the "All" button in the Leg column. This will set the "From/To (Secs)" fields. 
 - Set the "Process" to "Comb". 
 - Set the "Speed" to "Fast". 
 - Click "Save"
 - Click "Run"
+
 
 ## Progress Indicators
 While the video image process is being run:
@@ -124,7 +130,6 @@ While the video image process is being run:
 | Processing | Frame by frame loading, processing & displaying of the video(s) |
 | Saving     | The video and spreadsheet (if any) are saved |
 | Finished   | Shows total elapsed time (including loading, processing, UI updating and saving). |
-| Objects    | Number of objects and significant objects detected is shown |
 
 
 # The output
@@ -134,13 +139,11 @@ When the image processing run has finished, the object list appears:
 
 Also, these files are automatically saved on disk:
 - The annotated thermal video is saved to a file named InputFileName_SkyComb.mp4
-- Much thermal & optical meta-data, drone flight path and altitude data, ground and tree-top elevation, objects detected data is saved to a spreadsheet file named InputFileName_SkyComb.xls
-
-The [DataStore](./DataStore.md) page has more detail on the spreadsheet contents, purpose and usage.
+- Much thermal & optical meta-data, drone flight path and altitude data, ground and tree-top elevation, objects detected data is saved to the [DataStore](./DataStore.md)
 
 
-# Viewing all objects found
-After the run is completed, the objects are shown on the Flight Path graph in orange and red. 
+## Viewing all objects found
+In the main page, the objects are shown on the Flight Path graph in orange and red. 
 Clicking on the "pop-out" button above the Flight Path graph gives this expanded view:
 
 ![DroneFlightPathForm](./Static/DroneFlightPathForm.png?raw=true "Drone Flight Path Form")
@@ -150,8 +153,8 @@ Summary statistics about the object population are shown on the left.
 Using the "Show" radio buttons, you can change background on the flight path to show either the surface (aka tree-top, in shades of green), the ground (in shades of brown), or the area imaged by the drones thermal video camera.   
 
 
-# Viewing individual objects found
-After the run is completed, on the main form, the list shows all the objects found.
+## Viewing individual objects found
+In the main page, the list shows all the objects found.
 Clicking on the "pop-out" button at top-left of this list opens the Object Explorer form:
 
 ![Object Explorer](./Static/ObjectExplorer.png?raw=true "Object Explorer")
@@ -161,10 +164,10 @@ This page allows you to select and focus in on any single object & review much o
 Each object has been detected over several video frames. Each frame generated a "Feature" associated with the object. 
 The object features are shown in the list at bottom right.
 
-This page "loops" through the object feature data, so you can see the order the data was collected in. 
+This page "loops" through the object features, so you can see the order the data was collected in. 
 You can click the "Pause" button to stop or start this looping.
 
-# Viewing the object information later
-After processing your video, and viewing the objects, you can close down the SkyComb Analyst.
-If you come back later, start up the SkyComb Analyst, and select the same video, the object information is loaded from the DataStore.
-You can review the object data without reruning the image processing step.
+
+# Later Viewing
+If you close down SkyComb Analyst, and come back later, and select the same video, the flight and object information is quickly loaded from the DataStore, and shown.
+That is, you can review the flight and object data without reruning the image processing step.
