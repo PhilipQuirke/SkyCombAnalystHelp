@@ -23,7 +23,7 @@ Click "Select" and choose one of your thermal or optical video files:
 - SkyComb will default the "From/To (Secs)" fields matching the first and last legs found.
 - Images from the thermal and optical videos at the "From Secs" position will be displayed.
 
-![Main form](./Static/UIExample.png?raw=true "Main form")
+![Main form](./Static/UIExamplePostLoad.png?raw=true "Main form")
 
 At the same time, a spreadsheet containing the above data, graphs etc will be automatically created on disk. 
 The spreadsheet name is based on the thermal video file name but with the suffix "_SkyComb.xlsx"
@@ -138,6 +138,8 @@ When the image processing run has finished, in the UI:
 - The main progress indicator is updated
 - Various graphs are updated
 - A list detailing the objects found is displayed
+
+![Main form](./Static/UIExample.png?raw=true "Main form")
 
 Also, these files are saved on disk:
 - The annotated thermal video is saved to a file named InputFileName_SkyComb.mp4
