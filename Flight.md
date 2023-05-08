@@ -43,6 +43,7 @@ Flight paths containing several long legs are recommended.
 
 ![Drone Flight Path Example](./Static/DroneFlightPathExample.png?raw=true "Drone Flight Path Example")
 
+We recommend a "grid search" path like the one on the left - this maximises the area covered. The path on the right is pretty.
 
 # Decide on the best/safest height above the surface
 Drone thermal cameras have a lower resolution than their optical camera.
