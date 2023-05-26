@@ -33,6 +33,7 @@ These pages provide more detail:
 - The [Errors](./Errors.md) page describes all known error sources & how they are minimised. 
 - The [Ground](./Ground.md) page explains how detailed ground and treetop elevation data is obtained and displayed.
 - The [Process](./Process.md) page explains the image processing options the application supports.
+- The [Category](./Category.md) page explains how users manually categorise the animals detected.
 
 
 # Source Code
@@ -46,6 +47,7 @@ The main source files are:
 - GroundSpace folder: Refer [Ground](./Ground.md)
 - ProcessModel folder: Refer [Process](./Process.md) 
 - ProcessLogic folder: Refer [Process](./Process.md) 
+- CategorySpace folder: Refer [Category](./Category.md) 
 - RunSpace folder: Classes to run a process model over an image or video(s)
 - UserInterface folder: Forms used by the application including MainForm.cs the main UI page
 
@@ -55,6 +57,7 @@ Developed using:
 - Emgu, a C# wrapper around the OpenCV image processing library. Refer nuget package in project
 - EPPlus, a spreadsheet tool. Refer nuget package in project
 - Visual Studio Community 2022 downloaded from https://visualstudio.microsoft.com/vs/community/
+
 
 # Caveats
 This application has only been extensively tested with:
