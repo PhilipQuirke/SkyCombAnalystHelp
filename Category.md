@@ -29,6 +29,19 @@ Each master category has these fields:
 
 Clicking "Save" stores the master categories to the DataStore in tab "Cat1".
 
+## Default Master Categories
+The default set of master categories are:
+- Animal
+- Bird
+- Cat
+- Cow
+- Dog
+- Inanimate (Include = "No")
+- Person (Include = "No")
+- Pig
+- Possum
+- Stone
+- Water
 
 # Object Categories
 The "pop out" icon on the left above the objects list opens the "Object Explorer" form. 
