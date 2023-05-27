@@ -8,6 +8,7 @@ processes data collected by drones equipped with thermal and optical video camer
 
 For each animal detected it shows their size, temperature & height above ground. 
 It generates (thermal & optical) close up videos of each animal.
+You can category the animals and exclude objects you are not interested in.
 
 ![Object Explorer](./Static/ObjectExplorer.png?raw=true "Object Explorer")
 
