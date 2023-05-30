@@ -3,7 +3,7 @@
 
 # Overview
 The [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalyst/) tool 
-helps environmentalists, scientists & software developers uses drone as a scientific tool.
+helps environmentalists, conservationalists & scientists use a drone as a scientific tool.
 
 The primary use case is a drone with thermal and optical camera, flying over wilderness, detecting animals. 
 This document outlines how best to fly your drone to collect high quality data for this use case.
