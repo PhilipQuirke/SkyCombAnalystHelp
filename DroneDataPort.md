@@ -18,7 +18,7 @@ You can open the cover to reveal the USB port. The actual type of USB connection
 
 For the Mavic 2 Enterprise it is a USB C connector. You will need a cable to connect the drone to your computer:
 
-![USB C Cable](./Static/DroneDataUsbCable.jpg?raw=true "USB C Cable")
+![USB C Cable](./Static/DroneDataUsbCable.png?raw=true "USB C Cable")
 
 After connecting the drone data port to your computer using the USB cable, you can access the drone internal memory stick just like another other memory stick.
 
@@ -29,7 +29,7 @@ The naming of files depends on your drone model and whether it has one or two ca
 
 For the Mavic 2 Enterprise, which has a thermal and an optical camera, a single recording creates 4 files:
 
-![Drone Data Files](./Static/DroneDataFiles.jpg?raw=true "Drone Data Files")
+![Drone Data Files](./Static/DroneDataFiles.png?raw=true "Drone Data Files")
 
 The four files have similar (but not exactly the same) creation date / times.
 - The largest file is the optical video.
