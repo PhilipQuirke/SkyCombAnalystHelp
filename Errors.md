@@ -1,14 +1,14 @@
 # [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) - Error Sources
 
 
-# Overview
+## Overview
 The SkyComb Analyst tool helps environmentalists, conservationalists & scientists use a drone as a scientific tool.
 
 A key technical goal in the creation of this tool was to minimise the negative impact of various sources of error. 
 This document outlines these sources of error & how SkyComb Analyst minimses them. 
 
 
-# Drone Overview
+## Drone Overview
 A drone is a complex collection of multiple sub-systems (motors, accelerometers, video cameras, camera gimbal, GPS etc). 
 Each sub-system provides data and each has its own error source(s).
 The drone must integrate these data feeds, make and execute decisions, and store selected data as videos and flight logs - all in real-time.
@@ -16,9 +16,9 @@ The drone must integrate these data feeds, make and execute decisions, and store
 This document is not a critique of drones or drone engineers. It is instead a survery of real world error sources.
 
 
-# Drone Location
+## Drone Location
 
-## Drone Location Terminology
+### Drone Location Terminology
 Drones usually obtain their location from GPS data and record the location data as 
 [Longitude & Latitude](https://en.wikipedia.org/wiki/Geographic_coordinate_system#Latitude_and_longitude) coordinates.
 For example, in New Zealand, a sample location is Longitude 174.7030220 and Latitude -36.8918260
@@ -32,7 +32,7 @@ The origin of this measurement can be chosen at will.
 For each drone flight, SkyComb Analyst automatically chooses a nearby land point, that ensures that all drone locations are small positive numbers. 
 For a specific drone flight, SkyComb Analyst converted the above Longitude/Latitude to Northing 26.30m, Easting 10.67m.
 
-## Drone Location Accuracy
+### Drone Location Accuracy
 The primary data source for the location of the drone is GPS data.
 
 Caveat: A drone may record a line of data in its flight log 30 times a second. 
@@ -49,9 +49,9 @@ as new GPS data becomes available.
 SkyComb Analyst automatically smooths the location data.
 
 
-# Ground & Surface Elevation
+## Ground & Surface Elevation
 
-## Ground & Surface Elevation Terminology
+### Ground & Surface Elevation Terminology
 It is important to understand the difference between these two terms:
 
 - Ground Elevation: The height of the *ground* above sea level. 
@@ -59,7 +59,7 @@ It is important to understand the difference between these two terms:
 
 If the Ground Elevation is 170 meters, and the Surface Elevation is 177 meters, then the trees are 7 meters tall.
  
-## Ground & Surface Elevation accuracy
+### Ground & Surface Elevation accuracy
 Drones can **not** provide ground or surface elevation data. An alternative source of information is needed
 
 Many countries have accurately mapped part or all of their land using a technology called 
@@ -75,9 +75,9 @@ SkyComb Analyst can automatically integrate Lidar data for the area under a dron
 Caveat: Currently only New Zealand Lidar data has been integrated so far.
 
 
-# Drone Altitude vs Height
+## Drone Altitude vs Height
 
-## Drone Altitude vs Height terminology 
+### Drone Altitude vs Height terminology 
 Drones state their vertical distance above the ground using two different terms:
 - Drone **Altitude**: The height of the drone above **Sea level**. Say 190 meters
 - Drone **Height**: The height of the drone above the **Sea level** where it started its flight. Say 20 meters
@@ -86,7 +86,7 @@ For example, a drone placed on the ground in front of you, and switched on, will
 
 While drones can show their vertical distance above the ground using either Altitude or Height, the underlying data is the same.
 
-## Drone Altitude & Height systemic error
+### Drone Altitude & Height systemic error
 Most drones calculate their Altitude/Height using 
 [barometers](https://en.wikipedia.org/wiki/Barometer/)
 . A barometer measures air pressure. Air gets thinner as the drone rises. 
@@ -103,7 +103,7 @@ SkyComb Analyst **can** automatically correct this "systemic" error using Lidar 
 This correction is accurate to within +/- 0.2m at the drone flight "start" and "end" points, 
 but during the flight, as the drone is inherently an unstable flight platform, the height is much less accurately known.
 
-## Drone Altitude & Height variable error
+### Drone Altitude & Height variable error
 When say a storm front sweeps in, the air pressure changes. 
 Barometers are effected by these air pressure changes, and the impact over the duration of a drone flight can be significant. 
 
@@ -115,16 +115,16 @@ If the operator uses the recommended flight protocols,
 SkyComb Analyst **can** automatically spread this variable error evenly over the flight duration.
 This seems the best way to minimise the impact of this error on height data.
 
-## Drone Altitude & Height overall error
+### Drone Altitude & Height overall error
 Even with these enhancements, the drone height data is still the least accurate of all the drone data streams.
 
 SkyComb Analyst has another automated way (described in a later section) to further refine the drone height data.
 
 
 
-# Drone Logs
+## Drone Logs
 
-## Drone Log Interpretation
+### Drone Log Interpretation
 Drone flight logs are generally text files. The format depends on the drone model, but each new data set is stored on 1 to a few lines of text. 
 
 Flight logs are updated in real-time. The drone periodically adds a new data set to the end of the text file - generally at the same rate as the video frame rate. 
@@ -138,7 +138,7 @@ When a particular attribute **changes** assume that the related sub-system provi
 SkyComb Analyst understands this and compensates for it.
 Caveat: SkyComb Analyst has only been extensively tested with a DJI M2E drone. 
 
-## Drone Log Gaps
+### Drone Log Gaps
 On rare occassions, the sub-system that updates the flight log may fail resulting in a gap (lack of data) in the flight log.
 
 For example, a drone flight in New Zealand the flight log had a 1.5 second gap in the data. 
@@ -147,26 +147,26 @@ During this period, the drone continued to fly in the expected direction, at the
 SkyComb Analyst automatically copes with these gaps.
 
 
-# Optical and Thermal Videos
+## Optical and Thermal Videos
 This section relates to drones that have both an optical and a thermal camera. 
 
-## Video Resolution
+### Video Resolution
 The optical camera has a higher resolution than the thermal camera e.g. 1920x1080 vs 640x360. 
 
 SkyComb Analyst automatically copes with this.
 
-## Frame Rate
+### Frame Rate
 The optical camera has a higher frame rate than the thermal camera e.g. 30 frames/second vs 8 frames/second
 
 SkyComb Analyst automatically copes with this.
 
-## Field of Vision
+### Field of Vision
 The optical camera has a great field of vision than the thermal camera e.g. 85 degrees vs 57 degrees
 
 SkyComb Analyst copes with this automatically for the DJI M2E drone by hard-coding ThermalVideo.HFOVDeg & OpticalVideo.HFOVDeg.
 Caveat: For other drone models, other values may need to be hard-coded.
 
-## Optical and Thermal Synchronisation - Part 1
+### Optical and Thermal Synchronisation - Part 1
 The two cameras are distinct sub-systems, likely manufactured by different companies:
 - The thermal video camera is simpler: It has a lower resolution, and saving the data in real-time is quick.
 - The optical video camera is more complex: The resolution, colour palette, and frame frame are higher. The resulting image must be encoded (compressed) before storage. 
@@ -179,7 +179,7 @@ These factors result in differences:
  
 SkyComb Analyst copes with this automatically.
 
-## Optical and Thermal Synchronisation - Part 2
+### Optical and Thermal Synchronisation - Part 2
 The differences between the two cameras can result in the first frame of each video being captured at a slightly different time. 
 That is, if you play the two videos side by side, one video will lag behind the other one. 
 
@@ -188,7 +188,7 @@ Refer to the [Flight](./Flight.md#optical-and-thermal-video-synchronisation) pag
 After the operator enters the delay value in SkyComb Analyst, SkyComb Analyst stores the value 
 in the FlightConfig.cs setting ThermalToOpticalVideoDelayS, and handles the sychronization automatically. 
 
-## Thermal Video Inconsistency
+### Thermal Video Inconsistency
 On rare occassions, the thermal video data is internally inconsistent. 
 Say you set the video frame position to say frame 100 and do 400 "get next frame" calls, you get a certain final frame image. 
 If instead you set the video frame position to frame 500 (being 100 + 400) can you will get a slightly different frame image. 
@@ -201,10 +201,10 @@ It **consistently** processes the thermal video in all use cases.
 Specifically, it resets the video frame position at the start of each leg, 
 and then advances the video frame by frame to the point it is interested in.    
 
-# Gimbal 
+## Gimbal 
 The gimbal physically holds the camera(s) and compensates for small drone variable in yaw, pitch & roll, steadying the video image.
 
-## Gimbal lag on turning
+### Gimbal lag on turning
 When the drone is flying in a straight line, and has to cope with say with changes in the cross-wind strength, this works well.
 
 The gimbal is a distinct sub-system of the drone, and not perfectly co-ordinated with other drone sub-systems in real time.
@@ -217,7 +217,7 @@ While the flight log will contain the drone direction, information on the gimbal
 
 SkyComb Analyst copes with this gimbal lag automatically.
 
-## Camera down angle
+### Camera down angle
 The gimbal could be pointing the cameras at the horizon, or straight down at the ground, or somewhere inbetween.
 
 This angle is key to SkyComb Analyst calculations. The drone flight log often does **not** contain this angle. 
@@ -230,18 +230,18 @@ Caveat: The SkyComb flight protocol recommends the camera be pointed straight do
 SkyComb Analyst has mostly been tested on flights with this camera configuration.
 
 
-# Thermal Video Processing Errors
+## Thermal Video Processing Errors
 The above sections detail errors that can be quickly analysed when loading the drone flight data and associated Lidar data. 
 That is, the above corrections are implemented without relying on the contents of the videos.
 
 This section details errors related to the processing of the thermal video.
 
-## Thermal Video Resolution
+### Thermal Video Resolution
 The SkyComb Analyst image processing algorithms are limited by the resolution and frame rate of the thermal video. 
 While the thermal video may have a resolution of 640x360, the underlying sensor may have a lower resolution, 
 with some on-camera hardware algorithm generated the higher-resolution video.
 
-## Thermal Threshold
+### Thermal Threshold
 Thermal image processing algorithms must look at an image and decide which pixels are "hot" 
 and which are "not hot" using a "threshold value". 
 
@@ -249,7 +249,7 @@ SkyComb Analyst can't automatically detect or calculate the "best" threshold val
 SkyComb Analyst provides a way for the operator to determine the best value.
 Once the operator has entered this value, SkyComb Analyst applies the threshold automatically.
 
-## Drone Height & Object Location
+### Drone Height & Object Location
 The "Comb" image processing algorithm detects objects - on the ground or in trees above ground.
 
 Frame by frame, using the estimated drone height, SkyComb Analyst calculates the Northing / Easting location of the object.
@@ -268,7 +268,7 @@ There is good reason to believe that this approach is correctly calculating the 
 
 These improved drone height per flight leg  are "pushed back" into the drone data for future use.
 
-## Drone Height Leg Variance
+### Drone Height Leg Variance
 As explained in the "Drone Height" section it is common for the raw drone height data to be wrong.
 
 What is somewhat surprising is that, for a given drone flight, where the drone is instructed to fly at a "constant" height, 
@@ -284,7 +284,7 @@ before finally flattening to fly steadily down the next leg.
 The drone is cornering in 3D with only its internal accelerometers to tell it how it has changed direction, speed, etc. 
 It is very possible that this cornering introduces error into the drone height calculations.
 
-## Object Height
+### Object Height
 The "Comb" image processing algorithm takes the same objects detected above, and determines whether they are on the ground or in trees above ground.
 
 It does this using the [Parallax](https://en.wikipedia.org/wiki/Parallax) method. 
