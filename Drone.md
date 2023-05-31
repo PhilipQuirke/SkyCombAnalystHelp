@@ -1,18 +1,17 @@
-# [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) - Drone
+# [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) - Drone Terminology
 
 ## Overview
-This ReadMe covers the purpose and content of the DroneSpace folder of the SkyComb Analyst application.
-(Refer the root-level [ReadMe](./ReadMe.md) for an overview of the whole application.)
-DroneSpace covers drone flight logs, video metadata, ground elevation, etc. Also the Drone source code.
+This ReadMe covers aspects of the drone flight logs, video metadata, legs, ground elevation & terminology.
+Refer the root-level [ReadMe](./ReadMe.md) for an overview of the whole tool.
 
 
 ## Out of Scope
 This page does <u>not</u> cover:
 - How to fly your drone. We assumes you already know how to fly your drone.
 - How to prepare for and run drone data collection flights. Refer [Flight](./Flight.md) page.
-- How to use the SkyComb Analyst tool to analyse the data collected. Refer [UserInterface](./UserInterface.md)
-- The inaccuracies inherent in drone flight log data. Refer [Errors](./Errors.md) page.
 - How to copy video and flight log files from your drone. Refer [DroneDataPort](./DroneDataPort.md) page.
+- The inaccuracies inherent in drone flight log data. Refer [Errors](./Errors.md) page.
+- How to use the SkyComb Analyst tool to analyse the data collected. Refer [UserInterface](./UserInterface.md)
 
 
 ## Drone Input
@@ -26,8 +25,6 @@ For example, the Mavic 2 Enterprise (M2E) Dual drone, in a single flight can gen
 - DJI_0054.mp4		Thermal (aka IR) camera video, for the same time span as the optical video
 - DJI_0054.srt		Drone flight log (location, altitude, orientation, color palette) for thermal video
 The format of the two flight logs differ somewhat.
-
-The [DroneDataPort](./DroneDataPort.md) page explains how to copy video and flight log files from your drone to your computer.
 
 
 ## Height, Altitude & Elevation terminology
