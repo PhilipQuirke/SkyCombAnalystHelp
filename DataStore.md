@@ -1,12 +1,12 @@
 # [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) - DataStore
 
-# Overview
+## Overview
 The SkyComb Analyst tool generates a lot of data and graphs about the drone flight, videos and object found. 
 This data is persisted in a spreadsheet called a DataStore. This page describes the DataStore and its uses. 
 (Refer the root-level [ReadMe](./README.md) for an overview of the whole tool.)
 
 
-# Purpose
+## Purpose
 The SkyComb Analyst tool generates a lot of data. 
 To help users view and post-analyze the data, the data is persisted (stored) in a spreadsheet (called a DataStore).
 The spreadsheet is very human-readable and includes graphs.
@@ -19,13 +19,13 @@ The DataStore is named InputFileName_SkyComb.xlsx and is created in the location
 
 A sample datastore is [here](./Static/DJI_0094_SkyComb.xlsx)
 
-# DataStore Structure
+## DataStore Structure
 The DataStore has 3 main parts:
 - **Files**: A single tab listing the input files read, and the output files created
 - **Drone**: The "Drone" tab and the following 7 tabs. The data in these tabs is calculated when the user selects the video. This data exists (and is saved to the DataStore) before any video image processing is run.
 - **Process**:  The "Process" tab and the following 5 or 6 tabs. This data only exists _after_ the video image processing is run.
 
-# User Interface controls
+## User Interface controls
 All the fields in the user interface editable by the user are persisted to the DataStore. 
 
 Two editable fields also impact the volume of data the tool persists: 
@@ -37,8 +37,9 @@ If later the user re-loads the same video, the tool looks for an existing InputF
 - The existing drone flight path, ground elevation data, surface elevation data, etc is loaded and re-used
 - The graphs etc are updated with the loaded data 
 
-# DataStore Tabs
+## DataStore Tabs
 The DataStore contain some or all of these tabs:
+- **Index**: Lists the spreadsheet tabs, their purpose, and date/time last updated
 - **Files**: Lists the input files read, and the output files created
 - **Drone**: Summarises the drone video metadata, drone flight path meta-data, ground elevations, surface elevations and other settings related to:
 	- **Sects1**: Lists the raw flight sections data detailing the drone flight. 
@@ -85,7 +86,7 @@ The DataStore contain some or all of these tabs:
 	- **Popln**: Object population summary statisitcs
 	
 
-# Creating / Updating the DataStores 
+## Creating / Updating the DataStores 
 A new spreadsheet is created in three parts:
 - When a video is selected, by clicking the 'Select File' button, the Files tab is populated and the spreadsheet is created.
 - Immediately, some initial calculations are done, much drone-specific data is calculated, several "drone" tabs created, and the spreadsheet updated.
