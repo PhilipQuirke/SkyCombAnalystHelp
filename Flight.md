@@ -1,7 +1,7 @@
 # [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) - Flight Recommendations 
 
 
-# Overview
+## Overview
 The SkyComb Analyst tool helps environmentalists, conservationalists & scientists use a drone as a scientific tool.
 
 The primary use case is a drone with thermal and optical cameras, flying over wilderness, detecting animals. 
@@ -10,7 +10,7 @@ This document outlines how best to fly your drone to collect high quality data f
 **Disclaimer**: This page does not tell you how to fly your drone. We assume you already know how to fly your drone. Your drone's safety is your responsibility.
 
 
-# Recommendations
+## Recommendations
 Here are several recommendations on how to fly data collection missions, to optimse detection of 
 animals in a **repeatable, robust, safe** way. Each recommendation is explained in detail later, but in summary they are:
 - Decide whether to fly the data collection mission during the Day, at Dusk, at Dawn or at Night.
@@ -25,7 +25,7 @@ animals in a **repeatable, robust, safe** way. Each recommendation is explained 
 The SkyComb Analyst tool works best when these recommendations are followed.
 
 
-# Safety first
+## Safety first
 Drones are expensive and somewhat fragile. This tool's authors are risk adverse.
 These recommendations balance good animal detection outcomes with keeping the drone safe.
 
@@ -34,7 +34,7 @@ One drone was hurt in the development of this tool (when we ignored the below re
 **Disclaimer**: These recommendations minimise but do not eliminate the risks of data collection. Your drone is your responsibility.
 
 
-# Fly mostly in straight lines
+## Fly mostly in straight lines
 Drones are unstable flying platforms with a lot of wobble / error in the data they produce. 
 Flying at a steady speed, in a steady direction, at a steady height reduces some of these errors.
 When the SkyComb Analyst tool detects that the drone is flying a **Leg** (steady speed, direction & height), 
@@ -45,7 +45,7 @@ Flight paths containing several long legs are recommended.
 
 We recommend a "grid search" path like the one on the left - this maximises the area covered. The path on the right is pretty.
 
-# Decide on the best/safest height above the surface
+## Decide on the best/safest height above the surface
 Drone thermal cameras have a lower resolution than their optical camera.
 Fly too high and the thermal camera will not have the resolution to detect small animals.
 Fly too low and you risk hitting a tree.
@@ -59,7 +59,7 @@ find the highest tree top in your flight plan area and record its height.
 Later, fly your data collection flight at 10 meters above the highest tree top.
 
 
-# Day, Dusk, Dawn or Night
+## Day, Dusk, Dawn or Night
 If your drone has both thermal and optical cameras:
 - The optical camera works well during the day, dawn and dusk, but not at night (due to low light levels).
 - The thermal camera works day or night. At night, the landscape is cold, improving the contrast between the landscape and living things.
@@ -73,7 +73,7 @@ Depending on the animals you want to collect data on, you may want to flight you
 The SkyComb Analyst authors flew day, dawn, dusk and night missions safely using the below advice. Our one drone crash ocurred when we ignored the recommendations on this page.
 
 
-# Pre-prepare and use programmed flight paths
+## Pre-prepare and use programmed flight paths
 Many drones support programmed flight paths. Once programmed, the flight plan can be run end-to-end automatically. 
 
 SkyComb recommends you pre-prepare and use programmed flight paths:
@@ -82,7 +82,7 @@ SkyComb recommends you pre-prepare and use programmed flight paths:
 - The same flight plan can be run year after year, allowing an "apples with apples" comparison of the animal population between years.
 
 
-# Start and end video recording when the drone is on ground.
+## Start and end video recording when the drone is on ground.
 Drones can calculate their **location** accurately, but often **can't** calculate their **height** accurately.
 (Refer the [Errors](./Errors.md) page for why.)
 
@@ -93,7 +93,7 @@ Where SkyComb Analyst has access to very-accurate ground elevation data provided
 SkyComb Analyst automatically improves drone height data accuracy using the start & end ground location elevations as reference points. 
 
 
-# For most of the flight have the video cameras pointing straight down
+## For most of the flight have the video cameras pointing straight down
 We recommend that during the data collection Legs of your missions, the camera be pointing straight (vertically) down. 
 
 The thermal camera can detect objects under some depth of foliage (depending on density of foliage, temperature of animal, etc).
@@ -102,7 +102,7 @@ A straight down orientation minimises the depth of foliage between the thermal c
 This camera angle gives the best accuracy when SkyComb Analyst is calculating the height of detected objects above ground.
 
 
-# Test your programmed flight paths
+## Test your programmed flight paths
 We strongly recommend you test your flight path before your actual data collection mission:
 - At the launch site, during the day, when visibility is good, fly the drone upwards manually, and then visually determine a safe height to fly the drone at. Record this height.
 - Update the programmed drone flight path to use the recorded safe height.
@@ -117,15 +117,15 @@ The authors ignored this rule just once and damaged a drone:
 - The search for the downed drone had to start immediately, at 10:30pm, while the drone battery still had power and the drone lights would help our search. By good luck, we retrieved the damaged drone from deep grass. The process was stressful, risky, avoidable and costly. 
 
 
-# Copying data from your drone to your laptop
+## Copying data from your drone to your laptop
 Back at home, transfer the video and flight log files to your laptop or similar. 
 This usually involves connecting your drone to your laptop with a data cable to access the drone internal physical storage.
-Copy the drone files to your computer hard-disk.
+Copy the drone files to your computer hard-disk as described in the [DroneDataPort](./DroneDataPort.md) page.
 
-Then run the SkyComb Analyst tool on your new data as described in the [UserInterface](./USerInterface.md) page.
+Then run the SkyComb Analyst tool on your new data as described in the [UserInterface](./UserInterface.md) page.
 
 
-# Summary: Flying a Thermal Data Collection Mission Safely
+## Summary: Flying a Thermal Data Collection Mission Safely
 In summary, to minimise risk to the drone, we recommend this process:
 
 1. Plan the mission at home:
