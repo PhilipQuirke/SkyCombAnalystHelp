@@ -1,6 +1,6 @@
 # SkyComb Analyst Help
 
-# Introduction
+## Introduction
 The SkyComb Analyst tool processes data collected by drones equipped with thermal and optical video cameras. It detects animals:
 
 ![FlightPathForm](./Static/DroneFlightPathForm.png?raw=true "Flight Path Form")
@@ -24,7 +24,7 @@ SkyComb Analyst provides an easy to use [interface](./UserInterface.md) that mak
 ![User Interface](./Static/UIExample.png?raw=true "User Interface")
 
 
-# Index
+## Index
 These pages provide more detail:
 - The [Flight](./Flight.md) page explains how to fly your drone missions to collect high-quality data.
 - The [UserInterface](./UserInterface.md) page explains how to use the SkyComb Analyst tool to analyse your drone flight data. 
@@ -36,23 +36,8 @@ These pages provide more detail:
 - The [Category](./Category.md) page explains how users manually categorise the animals detected.
 
 
-# Source Code
-The source code is written in C# and stored in [SkyComb Analyst Code](https://github.com/PhilipQuirke/SkyCombAnalyst/). 
-The main source files are:
-- CommonSpace folder: Shared utility classes
-- DrawSpace folder: Classes to annotate videos and to draw graphs in the UI
-- PersistModel folder: Refer [DataStore](./DataStore.md)
-- DroneModel folder: Refer [Drone](./Drone.md)
-- DroneLogic folder: Refer [Drone](./Drone.md)
-- GroundSpace folder: Refer [Ground](./Ground.md)
-- ProcessModel folder: Refer [Process](./Process.md) 
-- ProcessLogic folder: Refer [Process](./Process.md) 
-- CategorySpace folder: Refer [Category](./Category.md) 
-- RunSpace folder: Classes to run a process model over an image or video(s)
-- UserInterface folder: Forms used by the application including MainForm.cs the main UI page
-
-# Caveats
-This application has only been extensively tested with:
+## Caveats
+This tool has only been extensively tested with:
 - Data from a DJI Mavic 2 Enterprise (M2E) Dual drone. SkyComb Analyst is designed to support any drone, but other drone models may require some code changes around flight log parsing and loading. Refer [Drone](./Drone.md) for more details.
 - Data generated using the [Flight](./Flight.md) page data collection recommendations, especially: 1) the flight starts and ends on the ground and 2) the camera(s) are pointing straight down during the flight. SkyComb Analyst will support other flight configurations, but the height accuracy will be worse.  
 - Ground (surface and treetop) data for New Zealand. SkyComb Analyst is designed to support any country, but supporting additional countries will involve locating publically available ground data, and parsing and loading that data. Refer [Ground](./Ground.md) for more detail.
