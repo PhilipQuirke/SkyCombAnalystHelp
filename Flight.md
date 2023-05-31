@@ -1,4 +1,4 @@
-# [SkyComb Analyst Help - Flight Recommendations](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
+# [SkyComb Analyst - Flight Recommendations](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) 
 
 
 # Overview
