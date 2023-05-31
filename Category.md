@@ -1,4 +1,4 @@
-# [SkyComb Analyst - Categorisation](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
+# [SkyComb Analyst - Categorisation](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) 
 
 # Overview
 This page covers the manual categorisation of animals detected by the SkyComb Analyst tool.
