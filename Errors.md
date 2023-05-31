@@ -1,4 +1,4 @@
-# [SkyComb Analyst Help - Error Sources](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
+# [SkyComb Analyst - Error Sources](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) 
 
 
 # Overview
