@@ -1,4 +1,4 @@
-# [SkyComb Analyst Help - User Interface](https://github.com/PhilipQuirke/SkyCombAnalystHelp/) 
+# [SkyComb Analyst - User Interface](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) 
 
 
 # Overview
