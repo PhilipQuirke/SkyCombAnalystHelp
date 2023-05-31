@@ -1,7 +1,8 @@
 # [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) - Drone Terminology
 
 ## Overview
-This ReadMe covers aspects of the drone flight logs, video metadata, legs, ground elevation & terminology.
+This page covers aspects of the drone flight logs, video metadata, legs, ground elevation & terminology.
+
 Refer the root-level [ReadMe](./ReadMe.md) for an overview of the whole tool.
 
 
