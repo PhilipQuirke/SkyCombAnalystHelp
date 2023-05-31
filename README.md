@@ -29,6 +29,7 @@ These pages provide more detail:
 - The [Flight](./Flight.md) page explains how to fly your drone missions to collect high-quality data.
 - The [UserInterface](./UserInterface.md) page explains how to use the SkyComb Analyst tool to analyse your drone flight data. 
 - The [Drone](./Drone.md) page explains aspects of the drone and drone-related source code.
+- The [DroneDataPort](./DroneDataPort.md) page explains how to copy video and flight log files from your drone to your computer.
 - The [DataStore](./DataStore.md) page explains the spreadsheet used by the application to store data.
 - The [Errors](./Errors.md) page describes all known error sources & how they are minimised. 
 - The [Ground](./Ground.md) page explains how detailed ground and treetop elevation data is obtained and displayed.
