@@ -1,9 +1,8 @@
-# [SkyComb Analyst - Error Sources](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) 
+# [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) - Error Sources
 
 
 # Overview
-The [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalyst/) tool 
-helps environmentalists, scientists & software developers make a drone into a scientific tool.
+The SkyComb Analyst tool helps environmentalists, conservationalists & scientists use a drone as a scientific tool.
 
 A key technical goal in the creation of this tool was to minimise the negative impact of various sources of error. 
 This document outlines these sources of error & how SkyComb Analyst minimses them. 
