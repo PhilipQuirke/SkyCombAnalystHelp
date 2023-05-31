@@ -1,8 +1,7 @@
-# [SkyComb Analyst Help](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) 
+# SkyComb Analyst Help
 
 # Introduction
-The [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalyst/) tool 
-processes data collected by drones equipped with thermal and optical video cameras. It detects animals:
+The SkyComb Analyst tool processes data collected by drones equipped with thermal and optical video cameras. It detects animals:
 
 ![FlightPathForm](./Static/DroneFlightPathForm.png?raw=true "Flight Path Form")
 
