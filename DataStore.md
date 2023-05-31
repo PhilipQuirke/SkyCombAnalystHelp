@@ -1,20 +1,17 @@
-# [SkyComb Analyst - DataStore](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) 
+# [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) - DataStore
 
 # Overview
-The [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalyst/) tool 
-generates a lot of data and graphs about the drone flight, videos and object found. 
-This data is persisted in a spreadsheet called a DataStore. 
-This page describes the DataStore and its uses. 
+The SkyComb Analyst tool generates a lot of data and graphs about the drone flight, videos and object found. 
+This data is persisted in a spreadsheet called a DataStore. This page describes the DataStore and its uses. 
 (Refer the root-level [ReadMe](./README.md) for an overview of the whole tool.)
 
 
 # Purpose
-The [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalyst/) tool generates a lot of data. 
-
+The SkyComb Analyst tool generates a lot of data. 
 To help users view and post-analyze the data, the data is persisted (stored) in a spreadsheet (called a DataStore).
 The spreadsheet is very human-readable and includes graphs.
 
-The DataStore acts as a _database_ for a drone flight.
+A DataStore acts as a _database_ for a drone flight.
 A user may run the same video several times with different settings. Each run takes time. 
 To speed up runs, the DataStore is used to cache information for re-use in successive runs.
 
