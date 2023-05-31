@@ -1,7 +1,7 @@
-# [SkyComb Analyst - Image Processing](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) 
+# [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) - Image Processing
 
 # Overview
-This page covers the image processing techniques embedded in the [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalyst/) tool.
+This page covers the image processing techniques embedded in the SkyComb Analyst tool.
 (Refer the root-level [ReadMe](./README.md) for an overview of the whole application.)
 
 
