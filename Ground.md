@@ -1,12 +1,12 @@
 # [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) - Ground
 
-# Overview
+## Overview
 The SkyComb Analyst tool works better with accurate ground and tree-top elevation data.
 This page covers how this elevation data is used in the application.
 (Refer the root-level [ReadMe](./README.md) for an overview of the tool.)
 
 
-# Ground Elevation
+## Ground Elevation
 SkyComb Analyst tries to determine whether a heat source is at ground level or is located up in a tree, above the ground. 
 For this, highly accuracy ground & surface (aka tree-top) elevation data is needed.
 
@@ -14,12 +14,12 @@ While the drone provides its own altitude and location, it can't provide informa
 tree tops. For ground and tree-top elevations, an alternative input source is needed.
 
 
-# Elevation Data Sources
+## Elevation Data Sources
 Some countries publish ground elevation maps based on [LIDAR](https://en.wikipedia.org/wiki/Lidar) surveys, which have very 
 accurate data, and can provide both ground elevation and also the height of the foliage above ground (aka surface elevation 
 aka tree-top elevation). 
 
-## New Zealand Elevation Data Sources
+### New Zealand Elevation Data Sources
 New Zealand is progressively mapping the entire country using LIDAR and publishing the data for free.
 Current and planned coverage is summarised at https://www.linz.govt.nz/products-services/data/types-linz-data/elevation-data
 
@@ -37,7 +37,7 @@ The data is also stored and graphed in the [DataStore](./DataStore.md) (aka spre
 ![Example Contor Graphs](./Static/Overview2.png?raw=true "Example Contor Graphs")
 
 
-# Using "File Based" Elevation Data
+## Using "File Based" Elevation Data
 The GroundSpace folder contains a "file based" method for obtaining elevations data in the SkyComb Analyst. 
 This requires some set-up, then is very fast and very accurate. This method is highly recommended if you want to use SkyComb Analyst offline.
 
@@ -54,12 +54,12 @@ and creates an index (e.g. D:\SkyComb\Ground_Data\SkyCombIndex.xlsx) containing 
 Subsequent SkyComb Analyst runs uses this index to quickly locate the ASC files pertainent to any drone flight in that coverage area.
 
 
-# Other Countries
+## Other Countries
 The method is currently implemented for NZ, but is easily extensible to data sources from other countries.
 Seach the source code for #ExtendGroundSpace to find what code to modify to support another country.
 
 
-# Using "Cloud Based" Elevation Data
+## Using "Cloud Based" Elevation Data
 The SkyComb Analyst environment will in the future implement a cloud based version of the Ground source code, tentatively called SkyGround.
 If you run the SkyComb Analyst tool on a video, and you don't have the elevation data available as files on your laptop, and you are online, 
 the tool will automatically ask SkyGround to provide the elevation data.
