@@ -1,18 +1,18 @@
 # [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) - Image Processing
 
-# Overview
+## Overview
 This page covers the image processing techniques embedded in the SkyComb Analyst tool.
 (Refer the root-level [ReadMe](./README.md) for an overview of the whole application.)
 
 
-# Purpose
+## Purpose
 This tool supports several image processing models that can be applied to videos. 
 
 The processes output markedly different images. 
 Example process outputs are shown [here](./Static/ModelExamples.png).
 
 
-# Simple Processes
+## Simple Processes
 A few "simple" processes transform each video frame independently. No data is persisted between frames:
 
 - None: No changes to the input image are made. The output mirrors the input. Useful for debugging & measuring processing "overhead".
@@ -33,18 +33,18 @@ A few "simple" processes transform each video frame independently. No data is pe
 - Gftt: The "Good feature to track" process finds significant visual things that might be worth tracking over time e.g. the corner of a car. This algorithm use the associated settings GfttMaxCorners, GfttQualityLevel, GfttMinDistance, GfttBlockSize, GfttUseHarris and GfttK. This algorithm also uses the Smooth and Threshold processes.
 
 
-# Complex Processes
+## Complex Processes
 There are two "complex"processing models. These processes transform each frame of the video, but also persist data between frames to derive additional information. The processes are called:
 - Flow
 - Comb 
 
-## Flow Process
+### Flow Process
 Aka Optical Flow. Aka OpticalFlowPyrLK. 
 Uses the Gftt process output as input, this process tracks significant visual things across mutiple frames drawing their visual progress over time as a "worm". 
 Uses settings FlowWindowSize, FlowMaxPyramid, FlowMinEigThreshold, DrawFlowHotPixels.  
 This algorithm also uses the Smooth and Threshold processes.
 
-## Comb Process
+### Comb Process
 Specific to this application, the Comb process is the "recommended" process for thermal videos. 
 
 This model processes the video by:
@@ -70,10 +70,6 @@ The altitude reported by the drone is often inaccurate. The inaccuracy causes th
 ![FixAltitudeM](./Static/FixAltitudeM.png?raw=true "Fix Altitude Example")
 
 The altitude correction algorithm code is in ProcessCombLeg.cs, and the results of the algorthim are stored in the "CombLeg" tab of the DataStore. 
-
-
-# Source Code
-The source code folders ProcessModel and ProcessLogic contain the implementation of these models.
 
 
 # Drone Specifics 
