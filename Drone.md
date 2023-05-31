@@ -1,21 +1,22 @@
 # [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) - Drone
 
-# Overview
+## Overview
 This ReadMe covers the purpose and content of the DroneSpace folder of the SkyComb Analyst application.
 (Refer the root-level [ReadMe](./ReadMe.md) for an overview of the whole application.)
 DroneSpace covers drone flight logs, video metadata, ground elevation, etc. Also the Drone source code.
 
 
-# Out of Scope
+## Out of Scope
 This page does <u>not</u> cover:
 - How to fly your drone. We assumes you already know how to fly your drone.
 - How to prepare for and run drone data collection flights. Refer [Flight](./Flight.md) page.
 - How to use the SkyComb Analyst tool to analyse the data collected. Refer [UserInterface](./UserInterface.md)
 - The inaccuracies inherent in drone flight log data. Refer [Errors](./Errors.md) page.
+- How to copy video and flight log files from your drone. Refer [DroneDataPort](./DroneDataPort.md) page.
 
 
-# Drone Input
-SkyComb Analyst can be used on a single image, or a standalone thermal video file, but is most useful when provide with:
+## Drone Input
+SkyComb Analyst can be used on a single thermal video file, but is most useful when provide with:
 - A thermal video file and the corresponding drone flight log - a text file of location and altitude etc information, or
 - Paired thermal and optical video files each with its own drone flight logs (so 2 videos and 2 flight logs).
 
@@ -26,8 +27,10 @@ For example, the Mavic 2 Enterprise (M2E) Dual drone, in a single flight can gen
 - DJI_0054.srt		Drone flight log (location, altitude, orientation, color palette) for thermal video
 The format of the two flight logs differ somewhat.
 
+The [DroneDataPort](./DroneDataPort.md) page explains how to copy video and flight log files from your drone to your computer.
 
-# Height, Altitude & Elevation terminology
+
+## Height, Altitude & Elevation terminology
 It is important to understand the difference between these terms:
 - Drone Height: The height of the drone above the GROUND where it started its flight.
 - Drone Altitude: The height of the drone above the SEA LEVEL.
@@ -38,25 +41,13 @@ The SkyComb Analyst application uses these terms consistently.
 For example, when you place a drone on the ground in front of you, and switch it on, 
 the drone will say that it is at a height of 0.0 meters, but at an altitude of say 56.4 meters.
 
-
-# Source Code Terminology
 The source files use this terminology:
 - Drones make FLIGHTs, at an ALTITUDE, with each flight being subdivided into 0.25 second SECTIONS.
 - Drones take THERMAL and OPTICAL videos in flight. Each VIDEO is made up of many FRAMES (aka images).
 - The GROUND has an ELEVATION. Trees have a topmost SURFACE some meters above the ground.  
 
 
-# Source Code
-The source files in the DroneSpace folder are:
-- Video.cs: Thermal and optical video metadata. Does NOT process the video images.
-- FlightSection.cs: Drone flight section raw data (altitude, location, etc). 
-- FlightStep.cs: Drone flight path data (speed, etc) derived from FlightSection and Ground data  
-- FlightLeg.cs: Segments of the drone flight path that are at a mostly constant altitude, in a mostly constant direction.
-- DroneData.cs: Contains all in-memory data we hold about a drone flight, the videos taken, the flight log, and ground DEM and DSM elevations. 
-- FlightConfig.cs: Contains configuration settings e.g. ThermalToOpticalVideoDelayS, SmoothSectionSize, ExcludeMarginRatio
-
-
-# Legs
+## Legs
 Much of the drone flight path is usually what is termed "legs". 
 Each leg is a path with a mostly constant altitude, in a mostly constant direction. 
 Each leg is independent (non-overlapping) of the other legs.
@@ -73,7 +64,7 @@ These criteria threshold values are defined in FlightConfig.cs
 Parts of the flight path that are NOT part of any leg include spinning (changing direction), hovering (not moving), climbing or descending.
 
 
-# Supporting More Drone Types
+## Supporting More Drone Types
 Each drone manufacturer has their own "flight data" file format - often in a human readable text file. 
 This format can also differ between different generations of drones from one manufacturer.
 
