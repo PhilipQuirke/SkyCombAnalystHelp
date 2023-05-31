@@ -22,25 +22,25 @@ For the Mavic 2 Enterprise it is a USB C connector. You will need a cable to con
 
 After connecting the drone data port to your computer using the USB cable, you can access the drone internal memory stick just like another other memory stick.
 
-For some drone, the memory stick will not appear on your computer until *after* you power on the drone. 
+For some drones, the memory stick will not appear on your computer until *after* you power on the drone. 
 
 ## Drone Data Files
-The naming of files depends on your drone model and whether it has one or two cameras. 
+The naming of drone data files depends on your drone model and whether it has one or two cameras. 
 
 For the Mavic 2 Enterprise, which has a thermal and an optical camera, a single recording creates 4 files:
 
 ![Drone Data Files](./Static/DroneDataFiles.png?raw=true "Drone Data Files")
 
-The four files have similar (but not exactly the same) creation date / times.
+The four files have similar (but not exactly the same) creation date / times:
 - The largest file is the optical video.
 - The second largest file is the thermal video.
 - The two small files are the flight logs - one for each video.
 
 The two file logs were created at the same time during the same flight, so they share (duplicate) a lot of flight data, but there are differences between them:
-- The logs contains data for each video frame, and the thermal and optical cameras have different frame rates, so the optical flight log contains more data.
+- Each log contains data for each video frame, and the thermal and optical cameras have different frame rates, so the optical flight log contains more data.
 - An optical camera has more "attributes" (such as FStop) than a thermal cmamera, so again the optical flight log contains more data.
 
 It is recommended that you copy the files off your drone and onto your computer before processing them. Once this is done, the drone can be switched off. 
 
-If they are avaialble, SkyComb Analyst uses all 4 files.
-SkyComb Analyst can also process 2 files or just 1 video file, but fewer files means less data, and so fewer SkyComb Analyst work with fewer files.   
+If they are available, SkyComb Analyst uses all 4 drone data files.
+SkyComb Analyst can also process 2 files or just 1 video file, but fewer files means less data, and so fewer SkyComb Analyst features are available with fewer drone data files.   
