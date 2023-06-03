@@ -17,13 +17,13 @@ You can category the animals and exclude objects you are not interested in.
 
 Drones are complex tools that move in three dimensions. The data they generate contains many inaccuracies. If you follow the SkyComb Analyst [recommendations](./Flight.md) on how to fly your drone, SkyComb Analyst can automatically compensate for [several inaccuracies](./Errors.md)
 
-Where it is available, SkyComb Analyst supplements the drone data with very accurate ground and tree top **elevation** data from public sources, increasing the accuracy of **animal height above ground** estimates.
+Where it is available, SkyComb Analyst supplements the drone data with very accurate ground and tree top **elevation** data from public (Lidar) sources, increasing the accuracy of **animal height above ground** estimates.
 
 ![DEM & DSM Elevations](./Static/Overview2.png?raw=true "DEM & DSM Elevations")
 
 SkyComb Analyst automatically finds animals in the area flown over, in a robust and repeatable fashion. You can easily view each animal found. The tool generates [spreadsheets](./DataStore.md) and annotated video as output. This output supports further offline analysis e.g. as input to image recognition machine learning systems.
 
-SkyComb Analyst provides an easy to use [interface](./UserInterface.md) that makes it easy to explore the data your drone collected.
+SkyComb Analyst provides an easy to use [interface](./UserInterface.md) that makes it quick to explore the data your drone collected.
 
 ![User Interface](./Static/UIExample.png?raw=true "User Interface")
 
