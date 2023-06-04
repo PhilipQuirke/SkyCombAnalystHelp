@@ -2,7 +2,7 @@
 
 
 ## Overview
-The SkyComb Analyst tool helps environmentalists, conservationalists & scientists use a drone as a scientific tool.
+The SkyComb Analyst tool helps environmentalists, conservationists & scientists use a thermal drone as a scientific tool.
 
 The primary use case is a drone with thermal and optical cameras, flying over wilderness, detecting animals. 
 This document outlines how best to fly your drone to collect high quality data for this use case.
