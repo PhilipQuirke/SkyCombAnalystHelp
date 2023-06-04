@@ -4,7 +4,10 @@
 The SkyComb Analyst tool helps environmentalists, conservationalists & scientists use a drone as a scientific tool 
 to collect information on wild animal populations in an automated, robust, repeatable, cost-effective & safe way.
 
-## Introduction
+## Video Introduction
+This 4 minute introductory video overviews the tool https://www.youtube.com/watch?v=QY1EAinyYJM
+
+## Description
 The SkyComb Analyst tool processes data collected by drones equipped with thermal and optical video cameras. It detects animals:
 
 ![FlightPathForm](./Static/DroneFlightPathForm.png?raw=true "Flight Path Form")
@@ -28,8 +31,8 @@ SkyComb Analyst provides an easy to use [interface](./UserInterface.md) that mak
 ![User Interface](./Static/UIExample.png?raw=true "User Interface")
 
 
-## Index
-These pages provide more detail:
+## Index of Content
+These pages provide more detail on the tool and its use:
 - The [Flight](./Flight.md) page explains how to fly your drone missions to collect high-quality data.
 - The [UserInterface](./UserInterface.md) page explains how to use the SkyComb Analyst tool to analyse your drone flight data. 
 - The [Drone](./Drone.md) page explains drone terminology related to the SkyComb Analyst tool.
@@ -45,4 +48,4 @@ These pages provide more detail:
 This tool has only been extensively tested with:
 - Data from a DJI Mavic 2 Enterprise (M2E) Dual drone. SkyComb Analyst is designed to support any drone, but other drone models may require some code changes around flight log parsing and loading. Refer [Drone](./Drone.md) for more details.
 - Data generated using the [Flight](./Flight.md) page data collection recommendations, especially: 1) the flight starts and ends on the ground and 2) the camera(s) are pointing straight down during the flight. SkyComb Analyst will support other flight configurations, but the height accuracy will be worse.  
-- Ground (surface and treetop) data for New Zealand. SkyComb Analyst is designed to support any country, but supporting additional countries will involve locating publically available ground data, and parsing and loading that data. Refer [Ground](./Ground.md) for more detail.
+- Ground (surface and treetop) data for New Zealand. SkyComb Analyst is designed to support any country, but supporting additional countries will involve locating & integrating publically-available Lidar data. Refer [Ground](./Ground.md) for more detail.
