@@ -1,7 +1,7 @@
 # SkyComb Analyst Help
 
 ## Purpose
-The SkyComb Analyst tool helps environmentalists, conservationalists & scientists use a drone as a scientific tool 
+The SkyComb Analyst tool helps environmentalists, conservationists & scientists use a thermal drone as a scientific tool 
 to collect information on wild animal populations in an automated, robust, repeatable, cost-effective & safe way.
 
 ## Video Introduction
