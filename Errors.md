@@ -2,7 +2,7 @@
 
 
 ## Overview
-The SkyComb Analyst tool helps environmentalists, conservationalists & scientists use a drone as a scientific tool.
+The SkyComb Analyst tool helps environmentalists, conservationists & scientists use a thermal drone as a scientific tool.
 
 A key technical goal in the creation of this tool was to minimise the negative impact of various sources of error. 
 This document outlines these sources of error & how SkyComb Analyst minimses them. 
