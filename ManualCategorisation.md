@@ -1,8 +1,9 @@
 # [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) - Manual Categorisation
 
 ## Overview
-This page covers the manual categorisation of animals detected by the SkyComb Analyst tool.
-(Refer the root-level [ReadMe](./README.md) for an overview of the whole tool.)
+This page covers the *manual* categorisation of animals detected by the SkyComb Analyst tool.
+The [AutoCategorisation](./AutoCategorisation.md) has an overview of the automatic categorisation of some animals.
+The main [ReadMe](./README.md) has an overview of the whole tool.
 
 
 ## Purpose
