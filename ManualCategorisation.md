@@ -2,7 +2,7 @@
 
 ## Overview
 This page covers the *manual* categorisation of animals detected by the SkyComb Analyst tool.
-The [AutoCategorisation](./AutoCategorisation.md) has an overview of the automatic categorisation of some animals.
+The [AutoCategorisation](./AutoCategorisation.md) page has an overview of the automatic categorisation of some animals.
 The main [ReadMe](./README.md) has an overview of the whole tool.
 
 
