@@ -31,18 +31,24 @@ Each master category has these fields:
 Clicking "Save" stores the master categories to the DataStore in tab "Cat1".
 
 ### Default Master Categories
-The default set of master categories are:
-- Animal
-- Bird
-- Cat
-- Cow
-- Dog
-- Inanimate (Include = "No")
-- Person (Include = "No")
-- Pig
-- Possum
-- Stone
-- Water
+The default master categories are:
+| Species   | Include | Notes                          | Terrestrial | Min Size CM2 | Max Size CM2 | Min Temp | Max Temp |
+|-----------|---------|--------------------------------|-------------|--------------|--------------|----------|----------|
+| Bird      | Yes     |                                | No          |              |              |          |          |
+| Cat       | Yes     |                                | No          | 120          | 600          |          |          |
+| Dog       | Yes     |                                | Yes         | 120          | 800          |          |          |
+| Inanimate | No      |                                | Yes         |              |              |          |          |
+| Mammal    | Yes     | 4 legged animal                | No          |              |              |          |          |
+| Person    | No      |                                | No          | 150          | 1200         |          |          |
+| Pig       | Yes     |                                | Yes         | 120          | 800          |          |          |
+| Possum    | Yes     |                                | No          | 120          | 700          |          |          |
+| Rabbit    | Yes     | Rabbit or wallaby              | Yes         | 50           | 180          |          |          |
+| Rat       | Yes     | Rat, hedgehog, ferret or stoat | Yes         | 10           | 60           |          |          |
+| Stone     | No      | Stone or concrete              | Yes         |              |              |          |          |
+| Ungulate  | Yes     | Cow, horse, deer or lama       | Yes         | 250          | 3000         |          |          |
+| Water     | No      |                                | Yes         |              |              |          |          |
+
+More research is needed to more accurately populate this table.
 
 ## Object Categories
 The "pop out" icon on the left above the objects list opens the "Object Explorer" form. 
