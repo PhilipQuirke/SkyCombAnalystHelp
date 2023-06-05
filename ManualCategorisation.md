@@ -32,6 +32,7 @@ Clicking "Save" stores the master categories to the DataStore in tab "Cat1".
 
 ### Default Master Categories
 The default master categories are:
+
 | Species   | Include | Notes                          | Terrestrial | Min Size CM2 | Max Size CM2 | Min Temp | Max Temp |
 |-----------|---------|--------------------------------|-------------|--------------|--------------|----------|----------|
 | Bird      | Yes     |                                | No          |              |              |          |          |
@@ -48,7 +49,10 @@ The default master categories are:
 | Ungulate  | Yes     | Cow, horse, deer or lama       | Yes         | 250          | 3000         |          |          |
 | Water     | No      |                                | Yes         |              |              |          |          |
 
-More research is needed to more accurately populate this table.
+Notes:
+- Terrestrial means that the object is restricted to the surface - that is it can not fly or climb trees.
+- The min/max sizes are based on the SkyComb Analyst use case where we are detecting animals in the wilderness.    
+- More research is needed to more accurately populate this table.
 
 ## Object Categories
 The "pop out" icon on the left above the objects list opens the "Object Explorer" form. 
