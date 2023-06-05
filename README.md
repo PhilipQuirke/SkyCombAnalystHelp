@@ -41,7 +41,8 @@ These pages provide more detail on the tool and its use:
 - The [Errors](./Errors.md) page describes all known error sources & how they are minimised. 
 - The [Ground](./Ground.md) page explains how detailed ground and treetop elevation data is obtained and displayed.
 - The [Process](./Process.md) page explains the image processing options the application supports.
-- The [Category](./Category.md) page explains how users manually categorise the animals detected.
+- The [ManualCategorisation](./ManualCategorisation.md) page explains how users manually categorise the animals detected.
+- The [AutoCategorisation](./AutoCategorisation.md) page outlines the automation categorisation of some animals detected.
 
 
 ## Caveats
