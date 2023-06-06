@@ -31,6 +31,7 @@ Partial auto-cat is acheivable using a number of useful partial solutions / char
 - Animal colour is sometimes a useful differentiator. 
 - Animal "eye shine" colour may be a useful differentiator.  
 - Compound optical images may be useful for distinguishing between fur vs feathers.
+- Machine learning approaches may be useful.
 
 
 ## Definition of Pest in New Zealand
@@ -109,6 +110,19 @@ It might for example be good enough to distinguish between fur and feathers.
 
 ## Decision tree
 SkyComb Analyst needs high quality data on NZ animal species characteristics (size, temperature range, noctural/dirunal, climber, etc) aligned to PF2050 goals.
+This is an area for research.
+
 For a given animal in a given video some (but not all) of the above methods will be applicable, giving some characteristics about the animal. 
-SkyComb Analyst will apply a decision tree based on that knowledge of NZ animal species characteristics to (sometimes) identify the animal species. 
-Where the animal species can not be identified, SkyComb Analyst will be able to say "the animal is one of these 3 categories" or similar.   
+Assuming SkyComb Analyst has access to NZ animal species characteristics data, it will apply a decision tree based on that characteristics data to (sometimes) identify the animal species. 
+Where the animal species can not be identified, SkyComb Analyst will be able to say "the animal is one of these 3 categories" or similar.
+
+
+## Machine Learning
+To use machine learning to extend the above approach, SkyComb Analyst needs additional useful training data.
+
+Enthusiastic volunteer conservations could help SkyComb Analyst.
+An online tool will be built to ask a volunteer to categorise say 20 randomly-selected animals each day: 
+- We will ask them to categorise some animals that SkyComb Analyst auto-categorised - to double-check the automatic categorisation accuracy.
+- We will ask them to categorise some animals that SkyComb Analyst could not auto-cat. A person may be able to detect additional characteristics e.g. the shape of a bird's nest and the heat pattern from center to edge may be a clear differentiator for them between a bird and a mammal. If multiple people agree on the categorisation of the animal, the categorisation is accepted. 
+
+Over time, a database of manually categorised animals (that SkyComb Analyst could not auto-cat) is built up. This is the additional training data that can be used to a machine learning algorithm. This algorithm may then increase the percentage of animals that SkyComb Analyst can auto-categorise.
