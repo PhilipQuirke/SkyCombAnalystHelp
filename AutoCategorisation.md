@@ -19,16 +19,18 @@ Given that SkyComb Analyst will most likely only auto-cat *some* of the animals 
 - Good population estimates with error ranges can be calculated. 
 - If needed, additional flights can add extra data 
 
+
+## Partial auto-cat implementation
 Partial auto-cat is acheivable using a number of useful partial solutions / characterisations:
-- Predator Free 2050 has a goal of eliminating some NZ pest species by 2050. Differentiating between pest and on-pest species is useful.
-- Animal locomotion characteristics - does the animal have 2 or 4 lege? Do they walk or hop?
+- Predator Free 2050 has a goal of eliminating some NZ pest species by 2050. Differentiating between pest and non-pest species is useful.
+- Animal locomotion characteristics - does the animal have 2 or 4 legs? Do they walk or hop?
 - For an active / moving animal, the time of day the video was taken can exclude / include some animal species.  
-- The location being at-ground-level vs above-ground-level is a useful differentiator
-- Animal size is a useful differentiator
+- The location being at-ground-level vs above-ground-level is a useful differentiator.
+- Animal size is a useful differentiator.
 - Animal temperature may be a useful differentiator. 
 - Animal colour is sometimes a useful differentiator. 
 - Animal "eye shine" colour may be a useful differentiator.  
-- Compound images may be useful.
+- Compound optical images may be useful for distinguishing between fur vs feathers.
 
 
 ## Definition of Pest in New Zealand
@@ -42,7 +44,7 @@ For some detected animals, image processing can automatically detect "locomotion
 - On NZ conservation land, if a (thermal or optical) video shows an animal walking on 4 legs or hopping on 2 legs it is a pest mammal. 
 - On NZ farmland, any hopping mammal is a pest. 
 
-Mammal locomotion is best seen in videos when the mammal is walking on the ground. Some mammals climb trees, but walking across atree branch is hard to see. Also the mammal may not be moving at all. So this is a partial solution.
+Mammal locomotion is best seen in videos when the mammal is walking on the ground. Some mammals climb trees, but walking across a tree branch is hard to see. Also the mammal may not be moving at all. So this is a partial solution.
 
 
 ## Time of Day
@@ -74,7 +76,7 @@ More research is needed in this area.
 ## Animal Colour
 For drones that have both thermal and optical cameras, an optical image of the animal may be visible.  
 
-In NZ, the only common animal that is >90% white in colour is the sheep.
+In NZ, the only common animals that are >90% white in colour are sheep and goats.
 
 Various breeds of cows have a distinctive colour pattern e.g. A Friesen cows are black and white  
 
@@ -93,12 +95,20 @@ Many detected animals will be largely covered by foilage. But the foliage does n
 Each thermal camera pixel that "fires" indicates a (small, temporary) gap in the foilage opening a direct path from part of the animal to the thermal camera.
 
 The animal can cause a series of pixels to fire in a physically concentrated area of the thermal image over a sequence of video frames.
-When the density of firing pixels both by image area and time sequence passes a threshold the animal is detected.
+When the density of firing pixels both by localised image area and time sequence passes a threshold SkyComb Analyst detects the animal.
 
 If the drone also has an optical camera, the optical camera will have say 8 times as many pixels as the thermal camera. 
-So for each thermal camera pixel there are say 8 corresponding optical camera pixels pointing at the same place. 
+So for each thermal camera pixel there are say 8 corresponding optical camera pixels pointing at the same physical location. 
 
 It is possible to assemble a single *optical* "compound image" of the animal from the multiple frames it was detected in.
 The image is assembled by using the "peak" thermal pixels in each frame, and using the optical pixels associated with the peak thermal pixels.
 
 More research is needed in understand the usefulness of this compound image in animal species detection.
+It might for example be good enough to distinguish between fur and feathers.
+
+
+## Decision tree
+SkyComb Analyst needs high quality data on NZ animal species characteristics (size, temperature range, noctural/dirunal, climber, etc) aligned to PF2050 goals.
+For a given animal in a given video some (but not all) of the above methods will be applicable, giving some characteristics about the animal. 
+SkyComb Analyst will apply a decision tree based on that knowledge of NZ animal species characteristics to (sometimes) identify the animal species. 
+Where the animal species can not be identified, SkyComb Analyst will be able to say "the animal is one of these 3 categories" or similar.   
