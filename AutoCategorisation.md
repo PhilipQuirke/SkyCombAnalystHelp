@@ -14,7 +14,7 @@ Auto-cat is an area of ongoing research for SkyComb Analyst. This page describes
 
 
 ## Partial auto-cat
-Given that SkyComb Analyst will most likely only identify *some* of the animals detected in a flight:
+Given that SkyComb Analyst will most likely only auto-cat *some* of the animals detected in a flight:
 - Manual categorisation can be applied to the unidentified animals. 
 - Good population estimates with error ranges can be calculated. 
 - If needed, additional flights can add extra data 
@@ -27,8 +27,8 @@ Partial auto-cat is acheivable using a number of useful partial solutions / char
 - Animal size is a useful differentiator
 - Animal temperature may be a useful differentiator. 
 - Animal colour is sometimes a useful differentiator. 
-- Animal "eye shine" colour. 
-- Compound images
+- Animal "eye shine" colour may be a useful differentiator.  
+- Compound images may be useful.
 
 
 ## Definition of Pest in New Zealand
