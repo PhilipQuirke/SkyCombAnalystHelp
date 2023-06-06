@@ -14,9 +14,7 @@ Auto-cat is an area of ongoing research for SkyComb Analyst. This page describes
 
 
 ## Partial auto-cat
-In a perfect world, SkyComb Analyst would identify the species of all animals detected in a flight. This seems unachievable. 
-
-If SkyComb Analyst can successfully identify the species of *some* of the animals detected:
+Given that SkyComb Analyst will most likely only identify *some* of the animals detected in a flight:
 - Manual categorisation can be applied to the unidentified animals. 
 - Good population estimates with error ranges can be calculated. 
 - If needed, additional flights can add extra data 
