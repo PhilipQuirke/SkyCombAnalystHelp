@@ -34,7 +34,7 @@ Partial auto-cat is acheivable using a number of useful partial solutions / char
 
 
 ## Definition of Pest in New Zealand
-In New Zealand (NZ), farms contain introduced ( *exotic* ) mammal species including sheep, cattle, pigs, deer, cats & dogs. NZ's only native mammal is a bat. So NZ has no *native* cat, dog, sheep, pig, cattle, deer, horse, possum, rat, ferret, stoat, hedgehog, rabbit or wallaby species. Most NZ animal species are birds.
+In New Zealand (NZ), farms contain introduced ( *exotic* ) mammal species including sheep, cattle, pigs, deer, cats & dogs. NZ's only native mammal is a bat. So NZ has no *native* cat, dog, sheep, pig, cattle, deer, horse, possum, rat, ferret, stoat, hedgehog, rabbit or wallaby species. Most native NZ animal species are birds and insects.
 
 In conservation land *all* mammals (except bats) are exotic pests. Mammals have some charateristics that easily differentiate them from birds and bats. SkyComb Analyst can leverage these characteristics.
 
