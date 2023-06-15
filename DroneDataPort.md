@@ -21,8 +21,11 @@ For the Mavic 2 Enterprise it is a USB C connector. You will need a cable to con
 ![USB C Cable](./Static/DroneDataUsbCable.png?raw=true "USB C Cable")
 
 After connecting the drone data port to your computer using the USB cable, you can access the drone internal memory stick just like another other memory stick.
+That is you can use your favourite file explorer tool to view and copy the files.
 
-For some drones, the memory stick will not appear on your computer until *after* you power on the drone. 
+For some drones, the memory stick will not appear on your computer until *after* you power *on* the drone. 
+
+After you have copied the files, remove the cable and remember to close the data port cover (in case your drone gets rained on later).
 
 ## Drone Data Files
 The naming of drone data files depends on your drone model and whether it has one or two cameras. 
