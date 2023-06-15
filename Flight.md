@@ -91,6 +91,7 @@ For a DJI drone, the flight logs are text files with a .SRT suffix. To enable th
 - Choose the MENU option on the right side of the screen for Images and Video
 - Choose the Video icon and ensure the file type is .MP4 (not .MOV)
 - Choose the Option tool icon and ensure the "Video Caption" setting is *on*
+This page also shows how: [Turn On Video Captions](https://dronesgalaxy.com/dji-drones-how-to-turn-on-video-captions/)
 
 With that option turned on, the .SRT files will be saved along with the .MP4 video file on your SD card when you record video during a flight.
 
