@@ -44,3 +44,14 @@ It is recommended that you copy the files off your drone and onto your computer 
 
 If they are available, SkyComb Analyst uses all 4 drone data files.
 SkyComb Analyst can also process 2 files or just 1 video file, but fewer files means less data, and so fewer SkyComb Analyst features are available with fewer drone data files.   
+
+
+## The DJI Drone flight log (.SRT) files are missing
+Is your DJI drone creating video files (.MP4) but *not* creating any flight log (.SRT) files? This is likely a settings issue.
+
+To enable the creation of the .SRT flight logs, in the DJI Go App:
+- Choose the MENU option on the right side of the screen for Images and Video
+- Choose the Video icon and ensute the file type is .MP4 (not .MOV)
+- Choose the Option tool icon and turn the "Video Caption" setting *on*
+
+With that option turned on, the .SRT files should be saved along with the .MP4 video file on your SD card when you record during a flight.
