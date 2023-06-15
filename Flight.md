@@ -17,6 +17,8 @@ animals in a **repeatable, robust, safe** way. Each recommendation is explained 
 - Decide on the best/safest height above the surface, and test it.
 - Pre-prepare and use programmed flight paths.  
 - Test the programmed flight plan fully before the data collection flight.
+- Turn on flight log creation
+- Use GPS mode
 - Start and end video recording when the drone is on ground.
 - For most of the flight, fly in straight lines.
 - For most of the flight, have the video cameras pointing straight down.
@@ -80,6 +82,26 @@ SkyComb recommends you pre-prepare and use programmed flight paths:
 - You can prepare the flight plan at home when you are not under time or weather pressure and have good internet connectivity.
 - Programmed flight paths tend to have more, longer and smoother Legs than a manual flight. 
 - The same flight plan can be run year after year, allowing an "apples with apples" comparison of the animal population between years.
+
+
+## Turn on Flight log creation
+Ensure that your drone's "Create flight log" setting is switched on, so that your drone will create a flight log whenever your drone is recording a video.  
+
+For a DJI drone, the flight logs are text files with a .SRT suffix. To enable the creation of the .SRT flight logs, in the DJI Go App:
+- Choose the MENU option on the right side of the screen for Images and Video
+- Choose the Video icon and ensute the file type is .MP4 (not .MOV)
+- Choose the Option tool icon and ensure  the "Video Caption" setting is *on*
+
+With that option turned on, the .SRT files should be saved along with the .MP4 video file on your SD card when you record video during a flight.
+
+
+## Use GPS Mode
+Ensure that your drone's "Use GPS" setting is switched on, so that your drone will record GSP location in the flight log.
+
+For a DJI drone, this video shows how: [Use GPS](https://www.youtube.com/watch?v=p6DL3UzPyzQ)
+
+When you flight your drone, it will then try to synchronise with the GPS satellites and will show "GPS Mode" (or similar) on the controller. 
+If the drone *can't* synchronise with the GPS satellites, it may say "ATTI Mode" or "OPTI Mode". In ATTI and OPTI mode, no GPS data is available, so no GPS data is stored in the flight log.
 
 
 ## Start and end video recording when the drone is on ground.
