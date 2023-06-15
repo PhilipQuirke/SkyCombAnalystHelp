@@ -85,14 +85,14 @@ SkyComb recommends you pre-prepare and use programmed flight paths:
 
 
 ## Turn on Flight log creation
-Ensure that your drone's "Create flight log" setting is switched on, so that your drone will create a flight log whenever your drone is recording a video.  
+Ensure that your drone's "Create flight log" (aka Video Caption) setting is switched on, so that your drone will create a flight log whenever your drone is recording a video.  
 
 For a DJI drone, the flight logs are text files with a .SRT suffix. To enable the creation of the .SRT flight logs, in the DJI Go App:
 - Choose the MENU option on the right side of the screen for Images and Video
-- Choose the Video icon and ensute the file type is .MP4 (not .MOV)
-- Choose the Option tool icon and ensure  the "Video Caption" setting is *on*
+- Choose the Video icon and ensure the file type is .MP4 (not .MOV)
+- Choose the Option tool icon and ensure the "Video Caption" setting is *on*
 
-With that option turned on, the .SRT files should be saved along with the .MP4 video file on your SD card when you record video during a flight.
+With that option turned on, the .SRT files will be saved along with the .MP4 video file on your SD card when you record video during a flight.
 
 
 ## Use GPS Mode
