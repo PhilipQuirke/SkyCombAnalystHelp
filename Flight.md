@@ -21,7 +21,7 @@ animals in a **repeatable, robust, safe** way. Each recommendation is explained 
 - Use GPS mode
 - Start and end video recording when the drone is on ground.
 - For most of the flight, fly in straight lines.
-- For most of the flight, have the video cameras pointing straight down.
+- For most of the flight, have the video cameras pointing down.
 - Record the thermal video in gray scale (not say in a "red is hot" mode).
  
 The SkyComb Analyst tool works best when these recommendations are followed.
@@ -116,13 +116,19 @@ Where SkyComb Analyst has access to very-accurate ground elevation data provided
 SkyComb Analyst automatically improves drone height data accuracy using the start & end ground location elevations as reference points. 
 
 
-## For most of the flight have the video cameras pointing straight down
-We recommend that during the data collection Legs of your missions, the camera be pointing straight (vertically) down. 
+## For most of the flight have the video cameras pointing down
+We recommend that during the data collection Legs of your missions, the camera be pointing downwards.
 
-The thermal camera can detect objects under some depth of foliage (depending on density of foliage, temperature of animal, etc).
-A straight down orientation minimises the depth of foliage between the thermal camera and the ground.
- 
-This camera angle gives the best accuracy when SkyComb Analyst is calculating the height of detected objects above ground.
+The thermal camera can detect objects under some depth of foliage (depending on density of foliage, temperature of animal, ambient temperature, etc).
+A downwards orientation minimises the depth of foliage between the thermal camera and the animal, and increases detection rates.
+
+You can use a straight-down camera angle (aka 90 degrees down angle). 
+If your thermal camera has "vertical field of vision" (VFOV) of say 20 degrees, then using a camera down angle of 80 degrees means the thermal video can see 80 +/- 10 degrees.
+That is the video covers 70 to 90 degrees.
+
+In all cases, record the "down angle" you used as SkyComb Analyst (currently) needs you to tell it this figure (as it is not stored in the Flight Log).
+
+A strongly "down" camera angle increases the accuracy of the height above ground of the detected objects calculated by SkyComb Analyst.
 
 
 ## Test your programmed flight paths
