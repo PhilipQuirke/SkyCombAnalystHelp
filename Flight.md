@@ -117,9 +117,9 @@ SkyComb Analyst automatically improves drone height data accuracy using the star
 
 
 ## For most of the flight have the video cameras pointing down
-We recommend that during the data collection Legs of your missions, the camera be pointing downwards.
+We recommend that during the data collection Legs of your missions, the camera is pointing downwards.
 
-The thermal camera can detect objects under some depth of foliage (depending on density of foliage, temperature of animal, ambient temperature, etc).
+This is less important when flying over low scrub. When flying over trees, the thermal camera can detect objects under some depth of foliage (depending on density of foliage, temperature of animal, ambient temperature, etc).
 A downwards orientation minimises the depth of foliage between the thermal camera and the animal, and increases detection rates.
 
 You can use a straight-down camera angle (aka 90 degrees down angle). 
