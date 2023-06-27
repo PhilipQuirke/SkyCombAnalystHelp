@@ -32,7 +32,8 @@ The spreadsheet name is based on the thermal video file name but with the suffix
 
 
 ### Optical to Thermal Video Delay
-For some drone flights, the first frame of the thermal and optical videos may start at slightly different times e.g. 0.4 seconds different. 
+For some drone flights, the first frame of the thermal and optical videos may start at slightly different times (e.g. 0.3 seconds different) 
+and the optical and thermal videos will be slightly out of sync.  
 SkyComb Analyst needs the videos to be time synchronised.
 
 The "Video delay (secs)" setting handles this difference and synchronises the videos. To tune this setting for your drone video:
@@ -41,9 +42,9 @@ The "Video delay (secs)" setting handles this difference and synchronises the vi
 3. Click "Run" and watch both the thermal and optical videos at the same time. 
 4. As the drone turns a corner, see if the thermal and optical video images start to "turn" at the same time. If they do, they are sychronized, and there is nothing more to do!
 5. If the images do *not* turn at the same time:
- - Click Stop
- - Increase or decrease "Video delay (secs)" by say +/= 0.1 seconds
- - Repeat Steps 3 & 4 until the videos sync up.
+    - Click Stop
+    - Increase or decrease "Video delay (secs)" by say +/= 0.1 seconds
+    - Repeat Steps 3 & 4 until the videos sync up.
 
 Click "Save" to save all settings to the [DataStore](./DataStore.md)
 
