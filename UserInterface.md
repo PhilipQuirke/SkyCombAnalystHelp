@@ -41,7 +41,7 @@ The "Video delay (secs)" setting handles this difference and synchronises the vi
 2. Set the "Speed" setting to Fast
 3. Click "Run" and watch both the thermal and optical videos at the same time. 
 4. As the drone turns a corner, see if the thermal and optical video images start to "turn" at the same time. If they do, they are sychronized, and there is nothing more to do!
-5. If the images do *not* turn at the same time:
+5. If the images do *not* turn the corner at the same time:
     - Click Stop
     - Increase or decrease "Video delay (secs)" by say +/= 0.1 seconds
     - Repeat Steps 3 & 4 until the videos sync up.
