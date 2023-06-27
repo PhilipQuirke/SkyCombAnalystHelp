@@ -32,18 +32,20 @@ The spreadsheet name is based on the thermal video file name but with the suffix
 
 
 ### Optical to Thermal Video Delay
-Differences between the thermal and optical cameras can result in the first frame of each video being captured at a slightly different time. 
-In one example, there was a difference of 0.5 seconds between the first frame of each video.
+For some drone flights, the first frame of the thermal and optical videos may start at slightly different times e.g. 0.4 seconds different. 
 SkyComb Analyst needs the videos to be time synchronised.
 
-To evaluate this setting for your drone video:
-1. Set the "Video delay (secs)" to "0"
-2. Click "Run" and watch both the thermal and optical videos are the same time. 
-3. As the drone turns a corner, see if the thermal and optical video images start to "turn" at the same time. If they do, they are sychronized.
-4. If the images do not turn at the same time, increase or decrease "Video delay (secs)".
-5. Repeat Step 2 etc until the videos sync up.
+The "Video delay (secs)" setting handles this difference and synchronises the videos. To tune this setting for your drone video:
+1. Set the "Video delay (secs)" setting to 0
+2. Set the "Speed" setting to Fast
+3. Click "Run" and watch both the thermal and optical videos at the same time. 
+4. As the drone turns a corner, see if the thermal and optical video images start to "turn" at the same time. If they do, they are sychronized, and there is nothing more to do!
+5. If the images do *not* turn at the same time:
+ - Click Stop
+ - Increase or decrease "Video delay (secs)" by say +/= 0.1 seconds
+ - Repeat Steps 3 & 4 until the videos sync up.
 
-Click "Save" to save all settings to the spreadsheet.
+Click "Save" to save all settings to the [DataStore](./DataStore.md)
 
 
 ### Camera Down Angle
@@ -76,7 +78,7 @@ The altitude graph this  flight are shown four times, demonstrating how the diff
 
 ![On Ground At Examples](./Static/OnGroundAtExamples.png?raw=true "On Ground At Examples")
 
-Click "Save" to save all settings to the DataStore.
+Click "Save" to save all settings to the [DataStore](./DataStore.md)
 
 
 ## Configuring the Image Processing Settings
@@ -121,14 +123,14 @@ This will change the "To (Secs)" field.
 You can select the set of legs to process by clicking (select), ctrl-clicking (deselect), and shift-clicking (add) on the Leg buttons.
 You must select a contiguous range of legs like "B" to "N" - you can't deselect a leg to give a hole in the middle of the range.  
 
-Click "Save" to save all settings to the DataStore.
+Click "Save" to save all settings to the [DataStore](./DataStore.md)
 
 
 ## Processing the new Drone Video
 You are ready to process the video:
 - Click the "All" Legs button (or select the range of Legs you want to process).
 - Set the "Process" to "Comb". 
-- Set the "Speed" to "Fast". 
+- Set the "Speed" to "Fast" (or "Max"). 
 - Click "Save"
 - Click "Run"
 
