@@ -38,6 +38,10 @@ In some cases, from this information, a "decision tree" will be able to identify
 If not, a Machine Learning model can evaluate the probability that the animal belongs to various species.
 
 
+## Useful animal characterisations
+These are the characterisations that may be useful in identifying a given animal's species:
+
+
 ### Definition of Pest in New Zealand
 In New Zealand (NZ), farms contain introduced ( *exotic* ) mammal species including sheep, cattle, pigs, deer, cats & dogs. NZ's only native mammal is a bat. So NZ has no *native* cat, dog, sheep, pig, cattle, deer, horse, possum, rat, ferret, stoat, hedgehog, rabbit or wallaby species. Most native NZ animal species are birds and insects.
 
@@ -118,7 +122,7 @@ More research is needed in understand the usefulness of this compound image in a
 It might for example be good enough to distinguish between fur and feathers.
 
 
-## Decision tree
+## Decision Tree
 SkyComb Analyst needs high quality data on NZ animal species characteristics (size, temperature range, noctural/dirunal, climber, etc) aligned to PF2050 goals.
 This is an area for research.
 
@@ -128,13 +132,15 @@ Where the animal species can not be identified, SkyComb Analyst may be able to s
 
 
 ## Machine Learning
+Machine Learning is a subset of Artificial Intelligence. 
+Machine Learning can be used to create an algorithm to answer questions such as "What species is this animal?". 
+It needs a "training set" of questions which already have correct answers provided.  
 
+To use machine learning to extend the Decision Tree approach, SkyComb Analyst needs training data. This training data does not exist today.
 
-To use machine learning to extend the above approach, SkyComb Analyst needs additional useful training data.
-
-Enthusiastic volunteer conservations could help SkyComb Analyst.
+Enthusiastic volunteer conservations could help SkyComb Analyst build this training data.
 An online tool will be built to ask a volunteer to categorise say 20 randomly-selected animals each day: 
-- We will ask them to categorise some animals that SkyComb Analyst auto-categorised - to double-check the automatic categorisation accuracy.
-- We will ask them to categorise some animals that SkyComb Analyst could not auto-cat. A person may be able to detect additional characteristics e.g. the shape of a bird's nest and the heat pattern from center to edge may be a clear differentiator for them between a bird and a mammal. If multiple people agree on the categorisation of the animal, the categorisation is accepted. 
+- We will ask them to categorise some animals that SkyComb Analyst auto-categorised using the Decision Tree - to double-check the automatic categorisation accuracy.
+- We will ask them to categorise some animals that SkyComb Analyst could not auto-cat. A person may be able to detect additional characteristics e.g. the shape of a bird's nest and the heat pattern from center to edge may be a clear differentiator for them between a bird and a mammal. If multiple people agree on the categorisation of the animal, the categorisation is accepted, and the training data set size increases.
 
-Over time, a database of manually categorised animals (that SkyComb Analyst could not auto-cat) is built up. This is the additional training data that can be used to a machine learning algorithm. This algorithm may then increase the percentage of animals that SkyComb Analyst can auto-categorise.
+Over time, a database of categorised animals is built up. This is the additional training data that can be used to create a Machine Learning algorithm. This algorithm should then increase the percentage of animals that SkyComb Analyst can auto-categorise.
