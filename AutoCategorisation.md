@@ -29,7 +29,7 @@ Partial auto-cat is acheivable using a number of useful partial solutions / char
 - Animal size is a useful differentiator.
 - Animal movement is a useful differentiator.
 - Animal temperature may be a useful differentiator. 
-- Animal colour is sometimes a useful differentiator. 
+- Animal colour / colour pattern is sometimes a useful differentiator. 
 - Animal "eye shine" colour may be a useful differentiator.  
 - Compound optical images may be useful for distinguishing between fur vs feathers.
 
@@ -81,14 +81,16 @@ An animal, that is above ground level, slowly moving horizontally must be walkin
 
 
 ### Animal Temperature
-Each animal species has its own "normal" temperature range. For a diurnal species there will be a different temperature range for the daytime (when they are active) and the nighttime (when they are sleeping).  
+Each animal species has its own "normal" temperature range. 
+For a diurnal species there will be a different temperature range for the daytime (when they are active) and the nighttime (when they are sleeping). 
+Ditto for nocturnal species. 
 
 Depending on the time of day the video was taken, and the animal temperature, some animal species can be excluded / included.
 
 More research is needed in this area.
 
 
-### Animal Colour
+### Animal Colour / Colour Pattern
 For drones that have both thermal and optical cameras, an optical image of the animal may be visible.  
 
 In NZ, the only common animals that are >90% white in colour are sheep and goats.
@@ -127,7 +129,7 @@ SkyComb Analyst needs high quality data on NZ animal species characteristics (si
 This is an area for research.
 
 For a given animal in a given video some (but not all) of the above methods will be applicable, giving some characteristics about the animal. 
-Assuming SkyComb Analyst has access to NZ animal species characteristics data, it will apply a decision tree based on that characteristics data to (sometimes) definitively identify the animal species. 
+Once SkyComb Analyst has access to NZ animal species characteristics data, it will apply a decision tree based on that characteristics data to (sometimes) definitively identify the animal species. 
 Where the animal species can not be identified, SkyComb Analyst may be able to say "the animal is one of these 3 categories".
 
 
@@ -136,7 +138,7 @@ Machine Learning is a subset of Artificial Intelligence.
 Machine Learning can be used to create an algorithm to answer questions such as "What species is this animal?". 
 It needs a "training set" of questions which already have correct answers provided.  
 
-To use machine learning to extend the Decision Tree approach, SkyComb Analyst needs training data. This training data does not exist today.
+To use machine learning to extend the Decision Tree approach, SkyComb Analyst needs training data specific to our use cases. This training data does not exist today.
 
 Enthusiastic volunteer conservations could help SkyComb Analyst build this training data.
 An online tool will be built to ask a volunteer to categorise say 20 randomly-selected animals each day: 
