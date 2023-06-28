@@ -27,46 +27,56 @@ Partial auto-cat is acheivable using a number of useful partial solutions / char
 - For an active / moving animal, the time of day the video was taken can exclude / include some animal species.  
 - The location being at-ground-level vs above-ground-level is a useful differentiator.
 - Animal size is a useful differentiator.
+- Animal movement is a useful differentiator.
 - Animal temperature may be a useful differentiator. 
 - Animal colour is sometimes a useful differentiator. 
 - Animal "eye shine" colour may be a useful differentiator.  
 - Compound optical images may be useful for distinguishing between fur vs feathers.
-- Machine learning approaches may be useful.
+
+For a given animal, SkyComb Analyst will, where feasible, evaluate the above characterisations. 
+In some cases, from this information, a "decision tree" will be able to identify the animal's species. 
+If not, a Machine Learning model can evaluate the probability that the animal belongs to various species.
 
 
-## Definition of Pest in New Zealand
+### Definition of Pest in New Zealand
 In New Zealand (NZ), farms contain introduced ( *exotic* ) mammal species including sheep, cattle, pigs, deer, cats & dogs. NZ's only native mammal is a bat. So NZ has no *native* cat, dog, sheep, pig, cattle, deer, horse, possum, rat, ferret, stoat, hedgehog, rabbit or wallaby species. Most native NZ animal species are birds and insects.
 
 In conservation land *all* mammals (except bats) are exotic pests. Mammals have some charateristics that easily differentiate them from birds and bats. SkyComb Analyst can leverage these characteristics.
 
 
-## Mammal Locomotion
+### Animal Locomotion
 For some detected animals, image processing can automatically detect "locomotion" characteristics:
 - On NZ conservation land, if a (thermal or optical) video shows an animal walking on 4 legs or hopping on 2 legs it is a pest mammal. 
-- On NZ farmland, any hopping mammal is a pest. 
+- On NZ farmland, any hopping animal is a pest. 
 
-Mammal locomotion is best seen in videos when the mammal is walking on the ground. Some mammals climb trees, but walking across a tree branch is hard to see. Also the mammal may not be moving at all. So this is a partial solution.
+Animal locomotion is best seen in videos when the animal is walking on the ground or along a branch. The animal may not be moving at all. So this is a partial solution.
 
 
-## Time of Day
+### Time of Day
 Most species are nocturnal (active at night) or diurnal (active during the day) but not both.  
 
 For an active / moving animal, the time of day the video was taken can exclude / include some animal species.  
 
 
-## Height above Ground
+### Height above Ground
 Some species, such as cows, do not climb trees.
 
 If an animal is located say 4 meters above the ground, some animal species can be excluded / included.  
 
 
-### Mammal Size
-In NZ, a mammal larger than a certain size is a cow, deer or horse. NZ has no bears, tigers, hippos, etc. Size is a useful distinction that SkyComb Analyst can automatically apply to exclude / include some species from consideration. 
+### Animal Size
+An animal over a certain size is not a bird. 
 
-On a given farm, the smallest non-pest animal will be a cat, dog or sheep. Any walking mammal smaller than this limit is a pest - either a rat, stoat, ferret, hedgehog, possum, rabbit or wallaby.  
+In NZ, a mammal larger than a certain size is a cow, deer or horse. NZ has no bears, tigers, hippos, etc. Size is a useful distinction that SkyComb Analyst can automatically apply to exclude / include some species from consideration. On a farm, the smallest non-pest mammal will be a cat, dog or sheep. Any walking mammal smaller than this limit is a pest - either a rat, stoat, ferret, hedgehog, possum, rabbit or wallaby.  
 
 
-## Animal Temperature
+### Animal Movement
+Birds move fast when flying. When they are not flying, birds move very slowly. An animal moving at a speed *between* these two speeds is not a bird. 
+
+An animal, that is above ground level, slowly moving horizontally must be walking along a branch. It is likely *not* a bird, and in NZ is therefore likely a mammal. If it is night-time, then it is the very likely *not* a bird, and in NZ is therefore very likely a mammal. 
+
+
+### Animal Temperature
 Each animal species has its own "normal" temperature range. For a diurnal species there will be a different temperature range for the daytime (when they are active) and the nighttime (when they are sleeping).  
 
 Depending on the time of day the video was taken, and the animal temperature, some animal species can be excluded / included.
@@ -74,7 +84,7 @@ Depending on the time of day the video was taken, and the animal temperature, so
 More research is needed in this area.
 
 
-## Animal Colour
+### Animal Colour
 For drones that have both thermal and optical cameras, an optical image of the animal may be visible.  
 
 In NZ, the only common animals that are >90% white in colour are sheep and goats.
@@ -82,7 +92,7 @@ In NZ, the only common animals that are >90% white in colour are sheep and goats
 Various breeds of cows have a distinctive colour pattern e.g. A Friesen cows are black and white  
 
 
-## Animal eye-shine colour
+### Animal eye-shine colour
 For drones that have both thermal and optical cameras, an optical image of the animal may be visible.  
 
 In low-light / night-time conditions, various species of animal have different 'eye-shine' colours. 
@@ -91,7 +101,7 @@ For example, possums' eye-shine is red-orange, rabbits' is red-pink, sheep and c
 Some nocturnal animals look towards light sources e.g. possums.
 
 
-## Compound images
+### Compound images
 Many detected animals will be largely covered by foilage. But the foliage does not completely cover the animal. 
 Each thermal camera pixel that "fires" indicates a (small, temporary) gap in the foilage opening a direct path from part of the animal to the thermal camera.
 
@@ -113,11 +123,13 @@ SkyComb Analyst needs high quality data on NZ animal species characteristics (si
 This is an area for research.
 
 For a given animal in a given video some (but not all) of the above methods will be applicable, giving some characteristics about the animal. 
-Assuming SkyComb Analyst has access to NZ animal species characteristics data, it will apply a decision tree based on that characteristics data to (sometimes) identify the animal species. 
-Where the animal species can not be identified, SkyComb Analyst will be able to say "the animal is one of these 3 categories" or similar.
+Assuming SkyComb Analyst has access to NZ animal species characteristics data, it will apply a decision tree based on that characteristics data to (sometimes) definitively identify the animal species. 
+Where the animal species can not be identified, SkyComb Analyst may be able to say "the animal is one of these 3 categories".
 
 
 ## Machine Learning
+
+
 To use machine learning to extend the above approach, SkyComb Analyst needs additional useful training data.
 
 Enthusiastic volunteer conservations could help SkyComb Analyst.
