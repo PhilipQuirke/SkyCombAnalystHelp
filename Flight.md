@@ -22,7 +22,8 @@ animals in a **repeatable, robust, safe** way. Each recommendation is explained 
 - Start and end video recording when the drone is on ground.
 - For most of the flight, fly in straight lines.
 - For most of the flight, have the video cameras pointing down.
-- Record the thermal video in gray scale (not say in a "red is hot" mode).
+- Display the thermal video in gray scale
+- Use the thermal camera "High Gain" mode
  
 The SkyComb Analyst tool works best when these recommendations are followed.
 
@@ -129,6 +130,21 @@ That is the video covers 70 to 90 degrees.
 In all cases, record the "down angle" you used as SkyComb Analyst (currently) needs you to tell it this figure (as it is not stored in the Flight Log).
 
 A strongly "down" camera angle increases the accuracy of the height above ground of the detected objects calculated by SkyComb Analyst.
+
+
+## Display the thermal video in gray scale
+Thermal camera videos can be shown in a number of different display modes. A common mode is "Red is hot".
+
+SkyComb Analyst (currently) needs the thermal camera video to be in "Gray scale" mode - where the image is shown in shades of white (hot) to black (cold).  
+
+
+## Use the thermal camera "High Gain" mode
+Some thermal cameras have (manufacturer specific) settings that allows them to focus on a smaller range of temperatures. 
+Choose the range that most closely aligned to animal body temperatures. 
+
+For example, the DJI Mavic 2 Enterprise has a "Gain Mode" setting. 
+If this is set to "High" the gray scale image is restricted to temperatures in the range -10C to 140C. 
+This setting appears under the "Menu > Spanner (aka Wrench)" area of the DJI Pilot app.
 
 
 ## Test your programmed flight paths
