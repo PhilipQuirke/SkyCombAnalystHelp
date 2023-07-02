@@ -11,12 +11,12 @@ This page assumes you have already:
 This page details how to use SkyComb Analyst to analyse the video.
 
 
-## Loading a new Drone Video
+## Step 0: Run SkyComb Analyst
 Run the SkyComb Analyst tool. 
 
 
-### Selecting a Video
-Click "Select" and choose one of your thermal or optical video files:
+## Step 1: Selecting a Video
+Click the "Select Video" button and choose one of your thermal or optical video files:
 - The flight log for the thermal video will be processed. This can take a few seconds. 
 - Detailed ground and surface elevation data for the area under the drone flight path will be obtained. This can take a few seconds.  
 - Several graphs will be displayed
@@ -31,34 +31,18 @@ This spreadsheet is called the [DataStore](./DataStore.md)
 The spreadsheet name is based on the thermal video file name but with the suffix "_SkyComb.xlsx"
 
 
-### Optical to Thermal Video Delay
-For some drone flights, the first frame of the thermal and optical videos may start at slightly different times (e.g. 0.3 seconds different) 
-and the optical and thermal videos will be slightly out of sync.  
-SkyComb Analyst needs the videos to be time synchronised.
+## Step 2: Drone Settings
+Click the "Drone Settings" button to edit settings related to the drone and its flight:
 
-The "Video delay (secs)" setting handles this difference and synchronises the videos. To tune this setting for your drone video:
-1. Set the "Video delay (secs)" setting to 0
-2. Set the "Speed" setting to Fast
-3. Click "Run" and watch both the thermal and optical videos at the same time. 
-4. As the drone turns a corner, see if the thermal and optical video images start to "turn" at the same time. If they do, they are sychronized, and there is nothing more to do!
-5. If the images do *not* turn the corner at the same time:
-    - Click Stop
-    - Increase or decrease "Video delay (secs)" by say +/= 0.1 seconds
-    - Repeat Steps 3 & 4 until the videos sync up.
+![Drone Settings](./Static/DroneSettings.png?raw=true "Drone Settings")
 
-Click "Save" to save all settings to the [DataStore](./DataStore.md)
+The Save button is only enabled after changes are made by the user, and it shows the number of changes. Click "Save" to save all the settings to the [DataStore](./DataStore.md)
 
 
-### Camera Down Angle
-On a drone, the camera gimbal controls where camera is pointing. 
-SkyComb Analyst needs to know this value, and this value is **not** available from the drone flight log.
+### Use Video From / To 
+These settings show the portion of the video that will be processed by SkyComb Analyst. 
 
-If the camera was pointing:
-- straight down during the flight, then set "Camera down angle" to 90 (not -90) in the SkyComb Analyst UI.
-- straight forward (horizontally), then set "Camera down angle" to 0.
-- half way between straight down and straight forward, then set "Camera down angle" to 45.  
-
-Click "Save" to save all settings to the [DataStore](./DataStore.md)
+The default settings are from the start of the first Leg to the end of the last Leg.
 
 
 ### On Ground At 
@@ -79,20 +63,49 @@ The altitude graph this  flight are shown four times, demonstrating how the diff
 
 ![On Ground At Examples](./Static/OnGroundAtExamples.png?raw=true "On Ground At Examples")
 
-Click "Save" to save all settings to the [DataStore](./DataStore.md)
+
+### Camera Down Angle
+On a drone, the camera gimbal controls where camera is pointing. 
+SkyComb Analyst needs to know this value, and this value is **not** available from the drone flight log.
+
+If the camera was pointing:
+- straight down during the flight, then set "Camera down angle" to 90 (not -90) in the SkyComb Analyst UI.
+- straight forward (horizontally), then set "Camera down angle" to 0.
+- half way between straight down and straight forward, then set "Camera down angle" to 45.  
 
 
-## Configuring the Image Processing Settings
+### Optical to Thermal Video Delay
+For some drone flights, the first frame of the thermal and optical videos may start at slightly different times (e.g. 0.3 seconds different) 
+and the optical and thermal videos will be slightly out of sync.  
+SkyComb Analyst needs the videos to be time synchronised.
+
+The "Video delay (secs)" setting handles this difference and synchronises the videos. To tune this setting for your drone video:
+1. Set the "Video delay (secs)" setting to 0 & click Save
+2. Click "Process Settings", set the "Speed" setting to Fast & click Save
+3. Click "Run" and watch both the thermal and optical videos at the same time. 
+4. As the drone turns a corner, see if the thermal and optical video images start to "turn" at the same time. If they do, they are sychronized, and there is nothing more to do!
+5. If the images do *not* turn the corner at the same time:
+    - Click Stop
+    - Increase or decrease "Video delay (secs)" by say +/= 0.1 seconds
+    - Repeat Steps 3 & 4 until the videos sync up.
 
 
-### Process
+## Step 3: Process Settings
+Click the "Process Settings" button to edit settings related to image processing:
+
+![Process Settings](./Static/ProcessSettings.png?raw=true "Process Settings")
+
+The Save button is only enabled after changes are made by the user, and it shows the number of changes. Click "Save" to save all the settings to the [DataStore](./DataStore.md)
+
+
+### Processing Algorithm
 The [Process](./Process.md) page describes the supported image processing algorithms. 
-Leave the value set to the recommended default value "Comb".
+Leave the value set to the default value "Comb".
 
 
-### Threshold value
+### Gray Scale "Hot" Threshold
 Thermal image processing algorithms must look at an image and decide which pixels are "hot" 
-and which are "not hot" using a "threshold value". 
+and which are "not hot" using a "threshold value" in the range 0 to 255. 
 
 SkyComb Analyst can't automatically detect or calculate the "best" ThresholdValue.
 You must calculate the best threshold value: 
@@ -127,13 +140,12 @@ You must select a contiguous range of legs like "B" to "N" - you can't deselect 
 Click "Save" to save all settings to the [DataStore](./DataStore.md)
 
 
-## Processing the new Drone Video
-You are ready to process the video:
+## Step 4: Start Run
 - Click the "All" Legs button (or select the range of Legs you want to process).
 - Set the "Process" to "Comb". 
-- Set the "Speed" to "Fast" (or "Max"). 
+- Set the "Speed" to "Fast" or "Max". 
 - Click "Save"
-- Click "Run"
+- Click "Start Run"
 
 
 ### Progress Indicators
