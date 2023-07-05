@@ -41,17 +41,22 @@ The data is also stored and graphed in the [DataStore](./DataStore.md) (aka spre
 The GroundSpace folder contains a "file based" method for obtaining elevations data in the SkyComb Analyst. 
 This requires some set-up, then is very fast and very accurate. This method is highly recommended if you want to use SkyComb Analyst offline.
 
-To set up this method, download the ground (aka DEM) and surface (aka tree-top aka DSM) datasets from the LINZ (or similar) 
-website in the "ASC" format. Set the GroundDirectory setting in App.Config to the root folder used to store this ground 
+To set up this method, export (download) the ground (aka DEM) and surface (aka tree-top aka DSM) datasets from the LINZ (or similar) 
+website in the "GeoTiff" format. LINZ has a 13Gb limit on individual exports. In the LINZ web site user interface you can manually reduce the area you want to export until it is under the 13b limit. 
+As a rough guide a 10Gb GeoTiff export will cover some 4,000 km2. 
+
+Set the GroundDirectory setting in App.Config to the root folder used to store this ground 
 data e.g. D:\SkyComb\Ground_Data . Unzip each downloaded ZIP into a separate sub-folder of the GroundDirectory folder.
 
-For example, the above datasets are downloaded as:
-- lds-auckland-north-lidar-1m-dem-2016-2018-AAIGrid.zip is 11 GB when downloaded, and 40 GB once unzipped. 
-- lds-auckland-north-lidar-1m-dsm-2016-2018-AAIGrid.zip is 12 GB when downloaded, and 43 GB once unzipped. 
+For example, exporting subsets of this Lidar data:
+- Exported a 4.6 Gb subset of this dataset lds-auckland-north-lidar-1m-dem-2016-2018-GTiff.zip. It covered ~5,000 km2. 
+- Exported a 4.7 Gb subset of this dataset lds-auckland-north-lidar-1m-dsm-2016-2018-GTiff.zip. It covered ~5,000 km2. 
 
 The first time that the SkyComb Analyst is run after unzipping new datasets into the GroundDirectory folder, the tool automatically scans the subfolders, 
-and creates an index (e.g. D:\SkyComb\Ground_Data\SkyCombIndex.xlsx) containing names of all the ASC datasets found and the ground area each covers. 
-Subsequent SkyComb Analyst runs uses this index to quickly locate the ASC files pertainent to any drone flight in that coverage area.
+and creates an index (e.g. D:\SkyComb\Ground_Data\SkyCombIndexTiff.xlsx) containing names of all the Tiffs found and the ground area each covers. 
+Subsequent SkyComb Analyst runs uses this index to quickly locate the Tiff files pertainent to any drone flight in that coverage area.
+
+SkyComb Analyst also supports the ASC (text) format but this format is bulkier and slower. This format is *not* recommended. 
 
 
 ## Other Countries
