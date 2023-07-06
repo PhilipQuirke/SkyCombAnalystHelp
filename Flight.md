@@ -107,10 +107,12 @@ If the drone *can't* synchronise with the GPS satellites, it may say "ATTI Mode"
 
 
 ## Start and end video recording when the drone is on ground.
-Drones can calculate their **location** accurately, but often **can't** calculate their **height** accurately.
+Drones can calculate their **location** accurately, but many drones **can't** calculate their **height** accurately.
 (Refer the [Errors](./Errors.md) page for why.)
 
-We recommend starting the video recording while the drone is still on the ground, and continuing recording 
+If your vendor says your drone provides very accurate drone **height** information (say +/- 10cm) great! 
+
+Otherwise, we recommend starting the video recording while the drone is still on the ground, and continuing recording 
 during the flight, until the drone is back on the ground, and only then stopping recording. 
 
 Where SkyComb Analyst has access to very-accurate ground elevation data provided by the New Zealand government and others, 
@@ -124,13 +126,22 @@ This is less important when flying over low scrub. When flying over trees, the t
 A downwards orientation minimises the depth of foliage between the thermal camera and the animal, and increases detection rates.
 
 You can use a straight-down camera angle (aka 90 degrees down angle). 
-If your thermal camera has "vertical field of vision" (VFOV) of say 20 degrees, then using a camera down angle of 80 degrees means the thermal video can see 80 +/- 10 degrees.
-That is the video covers 70 to 90 degrees.
+If your thermal camera has "vertical field of vision" (VFOV) of say 30 degrees, 
+then using a camera down angle of 75 degrees means the thermal video can see 75 +/- 15 degrees. 
+That is the video covers 65 to 90 degrees.
 
-In all cases, record the "down angle" you used as SkyComb Analyst (currently) needs you to tell it this figure (as it is not stored in the Flight Log).
+Modern drones record the direction the camera was pointing, in the flight log, frame by frame. 
+Where supported, SkyComb Analyst uses this very useful feature and information.
 
-A strongly "down" camera angle increases the accuracy of the height above ground of the detected objects calculated by SkyComb Analyst.
+This very useful feature was introduced in DJI SDK 4.3 and is incorporated into at least these DJI drones:
+- DJI Mavic Air 2
+- DJI Mavic 2 Pro/Zoom
+- DJI Phantom 4 Pro V2.0
+- DJI Inspire 2
+- DJI Matrice 200 series
+- DJI Matrice 600 series
 
+For older / less capable drones, you will need to maintain a steady "camera down angle" during the flight, remember this andgle, and enter this figure into SkyComb Analyst later. 
 
 ## Display the thermal video in gray scale
 Thermal camera videos can be shown in a number of different display modes. A common mode is "Red is hot".
