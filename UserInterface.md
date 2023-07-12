@@ -36,58 +36,7 @@ Click the "Drone Settings" button to edit settings related to the drone and its 
 
 ![Drone Settings](./Static/DroneSettings.png?raw=true "Drone Settings")
 
-The Save button is only enabled after changes are made by the user, and it shows the number of changes. Click "Save" to save all the settings to the [DataStore](./DataStore.md)
-
-
-### Use Video From / To 
-These settings show the portion of the video that will be processed by SkyComb Analyst. 
-
-The default settings are from the start of the first Leg to the end of the last Leg.
-
-
-### On Ground At 
-SkyComb Analyst can more accurately calculate the height of the drone if the drone was on the ground at the start and/or end of the flight/video.
-This information is <u>not</u> available from the drone flight log.
-
-Use the "On ground at" field to inform SkyComb Analyst when the drone was on the ground. Select one of the settings:
-- **Start** : The drone was on the ground at the start of the video (only). 
-- **End** : The drone was on the ground at the end of the video (only). 
-- **Both** : The drone was on the ground at both the start and end of the video. (This is the recommended approach & gives the best results).
-- **Auto** : Use this if you don't know the answer
-
-The user interface includes a "Drone Altitude" chart that shows the ground elevation in brown, the tree-top height in green and drone altitude in blue.
-Inaccurate elevations as measured by the drone can be corrected if the "On ground at" setting is specified.
-
-This diagram shows the inaccurate drone altitudes for an example flight that started and ended on the ground.
-The altitude graph this  flight are shown four times, demonstrating how the different "On ground at" settings is used mitigate the inaccuracies. 
-
-![On Ground At Examples](./Static/OnGroundAtExamples.png?raw=true "On Ground At Examples")
-
-
-### Camera Down Angle
-On a drone, the camera gimbal controls where camera is pointing. 
-SkyComb Analyst needs to know this value, and this value is **not** available from the drone flight log.
-
-If the camera was pointing:
-- straight down during the flight, then set "Camera down angle" to 90 (not -90) in the SkyComb Analyst UI.
-- straight forward (horizontally), then set "Camera down angle" to 0.
-- half way between straight down and straight forward, then set "Camera down angle" to 45.  
-
-
-### Optical to Thermal Video Delay
-For some drone flights, the first frame of the thermal and optical videos may start at slightly different times (e.g. 0.3 seconds different) 
-and the optical and thermal videos will be slightly out of sync.  
-SkyComb Analyst needs the videos to be time synchronised.
-
-The "Video delay (secs)" setting handles this difference and synchronises the videos. To tune this setting for your drone video:
-1. Set the "Video delay (secs)" setting to 0 & click Save
-2. Click "Process Settings", set the "Speed" setting to Fast & click Save
-3. Click "Run" and watch both the thermal and optical videos at the same time. 
-4. As the drone turns a corner, see if the thermal and optical video images start to "turn" at the same time. If they do, they are sychronized, and there is nothing more to do!
-5. If the images do *not* turn the corner at the same time:
-    - Click Stop
-    - Increase or decrease "Video delay (secs)" by say +/= 0.1 seconds
-    - Repeat Steps 3 & 4 until the videos sync up.
+These settings are detailed in the [DroneSettings](./DroneSettings.md) page. 
 
 
 ## Step 3: Process Settings
@@ -95,34 +44,7 @@ Click the "Process Settings" button to edit settings related to image processing
 
 ![Process Settings](./Static/ProcessSettings.png?raw=true "Process Settings")
 
-The Save button is only enabled after changes are made by the user, and it shows the number of changes. Click "Save" to save all the settings to the [DataStore](./DataStore.md)
-
-
-### Processing Algorithm
-The [Process](./Process.md) page describes the supported image processing algorithms. 
-Leave the value set to the default value "Comb".
-
-
-### Gray Scale "Hot" Threshold
-Thermal image processing algorithms must look at an image and decide which pixels are "hot" 
-and which are "not hot" using a "threshold value" in the range 0 to 255. 
-
-SkyComb Analyst can't automatically detect or calculate the "best" ThresholdValue.
-You must calculate the best threshold value: 
-- Too low a value and SkyComb Analyst will detect lots of "false hit" objects.
-- Too high a value and SkyComb Analyst will not detect any objects.
-
-Threshold Values as low as 150 and as high as 235 have been seen with various drone thermal videos.
-
-To calculate the best threshold value for your video:
-- Set the "Run speed" to "Fast". 
-- Set the "Threshold value" to "235".
-- Click "Run" & watch the thermal video, until you see a hot object detected that looks interesting. Note the time it appears.
-- Halt the run by clicking "Stop"
-- Set "From/To (Secs)" to a few seconds before the object was detected, to a few seconds after it was detected. 
-- Try increasing the "Threshold value" to say "240". Click "Run" and watch the object. Was the object outline better defined?
-- Try decreasing the "Threshold value" to say "230". Click "Run" and watch the object. Was the object outline better defined?
-- Repeat this process until you are happy with the Threshold Value
+These settings are detailed in the [ProcessSettings](./ProcessSettings.md) page. 
 
 
 ### Selecting Legs
@@ -136,8 +58,6 @@ This will change the "To (Secs)" field.
 
 You can select the set of legs to process by clicking (select), ctrl-clicking (deselect), and shift-clicking (add) on the Leg buttons.
 You must select a contiguous range of legs like "B" to "N" - you can't deselect a leg to give a hole in the middle of the range.  
-
-Click "Save" to save all settings to the [DataStore](./DataStore.md)
 
 
 ## Step 4: Start Run
