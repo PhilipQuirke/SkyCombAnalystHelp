@@ -141,7 +141,7 @@ This very useful feature was introduced in DJI SDK 4.3 and is incorporated into 
 - DJI Matrice 200 series
 - DJI Matrice 600 series
 
-For older / less capable drones, you will need to maintain a steady "camera down angle" during the flight, remember this andgle, and enter this figure into SkyComb Analyst later. 
+For older / less capable drones, you will need to maintain a steady "camera down angle" during the flight, remember this angle, and enter this figure into SkyComb Analyst later. 
 
 ## Display the thermal video in gray scale
 Thermal camera videos can be shown in a number of different display modes. A common mode is "Red is hot".
