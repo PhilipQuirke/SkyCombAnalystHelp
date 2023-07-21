@@ -33,7 +33,7 @@ Some drones have a removable SD Card (aka memory card) that the drone stores new
 
 In this case, after physically removing the SD Card from the drone, you can use an SD Card Reader to copy the memory card contents onto your computer:
 
-![SD Card Reader](./Static/SDCardreader.png?raw=true "SD Card Reader")
+![SD Card Reader](./Static/SDCardReader.png?raw=true "SD Card Reader")
 
 Remember to place the SD Card back into the drone afterwards. 
 
