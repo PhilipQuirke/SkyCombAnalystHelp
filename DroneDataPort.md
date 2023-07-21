@@ -2,7 +2,7 @@
 
 
 ## Overview
-During a drone flight, while the drone is recording, it stores the new video and flight log dataon an internal memory stick.  
+During a drone flight, while the drone is recording, it stores the new video and flight log data on an internal memory stick.  
 This page covers how accesss this data.
 (Refer the root-level [ReadMe](./README.md) for an overview of the whole application.)
 
@@ -26,6 +26,15 @@ That is you can use your favourite file explorer tool to view and copy the files
 For some drones, the memory stick will not appear on your computer until *after* you power *on* the drone. 
 
 After you have copied the files, remove the cable and remember to close the data port cover (in case your drone gets rained on later).
+
+
+## Drone SD Card
+Some drones have a removable SD Card (aka memory card) that the drone stores new video and flight log data on.
+
+If so, after removing the SD Card from the dreon, you can use an SD Card Reader to copy the memory card contents onto your computer:
+
+![SD Card Reader](./Static/SDCardreader.png?raw=true "SD Card Reader")
+
 
 ## Drone Data Files
 The naming of drone data files depends on your drone model and whether it has one or two cameras. 
