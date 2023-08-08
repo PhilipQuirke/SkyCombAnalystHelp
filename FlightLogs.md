@@ -18,13 +18,11 @@ This drone:
 
 This is a sample entry from a DJI Mavic 3t thermal flight log named "DJI_20230628182818_0001_T.SRT" : 
 
-<code>
-  28115
-  00:15:37,683 --> 00:15:37,717
-  <font size="28">FrameCnt: 28115, DiffTime: 34ms
-  2023-06-28 18:43:56.810
-  [focal_len: 40.00] [dzoom_ratio: 1.00], [latitude: -37.996099] [longitude: 177.035704] [rel_alt: 75.645 abs_alt: 227.888] [gb_yaw: 76.8 gb_pitch: -49.1 gb_roll: 0.0] </font>
-</code>
+<code>28115
+00:15:37,683 --> 00:15:37,717
+<font size="28">FrameCnt: 28115, DiffTime: 34ms
+2023-06-28 18:43:56.810
+[focal_len: 40.00] [dzoom_ratio: 1.00], [latitude: -37.996099] [longitude: 177.035704] [rel_alt: 75.645 abs_alt: 227.888] [gb_yaw: 76.8 gb_pitch: -49.1 gb_roll: 0.0] </font> </code>
 
 ## DJI M300 with XT2 19mm
 This drone:
