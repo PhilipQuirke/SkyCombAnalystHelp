@@ -25,10 +25,11 @@ This is a sample entry from a DJI Mavic 3t thermal flight log named "DJI_2023062
 [focal_len: 40.00] [dzoom_ratio: 1.00], [latitude: -37.996099] [longitude: 177.035704] [rel_alt: 75.645 abs_alt: 227.888] [gb_yaw: 76.8 gb_pitch: -49.1 gb_roll: 0.0] </font>
 
 
-## DJI M300 with XT2 19mmThis drone:
-- Has a thermal camera, that supports change in focal length **TBC**
-- Has a very brief SRT **TBC**
-- **Does** allow the thermal camera focal length to be changed. **TBC**
+## DJI M300 with XT2 19mm
+This drone:
+- Has a thermal camera, that supports change in focal length 
+- Has a very brief SRT 
+- Does allow the thermal camera focal length to be changed.
 - Takes 30 thermal images / second
 
 This is a sample entry from a DJI M300 with XT2 19mm thermal flight log named "DJI_0002.SRT" : 
