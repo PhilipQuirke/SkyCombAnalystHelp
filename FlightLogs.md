@@ -6,7 +6,7 @@ The SkyComb Analyst tool helps environmentalists, conservationalists & scientist
 
 The page summarises the information created by some drone models during flights and saved to their "flight log".
 
-**Disclaimer**: This page is based on examples seen. Possibly the drone mentioned have additional capabilitiess 
+**Disclaimer**: This page is based on examples seen. Possibly the drone mentioned have additional capabilities that need to be enabled. 
 
 
 ## DJI Mavic 3t
