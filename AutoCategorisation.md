@@ -23,12 +23,14 @@ Given that SkyComb Analyst will most likely only auto-cat *some percentage* of t
 ## Partial auto-cat implementation
 Partial auto-cat is achievable using a number of useful partial solutions / characterisations:
 - Predator Free 2050 has a goal of eliminating some NZ pest species by 2050. Differentiating between pest and non-pest species is useful.
-- Animal locomotion characteristics - does the animal have 2 or 4 legs? Do they walk or hop?
+- Animal shape characteristics e.g. does the animal have 2 or 4 legs? 
+- Animal locomotion characteristics e.g.does the animal walk or hop?
 - For an active / moving animal, the time of day the video was taken can exclude / include some  animal species.  
-- The animal location being at-ground-level vs above-ground-level is a useful differentiator.
+- The animal location being at-ground-level vs above-ground-level is a useful differentiator. Piges don't climb trees.
 - Animal size is a useful differentiator.
-- Animal movement is a useful differentiator.
+- Animal movement speed is a useful differentiator.
 - Animal temperature may be a useful differentiator. 
+- Animal heat patterns is a useful differentiator. 
 - Animal colour / colour pattern is sometimes a useful differentiator. 
 - Animal "eye shine" colour may be a useful differentiator.  
 - Compound optical images may be useful for distinguishing between fur vs feathers.
@@ -46,6 +48,10 @@ In more detail, these are the characterisations that may be useful in identifyin
 In New Zealand (NZ), farms contain introduced ( *exotic* ) mammal species including sheep, cattle, pigs, deer, cats & dogs. NZ's only native mammal is a bat. So NZ has no *native* cat, dog, sheep, pig, cattle, deer, horse, possum, rat, ferret, stoat, hedgehog, rabbit or wallaby species. Most native NZ animal species are birds and insects.
 
 In conservation land *all* mammals (except bats) are exotic pests. Mammals have some characteristics that easily differentiate them from birds and bats. SkyComb Analyst can leverage these characteristics.
+
+
+### Animal Shape
+For some detected animals, image processing can automatically detect useful "shape" characteristics. For example, an animal with 3 or 4 legs visible in an image is a mammal. The legs of a mamaml may not be visible, so this is a partial solution.
 
 
 ### Animal Locomotion
@@ -74,7 +80,7 @@ An animal over a certain size is not a bird.
 In NZ, a mammal larger than a certain size is a cow, deer or horse. NZ has no bears, tigers, hippos, etc. Size is a useful distinction that SkyComb Analyst can automatically apply to exclude / include some species from consideration. On a farm, the smallest non-pest mammal will be a cat, dog or sheep. Any walking mammal smaller than this limit is a pest - either a rat, stoat, ferret, hedgehog, possum, rabbit or wallaby.  
 
 
-### Animal Movement
+### Animal Movement Speed
 Birds move fast when flying. When they are not flying, birds move slowly. An animal moving at an intermediate speed *between* these two speeds is not a bird. 
 
 An animal, that is above ground level, slowly moving horizontally must be walking along a branch. It is likely *not* a bird, and in NZ is therefore likely a mammal.  
@@ -86,6 +92,14 @@ For a diurnal species there will be a different temperature range for the daytim
 Similarly for nocturnal species. 
 
 Depending on the time of day the video was taken, and the animal temperature, some animal species can be excluded / included.
+
+More research is needed in this area.
+
+
+### Animal Heat Patterns
+Some animal species have a distinct heat pattern:
+- A sheep's head and feet are visibly hotter than its body. This is different from a cow or possum.
+- A peacock sitting on a tree branch has a very distinct heat pattern.
 
 More research is needed in this area.
 
@@ -139,15 +153,15 @@ Once SkyComb Analyst can definitely identify the species of a percentage of the 
 
 One factor in this estimate is how deeply through the foliage the thermal camera can detect animals. This is an area for research. 
 
-SkyComb leverages high-accuracy metre-by-metre ground and surface (aka tree-top) data from LINZ. So knows the depth of the ground cover, and can calculate the fraction of the depth of ground cover successfully searched by the thermal camera. This will feed into the population distribution estimate.
+SkyComb leverages high-accuracy metre-by-metre ground and surface (aka tree-top) data from LINZ. So it knows the depth of the ground cover, and can calculate the fraction of the depth of ground cover successfully searched by the thermal camera. This will aid in the population distribution estimation.
 
 
 ## Machine Learning
 Machine Learning (ML) is a subset of Artificial Intelligence (AI). 
-ML techniques can be used to create an algorithm to answer questions such as "What species is this animal?". 
-It needs a "training set" of questions which already have correct answers provided.  
+ML techniques can be used to create an algorithm to answer the question "What species is this animal?". 
+It needs a "training set" of questions which already have correct answers (provided by humans).  
 
-To use ML  to extend the Decision Tree approach, SkyComb Analyst needs training data specific to our use cases. This training data does not exist today in sufficient volume.
+SkyComb needs training data specific to our use cases. This training data does not exist today in sufficient volume.
 
 Enthusiastic volunteer conservations could help SkyComb Analyst build this training data.
 An online tool will be built to ask a volunteer to categorise say 20 randomly-selected animals each day: 
