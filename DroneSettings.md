@@ -16,9 +16,6 @@ Click the "Drone Settings" button in the main window opens the dialog to edit dr
 ### Use Video From / To (Seconds)
 These editable settings show the portion of the video that will be image processed by SkyComb Analyst. 
 
-The default settings are from the start of the first Leg to the end of the last Leg.
-
-
 ### Drone on ground at 
 If your drone very accurately measures its height above ground then this setting can be skipped. 
 
@@ -39,8 +36,8 @@ The altitude graph this  flight are shown four times, demonstrating how the diff
 
 
 ### Gimbal Pitch/Roll/Yaw available
-Some drones store the **drone body** pitch, roll and yaw data in their flight logs. 
-Alternatively, some (more modern &/or expensive) drones store the **camera gimbal** pitch, roll and yaw data in their flight logs. 
+Simpler drones store the **drone body** pitch, roll and yaw data in their flight logs. 
+More complex/expensive drones store the **camera gimbal** pitch, roll and yaw data in their flight logs. 
 
 If SkyComb Analyst can detect that your drone stores gimbal data, this setting will be set to **Yes (Auto)** and you can skip this setting. 
 
@@ -58,15 +55,23 @@ For DJI drones, gimbal data was introduced in DJI SDK 4.3 and is incorporated in
 - DJI Matrice 600 series
 
 
-### Camera down angle (degrees)
-The camera gimbal controls where the drone camera is pointing. This setting can be skipped if the "Gimbal Pitch/Roll/Yaw available" setting is **Yes** or **Yes (Auto)**  
+### Fixed camera down angle
+This setting can be skipped if the "Gimbal Pitch/Roll/Yaw available" setting is **Yes** or **Yes (Auto)**  
 
-Otherwise, you need to indicate where the camera has point for the bulk of the flight. Use the "Camera down (angle) setting as follows: 
+The camera gimbal controls where the drone camera is pointing. SkyComb Analyst needs to know the "down angle" of the camera during the flight. For simpler drones, the only way to so this is for the operator to keep this angle constant during (the bulk of) the flight, and specific the angle here. 
+
+Use the "Fixed camera down angle" setting as follows: 
 - If the camera was pointing straight down during the flight, then enter "90" (not -90).
 - If the camera was pointing straight forward (horizontally), then enter "0".
 - If the camera was pointing half way between straight down and straight forward, then enter "45" (not -45).  
 - Or some other sensible value between "0" and "90"
 
+### Min camera down angle
+This setting can be skipped if the "Gimbal Pitch/Roll/Yaw available" setting is **No**  
+
+The camera gimbal controls where the drone camera is pointing. SkyComb Analyst needs to know the "down angle" of the camera during the flight. For complex drones, the camera down angle is recorded in the flight log and can vary over the flight. Drone operators occassionally look at the horizon to make sure the drone is not going to run into anything. If the camera view temporarily includes the horizon, then the camera can experience "thermal bloom", giving bad thermal readings, and lots of suprious features. Video frames where the camera down angle is **higher** (higher) than this settings are "out of scope" and are not processed.
+       
+Note: If this setting is set to 35, and the camera has vertical field of vision (VFOV) of 47.6 degrees, then the highest view the application processes is 35 +/- 24 degrees which is 11 to 49 degrees down from the horizon.
 
 ### Optical to Thermal Video Delay
 If your drone has a thermal camera but no optical camera, skip this setting.
