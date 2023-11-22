@@ -46,10 +46,10 @@ These pages provide more detail on the tool and its use:
 
 
 ## Caveats
-This tool has only been extensively tested with:
-- Data from a DJI Mavic 2 Enterprise (M2E) Dual drone. SkyComb Analyst is designed to support any drone, but other drone models may require some code changes around flight log parsing and loading. Refer [Drone](./Drone.md) for more details.
-- Data generated using the [Flight](./Flight.md) page data collection recommendations, especially: 1) the flight starts and ends on the ground and 2) the camera(s) are pointing straight down during the flight. SkyComb Analyst will support other flight configurations, but the height accuracy will be worse.  
-- Ground (surface and treetop) data for New Zealand. SkyComb Analyst is designed to support any country, but supporting additional countries will involve locating & integrating publically-available Lidar data. Refer [Ground](./Ground.md) for more detail.
+This tool has only been tested with Ground (surface and treetop) data for New Zealand. 
+SkyComb Analyst is designed to support any country, but supporting additional countries will involve locating & integrating publically-available Lidar data. Refer [Ground](./Ground.md) for more detail. 
 
 ## Thanks
+Thanks to Predator Free 2050 ( https://pf2050.co.nz/ ) for their financial and other support. 
 Thanks to Toitu Te Whenua (Land Information New Zealand) for providing detailed land elevation data.   
+
