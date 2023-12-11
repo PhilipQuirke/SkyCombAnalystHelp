@@ -24,9 +24,9 @@ Given that SkyComb Analyst will most likely only auto-cat *some percentage* of t
 Partial auto-cat is achievable using a number of useful partial solutions / characterisations:
 - Predator Free 2050 has a goal of eliminating some NZ pest species by 2050. Differentiating between pest and non-pest species is useful.
 - Animal shape characteristics e.g. does the animal have 2 or 4 legs? 
-- Animal locomotion characteristics e.g.does the animal walk or hop?
+- Animal locomotion characteristics e.g. does the animal walk or hop?
 - For an active / moving animal, the time of day the video was taken can exclude / include some  animal species.  
-- The animal location being at-ground-level vs above-ground-level is a useful differentiator. Piges don't climb trees.
+- The animal location being at-ground-level vs above-ground-level is a useful differentiator. Pigs don't climb trees.
 - Animal size is a useful differentiator.
 - Animal movement speed is a useful differentiator.
 - Animal temperature may be a useful differentiator. 
@@ -51,7 +51,7 @@ In conservation land *all* mammals (except bats) are exotic pests. Mammals have 
 
 
 ### Animal Shape
-For some detected animals, image processing can automatically detect useful "shape" characteristics. For example, an animal with 3 or 4 legs visible in an image is a mammal. The legs of a mamaml may not be visible, so this is a partial solution.
+For some detected animals, image processing can automatically detect useful "shape" characteristics. For example, an animal with 3 or 4 legs visible in an image is a mammal. The legs of a mammal may not be visible, so this is a partial solution.
 
 
 ### Animal Locomotion
@@ -166,6 +166,6 @@ SkyComb needs training data specific to our use cases. This training data does n
 Enthusiastic volunteer conservations could help SkyComb Analyst build this training data.
 An online tool will be built to ask a volunteer to categorise say 20 randomly-selected animals each day: 
 - We will ask them to categorise some animals that SkyComb Analyst auto-categorised using the Decision Tree - to double-check the automatic categorisation accuracy.
-- We will ask them to categorise some animals that SkyComb Analyst could not auto-cat. A person may be able to detect additional characteristics e.g. the shape of a bird's nest and the heat pattern from center to edge may be a clear differentiator for them between a bird and a mammal. If multiple people agree on the categorisation of the animal, the categorisation is accepted, and the training data set size increases.
+- We will ask them to categorise some animals that SkyComb Analyst could not auto-cat. A person may be able to detect additional characteristics e.g. the shape of a bird's nest and the heat pattern from centre to edge may be a clear differentiator for them between a bird and a mammal. If multiple people agree on the categorisation of the animal, the categorisation is accepted, and the training data set size increases.
 
 Over time, a database of categorised animals is built up. This is the additional training data that can be used to create a Machine Learning algorithm. This algorithm should then increase the percentage of animals that SkyComb Analyst can auto-categorise.
