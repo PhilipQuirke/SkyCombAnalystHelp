@@ -59,11 +59,12 @@ This drone:
 - Records the Yaw, Pitch and Roll of **both** the drone body and the camera. 
 - Takes 30 thermal images / second
 
-This is a sample paragraph. Note the blank line in the middle:
+This is a sample paragraph. Note the blank line in the middle. Note the use of the "<font>" </font>" delimiters in the SRT:
 
-<code>1
+<code>
+1
 00:00:00,000 --> 00:00:00,033
-<font size="28">FrameCnt: 1, DiffTime: 33ms
+< font size="28" >FrameCnt: 1, DiffTime: 33ms
 2024-02-27 22:30:45.395
 [fnum: 1.0] [focal_len: 58.00] [dzoom: 1.00] 
 [latitude: -44.228828] [longitude: 171.193516] [rel_alt: 40.162 abs_alt: 97.829] 
@@ -73,7 +74,8 @@ This is a sample paragraph. Note the blank line in the middle:
 
 0
 [dzoom_ratio: 10000, delta:0] [color_md : default] 
-</font></code>
+< /font >
+</code>
 
 
 ## DJI M300 with H20N (N for Nancy) Camera
@@ -84,9 +86,10 @@ This drone:
 
 This is a sample paragraph. Note the blank line in the middle:
 
-<code>1
+<code>
+1
 00:00:00,000 --> 00:00:00,036
-<font size="28">SrtCnt : 1, DiffTime : 36ms
+< font size="28" >SrtCnt : 1, DiffTime : 36ms
 2024-02-28 00:13:26.240
 [fnum: 1.0] [focal_len: 52.00] [dzoom: 1.79] 
 [latitude: -44.228930] [longitude: 171.193573] [rel_alt: 40.050 abs_alt: 104.235] 
@@ -95,5 +98,6 @@ This is a sample paragraph. Note the blank line in the middle:
 [gb_yaw: -35.4 gb_pitch: -30.3 gb_roll: 0.0] 
 
 0
-[dzoom_ratio: 17871, delta:0] </font></code>
+[dzoom_ratio: 17871, delta:0] < /font >
+</code>
 
