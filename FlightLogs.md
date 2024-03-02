@@ -59,7 +59,7 @@ This drone:
 - Records the Yaw, Pitch and Roll of **both** the drone body and the camera. 
 - Takes 30 thermal images / second
 
-This is a sample paragraph. Note the blank line in the middle. Note the use of the "<font>" </font>" delimiters in the SRT:
+This is a sample paragraph. Note the blank line in the middle. Note the use of the "font" delimiters in the SRT:
 
 <code>
 1
@@ -84,7 +84,7 @@ This drone:
 - Records the Yaw, Pitch and Roll of **both** the drone body and the camera. 
 - Takes 30 thermal images / second
 
-This is a sample paragraph. Note the blank line in the middle:
+This is a sample paragraph. Note the blank line in the middle.Note the use of the "font" delimiters in the SRT:
 
 <code>
 1
