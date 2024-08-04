@@ -55,7 +55,7 @@ For DJI drones, gimbal data was introduced in DJI SDK 4.3 and is incorporated in
 - DJI Matrice 600 series
 
 
-### Fixed camera down angle
+### Fixed camera down angle (15 to 90 degrees)
 This setting can be skipped if the "Gimbal Pitch/Roll/Yaw available" setting is **Yes** or **Yes (Auto)**  
 
 The camera gimbal controls where the drone camera is pointing. SkyComb Analyst needs to know the "down angle" of the camera during the flight. For simpler drones, the only way to so this is for the operator to keep this angle constant during (the bulk of) the flight, and specific the angle here. 
@@ -66,10 +66,10 @@ Use the "Fixed camera down angle" setting as follows:
 - If the camera was pointing half way between straight down and straight forward, then enter "45" (not -45).  
 - Or some other sensible value between "0" and "90"
 
-### Min camera down angle
+### Min camera down angle (15 to 90 degrees)
 This setting can be skipped if the "Gimbal Pitch/Roll/Yaw available" setting is **No**  
 
-The camera gimbal controls where the drone camera is pointing. SkyComb Analyst needs to know the "down angle" of the camera during the flight. For complex drones, the camera down angle is recorded in the flight log and can vary over the flight. Drone operators occassionally look at the horizon to make sure the drone is not going to run into anything. If the camera view temporarily includes the horizon, then the camera can experience "thermal bloom", giving bad thermal readings, and lots of suprious features. Video frames where the camera down angle is **higher** (higher) than this settings are "out of scope" and are not processed.
+The camera gimbal controls where the drone camera is pointing. SkyComb Analyst needs to know the "down angle" of the camera during the flight. For some drones, the camera down angle is recorded in the flight log and can vary over the flight. Drone operators occassionally look at the horizon to make sure the drone is not going to run into anything. If the camera view temporarily includes the horizon, then the camera can experience "thermal bloom", giving bad thermal readings, and lots of suprious objects. Video frames where the camera down angle is **higher** (higher) than this settings are "out of scope" and are not processed.
        
 Note: If this setting is set to 35, and the camera has vertical field of vision (VFOV) of 47.6 degrees, then the highest view the application processes is 35 +/- 24 degrees which is 11 to 49 degrees down from the horizon.
 
