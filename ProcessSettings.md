@@ -2,11 +2,11 @@
 
 
 ## Overview
-The Process Settings dialog allows you to configure setting related to image processing 
+The Process Settings dialog allows you to configure setting related to video image processing 
 
 
 ## Dialog Appearance
-Click the "Process Settings" button in the main window opens the dialog to edit the image processing settings:
+Click the "Process Settings" button in the main window opens the dialog to edit the video image processing settings:
 
 ![Process Settings](./Static/ProcessSettings.png?raw=true "Process Settings")
 
@@ -14,13 +14,15 @@ Click the "Process Settings" button in the main window opens the dialog to edit 
 ## Dialog Settings
 
 
-### Processing Algorithm
+### Processing algorithm
 The [Process](./Process.md) page describes the supported image processing algorithms. 
 
-If unsure, use the default setting "Comb".
+If unsure, use the default setting "Yolo".
 
 
-### Processing Speed 
+### Processing speed 
+This settings applies to SkyComb Analyst but not to SkyComb Flights.
+
 This setting takes values:
 - **Slow** makes SkyComb Analyst pause momentarily after displaying each processed video frame  
 - **Medium** is faster than slow
@@ -30,9 +32,9 @@ This setting takes values:
 If unsure, use the default setting "Fast".
 
 
-### Gray scale "hot" threshold
+### Gray scale "hot" threshold (50 to 255)
 Thermal image processing algorithms look at an image and categorise pixels as either "hot" (aka interesting) 
-or "not hot" (aka uninteresting). The algorithm does this using a "hot threshold value" in the range 0 to 255. 
+or "not hot" (aka uninteresting). The algorithm does this using a "hot threshold value" in the range 50 to 255. 
 
 SkyComb Analyst can't automatically detect or calculate the "best" ThresholdValue.
 You must calculate the best threshold value: 
@@ -50,6 +52,29 @@ To calculate the best threshold value for your video:
 - Try increasing the "Threshold value" to say "230". Click "Run" and watch the object. Was the object outline better defined?
 - Try decreasing the "Threshold value" to say "210". Click "Run" and watch the object. Was the object outline better defined?
 - Repeat this process until you are happy with the Threshold Value
+
+
+### YOLO detect confidence (0.1 to 0.9)
+
+This setting is specific to YOLO (You Only Long Once) image processing algorithm. 
+
+If unsure, use the default setting 0.66
+
+
+### YOLO intersection over union (0.1 to 0.9)
+
+This setting is specific to YOLO (You Only Long Once) image processing algorithm. 
+
+If unsure, use the default setting 0.25
+
+
+### Max distance to detect features (50 to 250m)
+
+When SkyComb detects an object, the SkyComb physics model estimates the distance away the object is from the drone.
+
+If the distance is greater than this threshold then the object is ignored. The rationale is that to detect an object at a great distance, the object must be very large, and so it is not an animal. 
+
+If unsure, use the default setting 150
 
 
 ### Save annotated video
