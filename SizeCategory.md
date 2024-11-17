@@ -8,7 +8,7 @@ This size data is categorised into 8 size classes to make it easier to understan
 SkyComb size categories are based on the "t-shirt sizes": XXS, XS, S, M, L, XL, XXL.
 Each size category has an associated from / to range in cm2. The range for each category is shown here:
 
-![Size Categories](./Static/Sizes.png?raw=true "Size Categories")
+![Animal Sizes](./Static/AnimalSizes.png?raw=true "Animal Sizes")
 
 Each size category contains more than one animal species. 
 So a size category is not enough to derive the animal species. 
