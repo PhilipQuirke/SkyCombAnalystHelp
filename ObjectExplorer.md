@@ -33,7 +33,7 @@ This area show the accuracy of the object "height above ground". It cycles throu
 At each frame the object's estimated height is shown in orange. 
 The longer the object is seen the more accurate the height calculation becomes.
 
-### Frmaes
+### Frames
 This area show detail related to each frame the object was seen in. 
 The "Play" button can be used to pause / start this page cycling through the frames.
 
