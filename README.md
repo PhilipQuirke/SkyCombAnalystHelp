@@ -5,7 +5,7 @@ The SkyComb Analyst tool helps environmentalists, conservationists & scientists 
 to collect information on wild animal populations in an automated, robust, repeatable, cost-effective & safe way.
 
 ## Video Introduction
-This 4 minute introductory video overviews the tool https://www.youtube.com/watch?v=QY1EAinyYJM
+This 4 minute introductory video overviews the tool https://www.youtube.com/watch?v=QY1EAinyYJM . The product interface has improved since this video was made.
 
 ## Description
 The SkyComb Analyst tool processes data collected by drones equipped with thermal video cameras. It detects animals:
