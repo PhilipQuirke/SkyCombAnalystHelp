@@ -33,7 +33,7 @@ SkyComb Analyst provides an easy to use [interface](./UserInterface.md) that mak
 These pages provide more detail on the tool and its use:
 - The [HomePageControls](./HomePageControls.md) page explains the SkyComb Analyst home page controls.
 - The [UserInterface](./UserInterface.md) page explains how to use the SkyComb Analyst tool to analyse your drone flight data.
-- The [FlightLeg](./UserInterface.md) page explains the drone flight path term "Leg" and how SkyComb uses them.
+- The [FlightLeg](./Flightleg.md) page explains the drone flight path term "Leg" and how SkyComb uses them.
 - The [SizeCategory](./SizeCategory.md) page explains how SkyComb categorises animals by their size.
 - The [HeightCategory](./HeightCategory.md) page explains how SkyComb categorises animals by their height above ground.
 - The [ManualCategorisation](./ManualCategorisation.md) page explains how users manually categorise the animals detected.
