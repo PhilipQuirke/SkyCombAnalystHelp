@@ -32,8 +32,11 @@ SkyComb Analyst provides an easy to use [interface](./UserInterface.md) that mak
 ## Index of Content
 These pages provide more detail on the tool and its use:
 - The [Flight](./Flight.md) page explains how to fly your drone missions to collect high-quality data.
-- The [UserInterface](./UserInterface.md) page explains how to use the SkyComb Analyst tool to analyse your drone flight data. 
+- The [UserInterface](./UserInterface.md) page explains how to use the SkyComb Analyst tool to analyse your drone flight data.
+- The [SizeCategory](./SizeCategory.md) page explains how SkyComb categorises animals by their size.
+- The [HeightCategory](./HeightCategory.md) page explains how SkyComb categorises animals by their height above ground.
 - The [Drone](./Drone.md) page explains drone terminology related to the SkyComb Analyst tool.
+- The [FlightLeg](./UserInterface.md) page explains the drone flight path term "Leg" and how SkyComb uses them.
 - The [DroneDataPort](./DroneDataPort.md) page explains how to copy video and flight log files from your drone to your computer.
 - The [DataStore](./DataStore.md) page explains the spreadsheet used by the application to store data.
 - The [Errors](./Errors.md) page describes all known error sources & how they are minimised. 
