@@ -9,7 +9,7 @@ SkyComb always sees the top surface of an animal.
 For a standing cow, the top surface is their spine/back, and this will be ~1.5m above the ground. 
 
 ## Height Categories
-SkyComb height categories are based on "building floors": G, 1, 2, 3, 4, 5, 6+ where each "floor" is 3 meters high.
+SkyComb height categories are based on "building floors": G, 1f, 2f, 3f, 4f, 5f, 6f+ where each "floor" is 3 meters high.
 
 Height "G" covers animals that are between 0 and 3 meters off the ground. 
 Height "1" covers animals that are between 3 and 6 meters off the ground, etc. 
