@@ -1,20 +1,22 @@
 # [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) - Height Categories
 
 ## Overview
-The height above ground of animals detected by SkyComb are measured in meters (m).
-This height above ground data is categorised into 7 height classes to make it easier to understand.
+An animal's height above ground is useful information. Some mammals climb tress while others don't. 
+SkyComb measures the height above ground of detected animals in meters (m).
 
 ## Top Surface
 SkyComb always sees the top surface of an animal. 
 For a standing cow, the top surface is their spine/back, and this will be ~1.5m above the ground. 
 
 ## Height Categories
-SkyComb height categories are based on "building floors": G, 1f, 2f, 3f, 4f, 5f, 6f+ where each "floor" is 3 meters high.
+The height above ground data is categorised into 7 height classes to make it easier to understand.
+Height categories are based on "building floors" and are named G, 1f, 2f, 3f, 4f, 5f, 6f+ 
 
-Height "G" covers animals that are between 0 and 3 meters off the ground. 
+Each "floor" is 3 meters high. So height "G" covers animals that are between 0 and 3 meters off the ground. 
 Height "1" covers animals that are between 3 and 6 meters off the ground, etc. 
 
 An additional height category "?" is used when SymComb can not calculate an animal's height above ground. 
+This can occur when an animal is only seen for a brief time. 
 
 ## Height Histogram
 After a video has been processed, and animals have been detected, 
