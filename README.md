@@ -36,7 +36,7 @@ These pages provide more detail on the tool and its use:
 - The [FlightLeg](./Flightleg.md) page explains the drone flight path term "Leg" and how SkyComb uses them.
 - The [SizeCategory](./SizeCategory.md) page explains how SkyComb categorises animals by their size.
 - The [HeightCategory](./HeightCategory.md) page explains how SkyComb categorises animals by their height above ground.
-- The [ManualCategorisation](./ManualCategorisation.md) page explains how users manually categorise the animals detected.
+- The [ObjectExplorer](./ObjectExplorer.md) page explains how users explore the animals detected.
 
 These pages provide more detail on drones and drone flights:
 - The [Drone](./Drone.md) page explains drone terminology related to the SkyComb Analyst tool.
