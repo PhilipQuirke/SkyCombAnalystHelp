@@ -31,18 +31,21 @@ SkyComb Analyst provides an easy to use [interface](./UserInterface.md) that mak
 
 ## Index of Content
 These pages provide more detail on the tool and its use:
-- The [Flight](./Flight.md) page explains how to fly your drone missions to collect high-quality data.
+- The [HomePageControls](./HomePageControls.md) page explains the SkyComb Analyst home page controls.
 - The [UserInterface](./UserInterface.md) page explains how to use the SkyComb Analyst tool to analyse your drone flight data.
+- The [FlightLeg](./UserInterface.md) page explains the drone flight path term "Leg" and how SkyComb uses them.
 - The [SizeCategory](./SizeCategory.md) page explains how SkyComb categorises animals by their size.
 - The [HeightCategory](./HeightCategory.md) page explains how SkyComb categorises animals by their height above ground.
+- The [ManualCategorisation](./ManualCategorisation.md) page explains how users manually categorise the animals detected.
+
+These pages provide more detail on drones and drone flights:
 - The [Drone](./Drone.md) page explains drone terminology related to the SkyComb Analyst tool.
-- The [FlightLeg](./UserInterface.md) page explains the drone flight path term "Leg" and how SkyComb uses them.
+- The [Flight](./Flight.md) page explains how to fly your drone missions to collect high-quality data.
 - The [DroneDataPort](./DroneDataPort.md) page explains how to copy video and flight log files from your drone to your computer.
 - The [DataStore](./DataStore.md) page explains the spreadsheet used by the application to store data.
 - The [Errors](./Errors.md) page describes all known error sources & how they are minimised. 
 - The [Ground](./Ground.md) page explains how detailed ground and treetop elevation data is obtained and displayed.
 - The [Process](./Process.md) page explains the image processing options the application supports.
-- The [ManualCategorisation](./ManualCategorisation.md) page explains how users manually categorise the animals detected.
 - The [AutoCategorisation](./AutoCategorisation.md) page outlines the automation categorisation of some animals detected.
 
 
