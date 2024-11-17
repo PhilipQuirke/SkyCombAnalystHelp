@@ -3,11 +3,10 @@
 ## Overview
 The size of animals detected by SkyComb are measured in square-centimeters (cm2) as measured from above looking straight down.
 
-
 ## Size Categories
 The size data is categorised into 8 size categories to make it easier to understand.
 The size categories are named using the "t-shirt sizes" scale: XXS, XS, S, M, L, XL, XXL.
-Each size category has an associated from / to range in cm2 as shown here:
+Each size category has an associated from / to range in cm2 as shown below at right:
 
 ![Animal Sizes](./Static/AnimalSizes.png?raw=true "Animal Sizes")
 
@@ -24,3 +23,7 @@ a histogram of the number of animals per size category is shown.
 ## SkyComb Analyst Size Filter
 After a video has been processed, and animals have been detected, 
 filters on the main page of SkyComb Analyst allow the user to select a range of sizes to focus on.
+
+## Object Categories
+The Object Categories on the left in the above image are used to tag each detected object. 
+These categories are discussed elsewhere.
