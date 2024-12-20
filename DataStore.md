@@ -17,7 +17,7 @@ To speed up runs, the DataStore is used to cache information for re-use in succe
 
 The DataStore is named InputFileName_SkyComb.xlsx and is created in the location specified in the setting "OutputDirectory". 
 
-A sample datastore is [here](./Static/DJI_0094_SkyComb.xlsx)
+A sample datastore is [here](./Static/DJI_20240416142614_0001_T_SkyComb.xlsx)
 
 ## DataStore Structure
 The DataStore has 3 main parts:
