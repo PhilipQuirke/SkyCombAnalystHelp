@@ -56,14 +56,14 @@ To calculate the best threshold value for your video:
 
 ### YOLO detect confidence (0.1 to 0.9)
 
-This setting is specific to YOLO (You Only Long Once) image processing algorithm. 
+This setting is specific to YOLO (You Only Look Once) image processing algorithm. 
 
 If unsure, use the default setting 0.66
 
 
 ### YOLO intersection over union (0.1 to 0.9)
 
-This setting is specific to YOLO (You Only Long Once) image processing algorithm. 
+This setting is specific to YOLO (You Only Look Once) image processing algorithm. 
 
 If unsure, use the default setting 0.25
 
