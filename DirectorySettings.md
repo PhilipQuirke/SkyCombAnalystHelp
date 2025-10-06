@@ -6,7 +6,7 @@ The Directory Settings dialog allows you to configure the directories where SkyC
 
 
 ## Dialog Appearance
-Click the "Directory Settings" button in the main window opens the dialog to edit these settings:
+Click the "Directory Settings" button in the main window opens the dialog to edit and save these settings:
 
 ![Process Settings](./Static/DirectorySettingsForm.png?raw=true "Directory Settings")
 
@@ -20,7 +20,7 @@ This is the top-level directory where the application looks for input files
 ### Ground directory
 This is the top-level directory where the application looks for ground and surface contour (Lidar DEM & DSM) data
 
-## Yolo directory and model
+### Yolo directory and model
 When using the YOLO image processing model, the application needs a trained YOLO model.
 This is directory and file name of the YOLO model.
 
