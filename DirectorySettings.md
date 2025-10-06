@@ -8,7 +8,7 @@ The Directory Settings dialog allows you to configure the directories where SkyC
 ## Dialog Appearance
 Click the "Directory Settings" button in the main window opens the dialog to edit these settings:
 
-![Process Settings](./Static/DirectorySettings.png?raw=true "Directory Settings")
+![Process Settings](./Static/DirectorySettingsForm.png?raw=true "Directory Settings")
 
 
 ## Dialog Settings
