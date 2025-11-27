@@ -1,4 +1,4 @@
-# [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) User Unterface Controls
+# [SkyComb Analyst](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/README.md) User Interface Controls
 
 ## Overview
 The home page of SkyComb Analyst has several controls. This page provides an overview of them.
