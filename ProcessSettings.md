@@ -17,7 +17,7 @@ Click the "Process Settings" button in the main window opens the dialog to edit 
 ### Processing algorithm
 The [Process](./Process.md) page describes the supported image processing algorithms. 
 
-If unsure, use the default setting "Yolo".
+If unsure, use the default setting "Threshold".
 
 
 ### Processing speed 
@@ -32,26 +32,42 @@ This setting takes values:
 If unsure, use the default setting "Fast".
 
 
-### Gray scale "hot" threshold (50 to 255)
-Thermal image processing algorithms look at an image and categorise pixels as either "hot" (aka interesting) 
-or "not hot" (aka uninteresting). The algorithm does this using a "hot threshold value" in the range 50 to 255. 
+### Pixel "hot" threshold (50 to 255)
 
-SkyComb Analyst can't automatically detect or calculate the "best" ThresholdValue.
-You must calculate the best threshold value: 
-- Too low a value and SkyComb Analyst will detect lots of "false hit" objects.
-- Too high a value and SkyComb Analyst will not detect any objects.
+Thermal images contain pixels with "heat" values in the range 0 to 255.
 
-Threshold Values as low as 150 and as high as 235 have been useful with various drone thermal videos.
+The processing algorithms find pixels as either "hot" (i.e. interesting) 
+or "not hot" (i.e. uninteresting) using this "hot pixel threshold" setting. 
 
-To calculate the best threshold value for your video:
-- Set the "Run speed" to "Fast". 
-- Set the "Threshold value" to "220".
-- Click "Run" & watch the thermal video, until you see a hot object detected that looks interesting. Note the time it appears.
-- Halt the run by clicking "Stop"
-- Set "From/To (Secs)" to a few seconds before the object was detected, to a few seconds after it was detected. 
-- Try increasing the "Threshold value" to say "230". Click "Run" and watch the object. Was the object outline better defined?
-- Try decreasing the "Threshold value" to say "210". Click "Run" and watch the object. Was the object outline better defined?
-- Repeat this process until you are happy with the Threshold Value
+Theoretically this setting could be in the range 0 to 255, by in practice values below 50 are not useful. 
+
+The default value of 200 is empirically found to be a good value for many DJI thermal cameras.
+But the best value depends on the ambient temperature during the flight, and the type of animals being detected.
+
+
+### Radio lower threshold (4000 to 5000)
+
+SkyComb Analyst uses radiometric temperature values stored in thermal images created by DJI drones.
+This setting defines the lower threshold for radiometric temperature values.
+Any radiometric value below this setting is increased to this threshold.
+Any radiometric value at (or below) this setting is "never interesting".
+
+DJI thermal cameras encode radiometric temperature values in the range 4000 to 5000. 
+The default of 4575 is empirically found to be a good value for many DJI thermal cameras.
+
+SkyComb maps the radiometric temperature values linearly to "hot pixel values" in the range 0 to 255. This setting defines the "hot pixel" value 0.
+
+### Radio upper threshold (4000 to 5000)
+
+SkyComb Analyst uses radiometric temperature values stored in thermal images created by DJI drones.
+This setting defines the upper threshold for radiometric temperature values.
+Any radiometric value above this setting is reduced to this threshold.
+Any radiometric value at (or above) this setting is "always interesting".
+
+DJI thermal cameras encode radiometric temperature values in the range 4000 to 5000. 
+The default of 4620 is empirically found to be a good value for many DJI thermal cameras.
+
+SkyComb maps the radiometric temperature values linearly to "hot pixel values" in the range 0 to 255. This setting defines the "hot pixel" value 255.
 
 
 ### YOLO detect confidence (0.1 to 0.9)
@@ -78,12 +94,14 @@ If unsure, use the default setting 150
 
 
 ### Save annotated video
+
 SkyComb Analyst can create a video as output. This video mirrors what is shown in the main window of SkyComb Analyst. That is, it is a copy of the input video, overlaid with any objects detected. 
 
 Use this setting to say whether an annotated video should be created.  If unsure, use the default setting "Yes".
 
 
 ### Saver object data
+
 SkyComb Analyst creates a spreadsheet (aka [DataStore](./DataStore.md) ) of results. 
 
 Use this setting to say whether object details should be saved to the spreadsheet. This setting takes values:
@@ -94,7 +112,15 @@ Use this setting to say whether object details should be saved to the spreadshee
 If unsure, use the default setting "Significant".
 
 
+### Min # hot pixels in object (1 to 1000)
+
+When detecting say possums, and given an operator's standard drone altitude, the operator may not empirically that a single hot pixel is too small to be an animal. 
+
+This setting defines the minimum number of hot pixels that must exist in a tight cluster for the object to be considered significant (i.e. interesting).
+
+
 ## Dialog Buttons
+
 The dialog contains these buttons:
 - **Save** : Clicking writes the changes to the [DataStore](./DataStore.md) and closes the dialog. Button is only enabled after you make changes, and it shows the number of unsaved changes.
 - **Undo** : Clicking reverse unsaved changes. Button is only enabled after you make changes, and it shows the number of unsaved changes.
