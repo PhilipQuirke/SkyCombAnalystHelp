@@ -13,27 +13,15 @@ Click the "Drone Settings" button in the main window opens the dialog to edit dr
 
 ## Dialog Settings
 
-### Use Video From / To (Seconds)
-These editable settings show the portion of the video that will be image processed by SkyComb Analyst. 
+### Use Video: From / To (Seconds)
+When processing a video, these editable settings show the portion of the video that will be image processed by SkyComb Analyst. 
 
-### Drone on ground at 
-If your drone very accurately measures its height above ground then this setting can be skipped. 
+By default, the entire video is processed. However, you may want to process only a portion of the video. For example, if the drone was taking off or landing, you may want to exclude these portions of the video from processing.
 
-Otherwise, use the "Drone on ground at" field to state when the drone was on the ground by selecting one of:
-- **Start** : The drone was on the ground at the start of the video (only). 
-- **End** : The drone was on the ground at the end of the video (only). 
-- **Both** : The drone was on the ground at both the start and end of the video. (This gives the best accuracy).
-- **Neither** : The drone was not on the ground at any point of the video. 
-- **Auto** : Use this if you don't know the answer
+### Use Images: From / To Frame
+When processing a folder of images, these editable settings show which images will be image processed by SkyComb Analyst. 
 
-Based on this setting, SkyComb Analyst can automatically refine inaccurate drone height data.
-
-The main window includes a "Drone Altitude" chart that shows the ground elevation in brown, the tree-top height in green and drone altitude in blue.
-This diagram shows the inaccurate drone altitudes for an example flight that started and ended on the ground.
-The altitude graph this  flight are shown four times, demonstrating how the different "Drone on ground at" settings is used mitigate the inaccuracies. 
-
-![On Ground At Examples](./Static/OnGroundAtExamples.png?raw=true "On Ground At Examples")
-
+By default, all images processed. However, you may want to process only some images.
 
 ### Gimbal Pitch/Roll/Yaw available
 Simpler drones store the **drone body** pitch, roll and yaw data in their flight logs. 
