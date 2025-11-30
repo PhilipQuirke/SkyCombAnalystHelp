@@ -41,31 +41,30 @@ or "not hot" (i.e. uninteresting) using this "hot pixel threshold" setting.
 
 Theoretically this setting could be in the range 0 to 255, by in practice values below 50 are not useful. 
 
-The default value of 200 is empirically found to be a good value for many DJI thermal cameras.
+The default value of 200 is empirically found to be a good value for many DJI thermal cameras - this corresponds to the top ~20% of heat values.
 But the best value depends on the ambient temperature during the flight, and the type of animals being detected.
 
-
-### Radio lower threshold (4000 to 5000)
+### Radio lower threshold 
 
 SkyComb Analyst uses radiometric temperature values stored in thermal images created by DJI drones.
 This setting defines the lower threshold for radiometric temperature values.
 Any radiometric value below this setting is increased to this threshold.
 Any radiometric value at (or below) this setting is "never interesting".
 
-DJI thermal cameras encode radiometric temperature values in the range 4000 to 5000. 
 The default of 4575 is empirically found to be a good value for many DJI thermal cameras.
+(The settings allows values in the range 4000 to 5000 in case other drones use a different range.)
 
 SkyComb maps the radiometric temperature values linearly to "hot pixel values" in the range 0 to 255. This setting defines the "hot pixel" value 0.
 
-### Radio upper threshold (4000 to 5000)
+### Radio upper threshold 
 
 SkyComb Analyst uses radiometric temperature values stored in thermal images created by DJI drones.
 This setting defines the upper threshold for radiometric temperature values.
 Any radiometric value above this setting is reduced to this threshold.
 Any radiometric value at (or above) this setting is "always interesting".
 
-DJI thermal cameras encode radiometric temperature values in the range 4000 to 5000. 
 The default of 4620 is empirically found to be a good value for many DJI thermal cameras.
+(The settings allows values in the range 4000 to 5000 in case other drones use a different range.)
 
 SkyComb maps the radiometric temperature values linearly to "hot pixel values" in the range 0 to 255. This setting defines the "hot pixel" value 255.
 

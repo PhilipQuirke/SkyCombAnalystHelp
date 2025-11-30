@@ -11,18 +11,12 @@ The latest version of ExIf tool is available at https://exiftool.org
 
 But for Windows users, an easier installer tool for Exif is available at https://oliverbetz.de/pages/Artikel/ExifTool-for-Windows. Download and run the latest "Windows Installer, 64 bit version" 
 
-## Path
-The tool needs to be available in your system PATH for SkyComb Analyst to find and use it.
+The installer has an option “Add EXif tool to path”. Ensure this option is checked during installation.
 
-To add ExifTool to your system PATH on Windows:
-1. Open the Start Menu and search for "Environment Variables".
-2. Click on "Edit the system environment variables".
-3. In the System Properties window, click on the "Environment Variables" button.
-4. In the Environment Variables window, under the "System variables" section, find and select the "Path" variable, then click "Edit".
-5. In the Edit Environment Variable window, click "New" and add the path to the directory where ExifTool is installed (e.g., `C:\Program Files\ExifTool`).
-6. Click "OK" to close all windows. 
-
+## Installation Verification
 To test that the ExifTool is correctly installed and available in your PATH:
 1. Open a Command Prompt window.
 2. Type `exiftool -ver` and press Enter.
 3. You should see the version number of ExifTool displayed, indicating that it is correctly installed and accessible.
+
+If this doesnt work, try restarting your computer to ensure the PATH changes take effect. If it still doesn't work, you may need to manually add the ExifTool installation directory to your system's PATH environment variable.
