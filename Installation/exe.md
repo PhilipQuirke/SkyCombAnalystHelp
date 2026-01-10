@@ -13,8 +13,8 @@ To install SkyComb Analyst using the installer executable:
 3. Follow the on-screen prompts to complete the installation process. You may need to agree to license terms and choose an installation directory.
 4. Once the installation is complete, you can launch SkyComb Analyst from the Start Menu or desktop shortcut.
 
-## Patching the Installation
-The installer currently has a fault - it does not install the text file libv_list.ini which the DJI SDK needs. 
+## Patching the Installation (deprecated)
+Previous versions of the installer had a fault - they did not install the text file libv_list.ini which the DJI SDK needs. 
 To fix this issue, download the file [SkyCombAnalystHelp//libv_list.ini](https://github.com/PhilipQuirke/SkyCombAnalystHelp/blob/main/static/libv_list.ini) and copy it to the installation folder, typically `C:\Program Files\SkyComb\SkyComb Analyst\`.
 
 This completes the installation of SkyComb Analyst.
