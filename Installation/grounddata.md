@@ -14,12 +14,10 @@ SkyComb Analyst uses the following folders for ground data, input data, and outp
 The lidar ground contour folder must contain a subfolder called nz-quasigeoid-2016-raster e.g.
 - D:\SkyComb\Data_Ground\nz-quasigeoid-2016-raster
 
-This folder must contain at least the file new_zealand_quasigeoid_2016_raster.tif which can be downloaded from:
+This folder must contain at least the file new_zealand_quasigeoid_2016_raster.tif which can be downloaded from the link below. (The other files in the folder are not used by the program but are included for completeness.):
 - https://drive.google.com/drive/folders/1kBHiEwMqPzKbVxvk3hqdnQ1JYplDoRR0
-The other files in the folder are not used but are included for completeness.
 
 Lidar ground data can be downloaded from various sources including government data portals. The data needs to be in GeoTiff format. SkyComb staff may provide the data you. The following example files were provided to one user:
-
 - D:\SkyComb\Data_Ground\lds-waikato-lidar-1m-dem-2021-GTiff\
 - D:\SkyComb\Data_Ground\lds-waikato-lidar-1m-dsm-2021-GTiff\
 - D:\SkyComb\Data_Ground\West-coast-lidar-1m-dem-2020-2025\
