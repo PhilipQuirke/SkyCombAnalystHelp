@@ -47,26 +47,13 @@ But the best value depends on the ambient temperature during the flight, and the
 ### Radio lower threshold 
 
 SkyComb Analyst uses radiometric temperature values stored in thermal images created by DJI drones.
-This setting defines the lower threshold for radiometric temperature values.
-Any radiometric value below this setting is increased to this threshold.
-Any radiometric value at (or below) this setting is "never interesting".
+This setting defines the lower cutoff for radiometric thresholding.
+Any radiometric value above this setting is treated as hot.
+Any radiometric value at (or below) this setting is not hot.
 
-The default of 4575 is empirically found to be a good value for many DJI thermal cameras.
-(The settings allows values in the range 4000 to 5000 in case other drones use a different range.)
+The default is derived from the flight data and often falls around the high-4500s for DJI thermal cameras.
 
-SkyComb maps the radiometric temperature values linearly to "hot pixel values" in the range 0 to 255. This setting defines the "hot pixel" value 0.
-
-### Radio upper threshold 
-
-SkyComb Analyst uses radiometric temperature values stored in thermal images created by DJI drones.
-This setting defines the upper threshold for radiometric temperature values.
-Any radiometric value above this setting is reduced to this threshold.
-Any radiometric value at (or above) this setting is "always interesting".
-
-The default of 4620 is empirically found to be a good value for many DJI thermal cameras.
-(The settings allows values in the range 4000 to 5000 in case other drones use a different range.)
-
-SkyComb maps the radiometric temperature values linearly to "hot pixel values" in the range 0 to 255. This setting defines the "hot pixel" value 255.
+Note: the current Process Settings UI exposes the lower radiometric threshold only.
 
 
 ### YOLO detect confidence (0.1 to 0.9)
@@ -83,32 +70,23 @@ This setting is specific to YOLO (You Only Look Once) image processing algorithm
 If unsure, use the default setting 0.25
 
 
-### Max distance to detect features (50 to 250m)
-
-When SkyComb detects an object, the SkyComb physics model estimates the distance away the object is from the drone.
-
-If the distance is greater than this threshold then the object is ignored. The rationale is that to detect an object at a great distance, the object must be very large, and so it is not an animal. 
-
-If unsure, use the default setting 150
-
-
 ### Save annotated video
 
 SkyComb Analyst can create a video as output. This video mirrors what is shown in the main window of SkyComb Analyst. That is, it is a copy of the input video, overlaid with any objects detected. 
 
-Use this setting to say whether an annotated video should be created.  If unsure, use the default setting "Yes".
+Use this setting to say whether an annotated video should be created. If unsure, use the default shown in the UI.
 
 
-### Saver object data
+### Save object data
 
 SkyComb Analyst creates a spreadsheet (aka [DataStore](./DataStore.md) ) of results. 
 
 Use this setting to say whether object details should be saved to the spreadsheet. This setting takes values:
 - **Significant** Only significant (aka interesting) detected objects are saved
 - **All** All (significant and insignificant) detected objects are saved
-- **No** No object data is saved
+- **None** No object data is saved
 
-If unsure, use the default setting "Significant".
+If unsure, use the default shown in the UI.
 
 
 ### Min # hot pixels in object (1 to 1000)
@@ -121,6 +99,7 @@ This setting defines the minimum number of hot pixels that must exist in a tight
 ## Dialog Buttons
 
 The dialog contains these buttons:
-- **Save** : Clicking writes the changes to the [DataStore](./DataStore.md) and closes the dialog. Button is only enabled after you make changes, and it shows the number of unsaved changes.
-- **Undo** : Clicking reverse unsaved changes. Button is only enabled after you make changes, and it shows the number of unsaved changes.
-- **Cancel** : Clicking closes the dialog. Button is not enabled if there are unsaved changes.
+- **Save** : Clicking writes the changes to the [DataStore](./DataStore.md). The button is only enabled after you make changes, and it shows the number of unsaved changes.
+- **Undo** : Clicking reverses unsaved changes. The button is only enabled after you make changes, and it shows the number of unsaved changes.
+
+Note: This settings panel is hosted in the main window. It does not have a separate Cancel button.

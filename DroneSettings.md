@@ -91,6 +91,7 @@ Use these settings to enter the minimum and maximum temperature that your therma
 
 ## Dialog Buttons
 The dialog contains these buttons:
-- **Save** : Clicking writes the changes to the [DataStore](./DataStore.md) and closes the dialog. Button is only enabled after you make changes, and it shows the number of unsaved changes.
-- **Undo** : Clicking reverse unsaved changes. Button is only enabled after you make changes, and it shows the number of unsaved changes.
-- **Cancel** : Clicking closes the dialog. Button is not enabled if there are unsaved changes.
+- **Save** : Clicking writes the changes to the [DataStore](./DataStore.md). The button is only enabled after you make changes, and it shows the number of unsaved changes.
+- **Undo** : Clicking reverses unsaved changes. The button is only enabled after you make changes, and it shows the number of unsaved changes.
+
+Note: This settings panel is hosted in the main window. It does not have a separate Cancel button.

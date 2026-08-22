@@ -3,7 +3,7 @@
 ## Overview
 This page covers aspects of the drone flight logs, video metadata, legs, ground elevation & terminology.
 
-Refer the root-level [ReadMe](./ReadMe.md) for an overview of the whole tool.
+Refer the root-level [README](./README.md) for an overview of the whole tool.
 
 
 ## Out of Scope
@@ -66,9 +66,9 @@ Parts of the flight path that are NOT part of any leg include spinning (changing
 Each drone manufacturer has their own "flight data" file format - often in a human readable text file. 
 This format can also differ between different generations of drones from one manufacturer.
 
-Currently SkyComb Analyst only supports DJI Mavic 2 Enterprise and and DJI Mini (2022 model) flight data text 
-files, which are named "DJI*.SRT". This DJI-drone-specific is isolated to code in DroneAll.cs in the 
-function LoadFlightInputFromDjiSrt.
+SkyComb Analyst currently supports DJI SRT-based flight log files (`DJI*.SRT`).
+The parser has been tested with common DJI thermal workflows (including Mavic-class devices).
+If your model produces a different SRT variant, support may require parser updates.
 
 If you want to use a different drone, and can provide sample drone videos and flight data, 
 the developers of SkyComb Analyst will extend DroneAll.cs to support your drone.

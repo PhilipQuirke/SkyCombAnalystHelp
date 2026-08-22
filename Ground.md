@@ -37,16 +37,17 @@ website in the "GeoTiff" format, covering the area you are interested in. LINZ h
 In the LINZ web site user interface you can manually reduce the area you want to export until it is under the 13b limit. 
 As a rough guide a 10Gb GeoTiff export will cover some 4,000 km2. 
 
-Set the GroundDirectory setting in App.Config to the root folder used to store this ground 
-data e.g. D:\SkyComb\Ground_Data . Unzip each downloaded ZIP into a separate sub-folder of the GroundDirectory folder.
+Set the Ground Directory setting in SkyComb Analyst (Settings) to the root folder used to store this ground data.
+Typical default is `C:\SkyComb\Data_Ground\`.
+Unzip each downloaded ZIP into a separate sub-folder of the Ground Directory folder.
 
 For example, exporting subsets of this Lidar data:
 - Exported a 4.6 Gb subset of this dataset lds-auckland-north-lidar-1m-dem-2016-2018-GTiff.zip. It covered ~5,000 km2. 
 - Exported a 4.7 Gb subset of this dataset lds-auckland-north-lidar-1m-dsm-2016-2018-GTiff.zip. It covered ~5,000 km2. 
 
-The first time that the SkyComb Analyst is run after unzipping new datasets into the GroundDirectory folder, the tool automatically scans the subfolders, 
-and creates an index (e.g. D:\SkyComb\Ground_Data\SkyCombIndexTiff.xlsx) containing names of all the Tiffs found and the ground area each covers. 
-Subsequent SkyComb Analyst runs uses this index to quickly locate the Tiff files pertainent to any drone flight in that coverage area.
+The first time SkyComb Analyst is run after adding new datasets into the Ground Directory folder, the tool automatically scans the subfolders,
+and creates an index (for example `SkyCombIndexTiff.xlsx`) containing names of all Tiffs found and the ground area each covers.
+Subsequent runs use this index to quickly locate relevant Tiff files for the drone flight area.
 
 SkyComb Analyst also supports the ASC (text) format but this format is bulkier and slower. This format is *not* recommended. 
 
